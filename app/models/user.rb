@@ -20,6 +20,12 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
 
+    has_many :locations_authored,
+        primary_key: :id,
+        foreign_key: :initial_author_id,
+        class_name: Location
+
+
     #FIGVAPER
 
     def self.find_by_credentials(email, password)

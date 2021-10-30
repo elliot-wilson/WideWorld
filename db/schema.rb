@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_10_29_230312) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "locations", force: :cascade do |t|
     t.string "title", null: false
     t.string "summary", limit: 280, null: false
@@ -19,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_10_29_230312) do
     t.float "lat"
     t.float "lng"
     t.text "description", null: false
-    t.text "additional_info", limit: 500
+    t.text "additional_info"
     t.string "official_website"
     t.integer "initial_author_id", null: false
     t.datetime "created_at", null: false

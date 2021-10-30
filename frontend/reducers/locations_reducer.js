@@ -1,6 +1,6 @@
 import { RECEIVE_LOCATIONS, RECEIVE_LOCATION, REMOVE_LOCATION } from "../actions/location_actions";
 
-const locationsReducer = (oldState ={}, action) {
+const locationsReducer = (oldState ={}, action) => {
     Object.freeze(oldState);
     let newState;
 

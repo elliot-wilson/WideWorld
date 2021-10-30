@@ -36,5 +36,5 @@ export const updateLocation = (location) => dispatch =>
         .then((location) => dispatch(receiveLocation(location)))
 
 export const deleteLocation = (locationId) => dispatch =>
-    LocationAPIUtil.removeLocation(locationId)
+    LocationAPIUtil.deleteLocation(locationId)
         .then(() => dispatch(removeLocation(locationId)))

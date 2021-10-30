@@ -8,6 +8,7 @@ const locationsReducer = (oldState ={}, action) => {
         case RECEIVE_LOCATIONS:
             return action.locations;
         case RECEIVE_LOCATION:
+            newState = Object.assign({}, oldState);
             newState[action.location.id] = action.location;
             return newState;
         case REMOVE_LOCATION:

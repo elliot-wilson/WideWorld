@@ -2,7 +2,7 @@ class Api::LocationsController < ApplicationController
 
     def create
         @location = Location.new(location_params)
-
+        
         if @location.save
             render :show
         else
@@ -30,8 +30,7 @@ class Api::LocationsController < ApplicationController
     private
 
     def location_params
-        params.require(:location).permit(:title, :summary, :address, :lat, :lng,
-            :description, :additional_info, :official_website, :initial_author_id)
+        params.require(:location).permit(:title, :summary, :address, :lat, :lng, :description, :additional_info, :official_website, :initial_author_id)
     end
 
 end

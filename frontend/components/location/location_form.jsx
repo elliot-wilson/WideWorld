@@ -15,6 +15,7 @@ class LocationForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
+        console.log(this.state);
         this.props.action(this.state);
     }
 
@@ -24,12 +25,12 @@ class LocationForm extends React.Component {
 
 
     render(){
-        const { location } = this.state;
+        const location = this.state;
 
         return (
             <div>
                 <h2>{this.props.formType}</h2>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>Title
                         <input
                             type="text"
@@ -53,19 +54,29 @@ class LocationForm extends React.Component {
                     </label>
                     <label>Description
                         <textarea
-                            onChange={this.handleChange('title')}
+                            onChange={this.handleChange('description')}
                             value={location.description}
                         />
                     </label>
                     <label>Additional Info
                         <input
                             type="text"
-                            onChange={this.handleChange('address')}
-                            value={location.address}
+                            onChange={this.handleChange('additional_info')}
+                            value={location.additionalInfo}
                         />
                     </label>
+                    <label>Official Website
+                        <input
+                            type="text"
+                            onChange={this.handleChange('official_website')}
+                            value={location.officialWebsite}
+                        />
+                    </label>
+                    <button type="submit">{this.props.formType}</button>
                 </form>
             </div>
         )
     }
-}
+};
+
+export default LocationForm;

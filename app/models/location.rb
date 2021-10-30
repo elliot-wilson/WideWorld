@@ -18,7 +18,7 @@
 class Location < ApplicationRecord
     validates :title, :address, :description, :initial_author_id, presence: true
     validates :summary, presence: true, length: {maximum: 280}
-    validates :additional_info, presence: true, length: {maximum: 500}, allow_nil: true
+    validates :additional_info, length: {maximum: 500}
 
 
     belongs_to :author,

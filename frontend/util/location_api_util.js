@@ -24,7 +24,7 @@ export const updateLocation = (location) => (
     $.ajax({
         method: 'PATCH',
         url: `api/locations/${location.id}`,
-        datA: { location }
+        data: { location }
     })
 );
 

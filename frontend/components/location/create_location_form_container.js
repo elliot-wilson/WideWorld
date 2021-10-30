@@ -3,16 +3,14 @@ import { createLocation } from "../../actions/location_actions";
 import LocationForm from './location_form';
 
 const mSTP = (state) => ({
-    location = {
+    location: {
         title: "",
         summary: "",
         address: "",
-        lat: "",
-        lng: "",
         description: "",
         additional_info: "",
         official_website: "",
-        initial_author_id: state.session.id
+        initial_author_id: 1
     },
     formType: 'Create'
 });

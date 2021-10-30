@@ -23,7 +23,7 @@ class User < ApplicationRecord
     has_many :locations_authored,
         primary_key: :id,
         foreign_key: :initial_author_id,
-        class_name: Location
+        class_name: 'Location'
 
 
     #FIGVAPER

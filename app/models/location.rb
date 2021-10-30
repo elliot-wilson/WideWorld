@@ -24,6 +24,6 @@ class Location < ApplicationRecord
     belongs_to :author,
         primary_key: :id,
         foreign_key: :initial_author_id,
-        class_name: User
+        class_name: 'User'
 
 end

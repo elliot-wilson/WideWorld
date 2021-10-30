@@ -62,14 +62,14 @@ class LocationForm extends React.Component {
                         <input
                             type="text"
                             onChange={this.handleChange('additional_info')}
-                            value={location.additionalInfo}
+                            value={location.additional_info}
                         />
                     </label>
                     <label>Official Website
                         <input
                             type="text"
-                            onChange={this.handleChange('official_website')}
-                            value={location.officialWebsite}
+                            onChange={this.handleChange('officialWebsite')}
+                            value={location.official_website}
                         />
                     </label>
                     <button type="submit">{this.props.formType}</button>

@@ -6,13 +6,15 @@ const mSTP = (state) => ({
     location: {
         title: "",
         summary: "",
+        lat: "",
+        lng: "",
         address: "",
         description: "",
         additional_info: "",
         official_website: "",
-        initial_author_id: 1
+        initial_author_id: state.session.id
     },
-    formType: 'Create'
+    formType: 'create'
 });
 
 const mDTP = (dispatch) => ({

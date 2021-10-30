@@ -5,6 +5,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LoginFormContainer from './login/login_form_container';
 import SignupFormContainer from './login/signup_form_container';
 import CreateLocationFormContainer from './location/create_location_form_container';
+import UpdateLocationFormContainer from './location/update_location_form_container';
 
 const App = () => (
     <div>
@@ -15,6 +16,7 @@ const App = () => (
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <ProtectedRoute path="/locations/new" component={CreateLocationFormContainer} />
+        <ProtectedRoute path="/locations/:id/edit" component={UpdateLocationFormContainer} />
     </div>
 )
 

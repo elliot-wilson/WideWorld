@@ -1,3 +1,7 @@
 body * {
     font-family: Lato;
 }
+
+a:hover {
+    cursor: pointer;
+}

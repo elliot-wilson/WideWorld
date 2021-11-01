@@ -6,6 +6,7 @@ import SignupFormContainer from './login/signup_form_container';
 import CreateLocationFormContainer from './location/create_location_form_container';
 import UpdateLocationFormContainer from './location/update_location_form_container';
 import NavBar from './header/navbar';
+import LocationContainer from './location/location_container';
 
 const App = () => (
     <div>
@@ -15,7 +16,8 @@ const App = () => (
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <ProtectedRoute path="/locations/new" component={CreateLocationFormContainer} />
-        <ProtectedRoute path="/locations/:id/edit" component={UpdateLocationFormContainer} />
+        <ProtectedRoute path="/locations/:locationId/edit" component={UpdateLocationFormContainer} />
+        <Route path="/locations/:locationId" component={LocationContainer}/>
     </div>
 )
 

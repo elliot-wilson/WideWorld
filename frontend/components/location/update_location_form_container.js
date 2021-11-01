@@ -6,7 +6,7 @@ import LocationForm from "./location_form";
 class UpdateLocationForm extends React.Component {
 
     componentDidMount(){
-        this.props.fetchLocation(this.props.match.params.id);
+        this.props.fetchLocation(this.props.match.params.locationId);
     };
 
     render() {
@@ -27,7 +27,7 @@ class UpdateLocationForm extends React.Component {
 
 
 const mSTP = (state, ownProps) => ({
-    location: state.entities.locations[ownProps.match.params.id],
+    location: state.entities.locations[ownProps.match.params.locationId],
     formType: 'update'
 });
 

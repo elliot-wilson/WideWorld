@@ -8,21 +8,21 @@ const AuthIndex = (props) => {
     const authIndex = // add a link to View Profile here 
         props.currentUser ?
             (
-                <div className="auth-index">
-                    <p>VIEW PROFILE</p>
-                    <button onClick={props.logout}>LOGOUT</button>
-                </div>
+                <ul className="auth-index">
+                    <li>VIEW PROFILE</li>
+                    <li onClick={props.logout}>LOGOUT</li>
+                </ul>
             )
             :
             (
-                <div className="auth-index">
-                    <Link to="/signup">SIGN UP</Link>
-                    <Link to="login">LOG IN</Link>
-                </div>
+                <ul className="auth-index">
+                    <li><Link to="/signup">SIGN UP</Link></li>
+                    <li><Link to="login">LOG IN</Link></li>
+                </ul>
             );
 
     return (
-        <div classame="auth-index-container">
+        <div className="auth-index-container">
             <FontAwesomeIcon icon={faUserAlt}/>
             {authIndex}
         </div>

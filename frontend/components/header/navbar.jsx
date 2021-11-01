@@ -13,7 +13,7 @@ const NavBar = (props) => (
         </div>
         <div className="auth-and-search">
             <AuthIndexContainer />
-            <div className="navsearch">
+            <div className="nav-search-container">
                 <FontAwesomeIcon icon={faSearch} />
             </div>
         </div>

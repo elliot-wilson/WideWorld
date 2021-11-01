@@ -1,0 +1,71 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    
+    > * {
+        padding: 20px;
+    }
+
+    > *:first-child {
+        border-right: 1px solid lightgrey;
+    }
+
+    > *:last-child {
+        border-left: 1px solid lightgrey;
+    }
+
+    .logo {
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .slogan {
+        width: 70%;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+    }
+
+    .auth-and-search {
+        display: flex;
+        align-items: center;
+        padding: 0;
+
+        > div {
+            display: flex;
+            padding: 10px;
+        }
+
+        .auth-index-container {
+            display: flex;
+            justify-content: center;
+            position: relative;
+
+            .fa-user-alt {
+                display: block;
+            }
+
+            .auth-index {
+                display: none;
+                position: absolute;
+                min-width: 100px;
+                z-index: 1;
+                padding: 5px;
+            }
+        }
+
+        .auth-index-container:hover {
+            .auth-index {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        
+    }
+}
+
+
+

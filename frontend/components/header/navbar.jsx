@@ -3,7 +3,7 @@ import AuthIndexContainer from './auth_index_container';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import logo from '../../../app/assets/images/logo3.png'
+import logo from '../../../app/assets/images/logo4.png'
 
 const NavBar = (props) => (
     <section className="navbar">

@@ -9,7 +9,7 @@ const AuthIndex = (props) => {
         props.currentUser ?
             (
                 <ul className="auth-index">
-                    <li><a>VIEW PROFILE</a></li>
+                    <li><a>{props.currentUser.username}</a></li>
                     <li onClick={props.logout}><a>LOGOUT</a></li>
                 </ul>
             )

@@ -7,9 +7,20 @@ class Location extends React.Component {
     }
     
     render() {
+        const { location } = this.props;
+
+        if (!location) return null;
+
         return (
-            <div className="article-container">
-                <section className="article-headers">TITLE, etc.!!!</section>
+            <div className="location-container">
+                <section className="location-headers">
+                    <div className="location-title-container">
+                        <div className="location-title">{location.title}</div>
+                    </div>
+                    <div className="tag-buttons">
+
+                    </div>
+                </section>
                 <section className="article-bodies">BODY, etc.!!!</section>
             </div>
         )

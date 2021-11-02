@@ -25,7 +25,9 @@ class User < ApplicationRecord
         foreign_key: :initial_author_id,
         class_name: 'Location'
 
+    has_one_attached :photo
 
+    
     #FIGVAPER
 
     def self.find_by_credentials(email, password)

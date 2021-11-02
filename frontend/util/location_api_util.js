@@ -16,7 +16,9 @@ export const createLocation = (location) => (
     $.ajax({
         method: 'POST',
         url: 'api/locations',
-        data: { location }
+        data: location,
+        contentType: false,
+        processData: false
     })
 );
 
@@ -24,7 +26,9 @@ export const updateLocation = (location) => (
     $.ajax({
         method: 'PATCH',
         url: `api/locations/${location.id}`,
-        data: { location }
+        data: location,
+        contentType: false,
+        processData: false
     })
 );
 

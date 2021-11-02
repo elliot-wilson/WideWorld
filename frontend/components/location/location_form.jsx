@@ -7,19 +7,41 @@ class LocationForm extends React.Component {
         this.state = this.props.location;
 
         this.bindFuncs();
+        console.log(this.state);
     }
 
     bindFuncs(){
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handlePhotoAdd = this.handlePhotoAdd.bind(this);
     }
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.action(this.state);
+        const formData = new FormData();
+        
+        for (const key in this.state) {
+            if (key === "photos") {
+                for (let i = 0; i < this.state.photos.length; i++) {
+                    formData.append(`location[photos][]`, this.state[key[i]])
+                }
+            } else {
+                formData.append(`location[${key}]`, this.state[key])   
+            }
+        }
+
+        console.log(formData)
+
+        this.props.action(formData);
     }
 
     handleChange(element){
+        console.log(this.state)
         return (e) => this.setState({[element]: e.currentTarget.value})
+    }
+
+    handlePhotoAdd(e){
+        const newPhotos = Array.from(e.target.files);
+        this.setState({photos: newPhotos});
     }
 
 
@@ -42,6 +64,13 @@ class LocationForm extends React.Component {
                             type="text"
                             onChange={this.handleChange('summary')}
                             value={location.summary}
+                        />
+                    </label>
+                    <label>Photos
+                        <input
+                        type="file"
+                        onChange={this.handlePhotoAdd}
+                        multiple
                         />
                     </label>
                     <label>Address

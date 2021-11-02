@@ -12,7 +12,7 @@ class Api::LocationsController < ApplicationController
     end
 
     def show
-        @location = Location.find(params[:id])
+        @location = Location.with_attached_photos.find(params[:id])
         render :show
     end
 
@@ -30,7 +30,9 @@ class Api::LocationsController < ApplicationController
     private
 
     def location_params
-        params.require(:location).permit(:title, :summary, :address, :lat, :lng, :description, :additional_info, :official_website, :initial_author_id)
+        params.require(:location).permit(:title, :summary, :address, :lat, :lng,
+             :description, :additional_info, :official_website, 
+             :initial_author_id, photos: [])
     end
 
 end

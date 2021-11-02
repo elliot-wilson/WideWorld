@@ -13,11 +13,13 @@ const App = () => (
         <header>
             <Route path="/" component={NavBar}/>
         </header>
-        <AuthRoute path="/login" component={LoginFormContainer} />
-        <AuthRoute path="/signup" component={SignupFormContainer} />
-        <ProtectedRoute path="/locations/new" component={CreateLocationFormContainer} />
-        <ProtectedRoute path="/locations/:locationId/edit" component={UpdateLocationFormContainer} />
-        <Route path="/locations/:locationId" component={LocationContainer}/>
+        <Switch>
+            <AuthRoute path="/login" component={LoginFormContainer} />
+            <AuthRoute path="/signup" component={SignupFormContainer} />
+            <ProtectedRoute exact path="/locations/new" component={CreateLocationFormContainer} />
+            <ProtectedRoute exact path="/locations/:locationId/edit" component={UpdateLocationFormContainer} />
+            <Route path="/locations/:locationId" component={LocationContainer}/>
+        </Switch>
     </div>
 )
 

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { logout } from "../../actions/session_actions";
+import { logout, login } from "../../actions/session_actions";
 import AuthIndex from './auth_index';
 
 const mSTP = (state) => ({
@@ -7,7 +7,8 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    login: () => dispatch(login({ email: "example@example.com", password: "123456" }))
 });
 
 export default connect(mSTP, mDTP)(AuthIndex);

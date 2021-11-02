@@ -26,4 +26,6 @@ class Location < ApplicationRecord
         foreign_key: :initial_author_id,
         class_name: 'User'
 
+    has_many_attached :photos
+
 end

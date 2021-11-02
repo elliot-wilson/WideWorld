@@ -18,6 +18,7 @@ const AuthIndex = (props) => {
                 <ul className="auth-index">
                     <li><Link to="/signup">SIGN UP</Link></li>
                     <li><Link to="login">LOG IN</Link></li>
+                    <li><a onClick={props.login}>DEMO USER</a></li>
                 </ul>
             );
 

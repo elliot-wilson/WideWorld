@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 demo_user = User.create(username: "Demo", email: "example@example.com", password: "123456")
+elliot = User.create(username: "ElliotWilson", email: "elliotandrewwilson@gmail.com", password: "123456")
 
 seashells = Location.create(
     title: "Seashell Graves of Comfort Cemetery",
@@ -22,5 +23,7 @@ Early settlers in Comfort were of German descent, and the most common explanatio
 
 What is known for sure is that the graves are beautifully unique. Unfortunately, some shells have fallen off or been removed by vandals over time. Visitors must please recognize that the seashells are best left where they belong, in the comfort of Comfort Cemetery.",
     additional_info: "Please do not remove shells.",
-    initial_author_id: 1
+    initial_author_id: 1,
+    lat: 29.9738,
+    lng: -98.9132
 )

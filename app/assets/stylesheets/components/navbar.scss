@@ -64,6 +64,10 @@
             display: flex;
             padding: 25px;
         }
+        
+        svg {
+            font-size: 22px;
+        }
 
         .auth-index-container {
             display: flex;
@@ -73,6 +77,7 @@
             min-height: 100%;
             border-right: 1px solid lightgrey;
             z-index: 2;
+
             
             .auth-index {
                 display: none;

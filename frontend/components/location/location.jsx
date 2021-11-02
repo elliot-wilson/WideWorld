@@ -1,4 +1,6 @@
 import React from "react";
+import TagButtons from './tag_buttons';
+import LocationDetailContainer from "./location_detail_container";
 
 class Location extends React.Component {
     
@@ -16,12 +18,14 @@ class Location extends React.Component {
                 <section className="location-headers">
                     <div className="location-title-container">
                         <div className="location-title">{location.title}</div>
+                        <div className="location-summary">{location.summary}</div>
                     </div>
-                    <div className="tag-buttons">
-
-                    </div>
+                    <TagButtons/>
                 </section>
-                <section className="article-bodies">BODY, etc.!!!</section>
+                <section className="location-bodies">
+                    <section className="location-text">{location.description}</section>
+                    <LocationDetailContainer location={location}/>
+                </section>
             </div>
         )
     }

@@ -1,0 +1,110 @@
+.location-container {
+    width: 100%;
+    margin-top: 2%;
+    
+    .location-headers {
+        padding: 0 5% 2% 5%;
+        display: flex;
+        justify-content: space-between;
+
+        .location-title-container {
+            .location-title {
+                font-size: 60px;
+                font-weight: 600;
+                color: #382c14;
+            }
+            .location-summary {
+                font-size: 28px;
+                padding: 1% 0 0 0;
+            }
+        }
+
+        .tag-buttons {
+            display: flex;
+            color: #888071;
+
+            .tag-button {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: 2px solid #888071;
+                border-radius: 5px;
+                padding: 10px;
+                height: 90px;
+                width: 90px;
+                margin: 4px;
+
+                svg {
+                    font-size: 30px;
+                    margin: 2px;
+                }
+
+                p {
+                    font-size: 12px;
+                    text-align: center;
+                    line-height: 14px;
+                    margin: 4px;
+                }
+
+                &:hover {
+                    border-color: #8ed486;
+                    cursor: pointer;
+                }
+
+                &:last-of-type:hover{
+                    border-color: #50416d;
+                }
+
+            }
+        }
+    }
+
+    .location-bodies {
+        background: #efe8dc;
+        padding: 2% 5% 2% 5%;
+        display: flex;
+        justify-content: space-between;
+
+        .location-text {
+            font-size: 110%;
+            margin: 0 2% 0 0;
+        }
+
+        .location-details-container {
+
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 20px;
+            height: min-content;
+            margin: 0 0 2% 0;
+
+            .loc-det-item{
+                display: flex;
+                justify-content: spa;
+                margin: 0 0 1% 0;
+                padding: 4px;
+                width: 100%;
+
+                > p {
+                    margin: 0 0 0 1%;
+                }
+
+                svg {
+                    font-size: 18px;
+                }
+            }
+
+            #map-container {
+                height: 300px;
+                width: 450px;
+                border-radius: 10px;
+            }
+        }
+
+    }
+}

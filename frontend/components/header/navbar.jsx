@@ -22,7 +22,7 @@ const NavBar = (props) => (
                     <a>LISTS</a>
                 </li>
                 <li>
-                    <a>RANDOM PLACE</a>
+                    <Link to="/locations/1">RANDOM PLACE</Link>
                 </li>
             </ul>
         </div>

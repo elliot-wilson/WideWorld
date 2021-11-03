@@ -6,7 +6,6 @@ class LocationMap extends React.Component {
     componentDidMount() {
 
         const { lat, lng } = this.props.location
-        console.log(lat)
         const mapOptions = {
             mapTypeControlOptions: { mapTypeIds: [] },
             streetViewControl: false,

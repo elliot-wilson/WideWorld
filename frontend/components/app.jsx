@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LoginFormContainer from './login/login_form_container';
 import SignupFormContainer from './login/signup_form_container';
@@ -14,11 +14,12 @@ const App = () => (
             <Route path="/" component={NavBar}/>
         </header>
         <Switch>
-            <AuthRoute path="/login" component={LoginFormContainer} />
-            <AuthRoute path="/signup" component={SignupFormContainer} />
+            <AuthRoute exact path="/login" component={LoginFormContainer} />
+            <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/locations/new" component={CreateLocationFormContainer} />
             <ProtectedRoute exact path="/locations/:locationId/edit" component={UpdateLocationFormContainer} />
-            <Route path="/locations/:locationId" component={LocationContainer}/>
+            <Route exact path="/locations/:locationId" component={LocationContainer}/>
+            <Route render={() => <Redirect to="/" />} />
         </Switch>
     </div>
 )

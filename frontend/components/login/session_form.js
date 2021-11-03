@@ -68,39 +68,40 @@ class SessionForm extends React.Component {
         } else {
             linkTitle = 'Sign Up';
             linkTo = '/signup';
-            linkLeadin = 'Want to become a member?'
+            linkLeadin = 'Want to join?'
         }
 
         return (
-            <div>
-                <h1>{this.props.formType}</h1>
-                <form onSubmit={this.handleSubmit}>
-                    {username}
-                    <label>Email:
-                        <input
-                            type="text"
-                            onChange={this.handleChange('email')}
-                            value={this.state.email}
-                        />
-                    </label>
-                    <label>Password:
-                        <input
-                            type="password"
-                            onChange={this.handleChange('password')}
-                            value={this.state.password}
-                        />
-                    </label>
-                    <button>{this.props.formType}</button>
-                </form>
-                {errors}
-                <div>
-                    <p>{linkLeadin}</p>
-                    <Link to={linkTo}>{linkTitle}</Link>
-                </div>
-                <div>
-                    <p>Still deciding? Preview as a
-                    <span><button onClick={this.submitDemo}>Guest</button></span>
-                    </p>
+            <div className="session-form-container">
+                <div className="session-form">
+                    <h1>{this.props.formType}</h1>
+                    <div>
+                        <p>{linkLeadin} <Link to={linkTo}>{linkTitle}</Link>!</p>
+                    </div>
+                    <form className="session-form-body" onSubmit={this.handleSubmit}>
+                        {username}
+                        <label>Email:
+                            <input
+                                type="text"
+                                onChange={this.handleChange('email')}
+                                value={this.state.email}
+                            />
+                        </label>
+                        <label>Password:
+                            <input
+                                type="password"
+                                onChange={this.handleChange('password')}
+                                value={this.state.password}
+                            />
+                        </label>
+                        <button>{this.props.formType}</button>
+                    </form>
+                    {errors}
+                    <div>
+                        <p>Still deciding? Preview as a
+                        <span><button onClick={this.submitDemo}>Guest</button></span>
+                        </p>
+                    </div>
                 </div>
             </div>
         )

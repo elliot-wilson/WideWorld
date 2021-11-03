@@ -13,11 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
- /* CSS RESET */
-
- @import './base/reset.css';
-
- /* BASE */
-
- @import './base/fonts.css'

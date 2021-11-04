@@ -1,12 +1,12 @@
 # == Schema Information
 #
-# Table name: location_wanna_visits
+# Table name: location_editors
 #
-#  id               :bigint           not null, primary key
-#  location_id      :integer          not null
-#  wanna_visitor_id :integer          not null
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
+#  id          :bigint           not null, primary key
+#  editor_id   :integer          not null
+#  location_id :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 # This model initially had no columns defined. If you add columns to the

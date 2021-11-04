@@ -1,10 +1,19 @@
 import { connect } from "react-redux";
 import EditorsDetails from "./editors_details";
 
-const mSTP = (state, ownProps) => ({
-    location: ownProps.currLocation,
-    editors: Object.values(state.entities.editors)
-});
+const mSTP = (state, ownProps) => {
+
+    const location = ownProps.currLocation
+    const editors = state.entities.locationEdits;
+    const initialEditor = location.initial_author
 
 
-export default connect(mSTP, mDTP)(EditorsDetails)
+    return {
+        location,
+        editors,
+        initialEditor
+    }
+};
+
+
+export default connect(mSTP)(EditorsDetails)

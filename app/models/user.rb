@@ -43,6 +43,15 @@ class User < ApplicationRecord
         through: :location_wanna_visits,
         source: :location
 
+    has_many :edits,
+        primary_key: :id,
+        foreign_key: :editor_id,
+        class_name: :LocationEdit
+
+    has_many :edited_location,
+        through: :edits,
+        source: :location
+
     has_one_attached :photo
 
     

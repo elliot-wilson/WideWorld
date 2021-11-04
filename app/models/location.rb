@@ -20,7 +20,6 @@ class Location < ApplicationRecord
     validates :summary, presence: true, length: {maximum: 280}
     validates :additional_info, length: {maximum: 500}
 
-
     belongs_to :author,
         primary_key: :id,
         foreign_key: :initial_author_id,
@@ -44,6 +43,20 @@ class Location < ApplicationRecord
         through: :location_wanna_visits,
         source: :wanna_visitor
 
+    has_many :edits,
+        primary_key: :id,
+        foreign_key: :location_id,
+        class_name: :LocationEdit
+
+    has_many :editors,
+        through: :edits,
+        source: :editor
+
     has_many_attached :photos
+
+    def initial_author
+        id = initial_author_id
+        User.find(id)
+    end
 
 end

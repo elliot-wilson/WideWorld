@@ -8,14 +8,14 @@ class Api::LocationsController < ApplicationController
         else
             render json: @location.errors.full_messages, status: 422
         end
-
+        
     end
-
+    
     def show
-        @location = Location.with_attached_photos.find(params[:id])
+        @location = Location.find(params[:id])
         render :show
     end
-
+    
     def update
         @location = Location.find(params[:id])
         if @location.update_attributes(location_params)

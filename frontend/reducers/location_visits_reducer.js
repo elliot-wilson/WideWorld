@@ -1,7 +1,7 @@
 import { RECEIVE_LOCATION } from "../actions/location_actions";
 import { RECEIVE_LOCATION_VISIT, REMOVE_LOCATION_VISIT } from "../actions/location_visit_actions";
 
-const locationVisitsReducer = (oldState = [], action) => {
+const locationVisitsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let newState;
 
@@ -20,6 +20,6 @@ const locationVisitsReducer = (oldState = [], action) => {
         default:
             return oldState;
     }
-}
+};
 
 export default locationVisitsReducer;

@@ -35,6 +35,28 @@
         .session-form-body {
             display: flex;
             flex-direction: column;
+            align-items: center;
+
+            input {
+                font-size: 20px;
+                padding: 10px;
+                margin: 10px;
+                width: 400px;
+                border-radius: 8px;
+                border: 1px solid gray;
+            }
+
+            button {
+                font-size: 18px;
+                width: auto;
+                padding: 10px;
+                border-radius: 8px;
+                border: 1px solid gray;
+
+                &:hover{
+                    background: lightgrey;
+                }
+            }
         }
     }
 }

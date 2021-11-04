@@ -56,13 +56,12 @@ class SessionForm extends React.Component {
             linkTitle = 'Log in';
             linkTo = '/login';
             username = (
-                <label>Username:
-                    <input
-                        type="text"
-                        onChange={this.handleChange('username')}
-                        value={this.state.username}
-                    />
-                </label>
+                <input
+                    placeholder="Username"
+                    type="text"
+                    onChange={this.handleChange('username')}
+                    value={this.state.username}
+                />
             );
             linkLeadin = 'Already a member?'
         } else {
@@ -80,20 +79,18 @@ class SessionForm extends React.Component {
                     </div>
                     <form className="session-form-body" onSubmit={this.handleSubmit}>
                         {username}
-                        <label>Email:
-                            <input
-                                type="text"
-                                onChange={this.handleChange('email')}
-                                value={this.state.email}
-                            />
-                        </label>
-                        <label>Password:
-                            <input
-                                type="password"
-                                onChange={this.handleChange('password')}
-                                value={this.state.password}
-                            />
-                        </label>
+                        <input
+                            placeholder="Email"
+                            type="text"
+                            onChange={this.handleChange('email')}
+                            value={this.state.email}
+                        />
+                        <input
+                            placeholder="Password"
+                            type="password"
+                            onChange={this.handleChange('password')}
+                            value={this.state.password}
+                        />
                         <button>{this.props.formType}</button>
                     </form>
                     {errors}

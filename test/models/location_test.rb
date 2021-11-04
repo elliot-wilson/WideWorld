@@ -2,14 +2,14 @@
 #
 # Table name: locations
 #
-#  id                :integer          not null, primary key
+#  id                :bigint           not null, primary key
 #  title             :string           not null
 #  summary           :string(280)      not null
 #  address           :string           not null
 #  lat               :float
 #  lng               :float
 #  description       :text             not null
-#  additional_info   :text(500)
+#  additional_info   :text
 #  official_website  :string
 #  initial_author_id :integer          not null
 #  created_at        :datetime         not null

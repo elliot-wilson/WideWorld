@@ -7,6 +7,8 @@ import CreateLocationFormContainer from './location/create_location_form_contain
 import UpdateLocationFormContainer from './location/update_location_form_container';
 import NavBar from './header/navbar';
 import LocationContainer from './location/location_container';
+import HomePageContainer from './homepage/homepage_container';
+import NotFound from './not_found';
 
 const App = () => (
     <div>
@@ -19,7 +21,8 @@ const App = () => (
             <ProtectedRoute exact path="/locations/new" component={CreateLocationFormContainer} />
             <ProtectedRoute exact path="/locations/:locationId/edit" component={UpdateLocationFormContainer} />
             <Route exact path="/locations/:locationId" component={LocationContainer}/>
-            <Route render={() => <Redirect to="/" />} />
+            <Route exact path="/" component={HomePageContainer}/>
+            <Route component={NotFound} />
         </Switch>
     </div>
 )

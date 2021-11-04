@@ -2,14 +2,14 @@
 #
 # Table name: locations
 #
-#  id                :integer          not null, primary key
+#  id                :bigint           not null, primary key
 #  title             :string           not null
 #  summary           :string(280)      not null
 #  address           :string           not null
 #  lat               :float
 #  lng               :float
 #  description       :text             not null
-#  additional_info   :text(500)
+#  additional_info   :text
 #  official_website  :string
 #  initial_author_id :integer          not null
 #  created_at        :datetime         not null
@@ -24,7 +24,25 @@ class Location < ApplicationRecord
     belongs_to :author,
         primary_key: :id,
         foreign_key: :initial_author_id,
-        class_name: 'User'
+        class_name: :User
+
+    has_many :location_visits,
+        primary_key: :id,
+        foreign_key: :location_id,
+        class_name: :LocationVisit
+
+    has_many :visitors,
+        through: :location_visits,
+        source: :visitor
+
+    has_many :location_wanna_visits,
+        primary_key: :id,
+        foreign_key: :location_id,
+        class_name: :LocationWannaVisit
+    
+    has_many :wanna_visitors,
+        through: :location_wanna_visits,
+        source: :wanna_visitor
 
     has_many_attached :photos
 

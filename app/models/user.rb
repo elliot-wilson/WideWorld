@@ -2,7 +2,7 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
+#  id              :bigint           not null, primary key
 #  username        :string           not null
 #  email           :string           not null
 #  password_digest :string           not null
@@ -23,7 +23,25 @@ class User < ApplicationRecord
     has_many :locations_authored,
         primary_key: :id,
         foreign_key: :initial_author_id,
-        class_name: 'Location'
+        class_name: :Location
+
+    has_many :location_visits,
+        primary_key: :id,
+        foreign_key: :visitor_id,
+        class_name: :LocationVisit
+
+    has_many :visited_locations,
+        through: :location_visits,
+        source: :location
+
+    has_many :location_wanna_visits,
+        primary_key: :id,
+        foreign_key: :wanna_visitor_id,
+        class_name: :LocationWannaVisit
+
+    has_many :wanna_visit_locations,
+        through: :location_wanna_visits,
+        source: :location
 
     has_one_attached :photo
 

@@ -1,0 +1,1 @@
+json.extract! @location_wanna_visit, :id, :wanna_visitor_id, :location_id

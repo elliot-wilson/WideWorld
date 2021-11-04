@@ -9,9 +9,9 @@ const receiveLocations = (locations) => ({
     locations
 });
 
-const receiveLocation = (location) => ({
+const receiveLocation = (locationPayload) => ({
     type: RECEIVE_LOCATION,
-    location
+    locationPayload
 });
 
 const removeLocation = (locationId) => ({
@@ -25,7 +25,7 @@ export const fetchLocations = () => dispatch =>
 
 export const fetchLocation = (locationId) => dispatch =>
     LocationAPIUtil.fetchLocation(locationId)
-        .then((location) => dispatch(receiveLocation(location)))
+        .then((locationPayload) => dispatch(receiveLocation(locationPayload)))
 
 export const createLocation = (location) => dispatch =>
     LocationAPIUtil.createLocation(location)

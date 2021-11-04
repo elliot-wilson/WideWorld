@@ -76,8 +76,13 @@
 
             .tagged {
                 background: #8ed486;
-                border: #8ed486;
+                border: 2px solid #8ed486;
                 color: white;
+
+                &:hover {
+                    color: #8ed486;
+                    background: white;
+                }
             }
 
         }

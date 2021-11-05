@@ -5,3 +5,23 @@ body * {
 a:hover {
     cursor: pointer;
 }
+
+.title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #382c14;
+}
+
+.subheading {
+    color: #382c14;
+    font-weight: 600;
+    font-size: 33px;
+}
+
+.form-question-text {
+    font-size: 19px;
+}
+
+.form-help-text {
+    font-size: 17px;
+}

@@ -1,0 +1,61 @@
+.page-body {
+    background: #efe8dc;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .location-form-container {
+        padding: 5% 8% 5% 8%;
+    }
+
+    .location-form {
+
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        margin: 2% 0 0 0;
+
+        > * {
+            margin: 1% 0 0 0;
+        }
+
+        .subheading + * {
+            margin: 2% 0 0 0;
+        }
+
+        input, textarea {
+            resize: none;
+            white-space: normal;
+            padding: 1%;
+            font-size: 19px;
+            border: 1px solid lightgrey;
+            margin: 1% 0 1% 0;
+        }
+
+        .description-help-text {
+            margin: 3% 0 2% 0;
+        }
+
+        .description-textarea {
+            height: 600px;
+        }
+
+        .form-submit-button {
+            background: #1b624f;
+            font-size: 33px;
+            color: white;
+            width: max-content;
+            align-self: center;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid black;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+
+    }
+
+}

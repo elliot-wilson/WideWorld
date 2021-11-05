@@ -1,0 +1,49 @@
+.editors-box {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    width: 100%;
+
+    h2 {
+        font-weight: 600;
+        font-size: 26px;
+    }
+
+    .initial-editor-spotlight {
+        padding: 5px 0 0 0;
+    }
+
+    .editor-leadin {
+        font-size: 16px;
+    }
+
+    .editor-name > a {
+        color: #888071;
+        text-transform: lowercase;
+    }
+
+    .addl-editor-list {
+
+        padding: 5px 0 0 0;
+        margin: 1% 0 2% 0;
+
+        > ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    .edit-location-links-box {
+        border-top: 1px solid lightgrey;
+        padding: 2% 0 0 0;
+
+        a {
+            color: #d36a55;
+        }
+    }
+
+}
+    

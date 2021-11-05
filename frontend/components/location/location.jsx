@@ -17,8 +17,8 @@ class Location extends React.Component {
         let additionalInfo;
         if (location.additional_info) {
             additionalInfo = (
-                <div>
-                    <h2>Know Before You Go</h2>
+                <div className="addl-info-container">
+                    <h2 className="addl-info-header">Know Before You Go</h2>
                     <div>{location.additional_info}</div>
                 </div>
             )
@@ -28,15 +28,15 @@ class Location extends React.Component {
             <div className="location-container">
                 <section className="location-headers">
                     <div className="location-title-container">
-                        <div className="location-title">{location.title}</div>
+                        <div className="title">{location.title}</div>
                         <div className="location-summary">{location.summary}</div>
                     </div>
                     <TagButtonsContainer currLocation={location}/>
                 </section>
                 <section className="location-bodies">
                     <section className="location-text">
-                        <div>{location.description}</div>
-                        {additionalInfo}
+                            <div>{location.description}</div>
+                            {additionalInfo}
                         <EditorsDetailContainer currLocation={location} />
                     </section>
                     <LocationDetailContainer location={location}/>

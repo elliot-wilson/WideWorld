@@ -5,6 +5,7 @@ class LocationForm extends React.Component {
         super(props);
 
         this.inputRef = React.createRef();
+        this.mapRef = React.createRef();
 
         this.state = this.props.location;
         this.initialTitle = this.props.location.title;
@@ -19,10 +20,41 @@ class LocationForm extends React.Component {
 
     componentDidMount() {
         this.generateAutoComplete();
+        this.setMap();
     }
 
     generateAutoComplete() {
         const autocomplete = new google.maps.places.Autocomplete(this.inputRef.current)
+        
+        autocomplete.addListener("place_changed", () => {
+            let place = autocomplete.getPlace();
+            let address = place.formatted_address;
+            let lat = place.geometry.location.lat();
+            let lng = place.geometry.location.lng();
+
+            
+            this.setState({ lat, lng, address })
+            
+            this.setMap();
+        })
+    }
+
+    setMap() {
+        console.log(this.state)
+        const { lat, lng } = this.state;
+        console.log(lat);
+        const options = {
+            mapTypeControlOptions: { mapTypeIds: [] },
+            streetViewControl: false,
+            center: { lat, lng },
+            zoom: 15,
+        }
+        console.log(this.mapRef)
+        const map = new google.maps.Map(this.mapRef.current, options);
+        const marker = new google.maps.Marker({
+            position: { lat, lng },
+            map: map 
+        });
     }
 
     handleSubmit(e){
@@ -105,6 +137,11 @@ class LocationForm extends React.Component {
                             onChange={this.handleChange('address')}
                             value={location.address}
                         />
+                        <div
+                            id="location-form-map"
+                            ref={this.mapRef}
+                        >
+                        </div>
                         <p className="subheading">{bodyHeader}</p>
                         <p className="form-help-text description-help-text">
                             Please use your own words to tell the unique story of the place in an engaging, concise way. If you need some help, here's a great example of an entry our users love.

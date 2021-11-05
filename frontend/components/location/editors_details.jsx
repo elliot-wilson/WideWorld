@@ -51,7 +51,7 @@ class EditorsDetails extends React.Component {
                         </Link>
                     </p>
                     <p>
-                        <Link>
+                        <Link to={`/locations/${location.id}/add_photos`}>
                             Add Photos
                             <FontAwesomeIcon icon={faCamera} />
                         </Link>

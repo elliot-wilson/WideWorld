@@ -31,8 +31,8 @@ export const createLocation = (location) => dispatch =>
     LocationAPIUtil.createLocation(location)
         .then((location) => dispatch(receiveLocation(location)))
 
-export const updateLocation = (location) => dispatch =>
-    LocationAPIUtil.updateLocation(location)
+export const updateLocation = (location, id) => dispatch =>
+    LocationAPIUtil.updateLocation(location, id)
         .then((location) => dispatch(receiveLocation(location)))
 
 export const deleteLocation = (locationId) => dispatch =>

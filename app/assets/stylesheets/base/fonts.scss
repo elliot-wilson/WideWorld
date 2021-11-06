@@ -25,3 +25,17 @@ a:hover {
 .form-help-text {
     font-size: 17px;
 }
+
+.green-button {
+    background: #1b624f;
+    color: white;
+    width: max-content;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid black;
+
+    &:hover {
+        cursor: pointer;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0 0);
+    }
+}

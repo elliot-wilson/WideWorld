@@ -41,18 +41,9 @@
         }
 
         .form-submit-button {
-            background: #1b624f;
+            margin: 2% 0 0 0;
             font-size: 33px;
-            color: white;
-            width: max-content;
             align-self: center;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid black;
-
-            &:hover {
-                cursor: pointer;
-            }
         }
 
 
@@ -63,4 +54,42 @@
 #location-form-map {
     width: 100%;
     height: 250px;
+}
+
+#photo-id-choose + * {
+    margin-top: 0;
+}
+
+.photo-preview-container {
+    margin: 0 0 0 0;
+}
+
+.photo-preview-helper {
+    margin: 0 0 2% 0;
+}
+
+.photo-preview {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+
+    .form-preview-image {
+        
+        padding: 0 0 0 0;
+        margin: 0 1% 1% 1%;
+        border: 1px solid black;
+        max-height: 250px;
+        max-width: 450px;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.8;
+        }
+    }
+}
+
+#photo-chooser-label {
+    margin: 3% 0 2% 0;
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_04_141901) do
+ActiveRecord::Schema.define(version: 2021_11_05_235411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,16 @@ ActiveRecord::Schema.define(version: 2021_11_04_141901) do
     t.index ["location_id"], name: "index_location_edits_on_location_id"
   end
 
+  create_table "location_listings", force: :cascade do |t|
+    t.integer "location_id", null: false
+    t.integer "list_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_location_listings_on_list_id"
+    t.index ["location_id", "list_id"], name: "index_location_listings_on_location_id_and_list_id", unique: true
+    t.index ["location_id"], name: "index_location_listings_on_location_id"
+  end
+
   create_table "location_visits", force: :cascade do |t|
     t.integer "location_id", null: false
     t.integer "visitor_id", null: false
@@ -77,6 +87,16 @@ ActiveRecord::Schema.define(version: 2021_11_04_141901) do
     t.datetime "updated_at", null: false
     t.index ["initial_author_id"], name: "index_locations_on_initial_author_id"
     t.index ["title"], name: "index_locations_on_title", unique: true
+  end
+
+  create_table "user_location_lists", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "description"
+    t.integer "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id", "title"], name: "index_user_location_lists_on_author_id_and_title", unique: true
+    t.index ["author_id"], name: "index_user_location_lists_on_author_id"
   end
 
   create_table "users", force: :cascade do |t|

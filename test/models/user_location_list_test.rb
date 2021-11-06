@@ -1,16 +1,17 @@
 # == Schema Information
 #
-# Table name: location_edits
+# Table name: user_location_lists
 #
 #  id          :bigint           not null, primary key
-#  editor_id   :integer          not null
-#  location_id :integer          not null
+#  title       :string           not null
+#  description :string
+#  author_id   :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 require 'test_helper'
 
-class LocationEditorTest < ActiveSupport::TestCase
+class UserLocationListTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

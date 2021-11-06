@@ -22,10 +22,10 @@ export const createLocation = (location) => (
     })
 );
 
-export const updateLocation = (location) => (
+export const updateLocation = (location, id) => (
     $.ajax({
         method: 'PATCH',
-        url: `api/locations/${location.id}`,
+        url: `api/locations/${id}`,
         data: location,
         contentType: false,
         processData: false

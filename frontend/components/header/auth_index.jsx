@@ -4,27 +4,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserAlt } from '@fortawesome/free-solid-svg-icons'
 
 const AuthIndex = (props) => {
-
-    const authIndex = // add a link to View Profile here 
-        props.currentUser ?
-            (
-                <ul className="auth-index">
-                    <li><a>{props.currentUser.username}</a></li>
-                    <li onClick={props.logout}><a>LOGOUT</a></li>
-                </ul>
-            )
-            :
-            (
-                <ul className="auth-index">
-                    <li><Link to="/signup">SIGN UP</Link></li>
-                    <li><Link to="/login">LOG IN</Link></li>
-                    <li><a onClick={props.login}>DEMO USER</a></li>
-                </ul>
-            );
+    const { currentUser } = props;
+    let authIndex, authLink;
+    if (currentUser) {
+        authIndex = (
+            <ul className="auth-index">
+                <li><a>{currentUser.username}</a></li>
+                <li onClick={props.logout}><a>LOGOUT</a></li>
+            </ul>
+        );
+        authLink = `/users/${currentUser.id}`
+    } else {
+        authIndex = (
+            <ul className="auth-index">
+                <li><Link to="/signup">SIGN UP</Link></li>
+                <li><Link to="/login">LOG IN</Link></li>
+                <li><a onClick={props.login}>DEMO USER</a></li>
+            </ul>
+        );
+        authLink = '/signin'
+    }
 
     return (
         <div className="auth-index-container">
-            <FontAwesomeIcon icon={faUserAlt}/>
+            <Link to={authLink}><FontAwesomeIcon icon={faUserAlt}/></Link>
             {authIndex}
         </div>
     )

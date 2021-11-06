@@ -8,6 +8,7 @@ class LocationForm extends React.Component {
         this.mapRef = React.createRef();
 
         this.state = this.props.location;
+        this.state.photos = [];
         this.initialTitle = this.props.location.title;
 
         this.bindFuncs();
@@ -40,16 +41,13 @@ class LocationForm extends React.Component {
     }
 
     setMap() {
-        console.log(this.state)
         const { lat, lng } = this.state;
-        console.log(lat);
         const options = {
             mapTypeControlOptions: { mapTypeIds: [] },
             streetViewControl: false,
             center: { lat, lng },
             zoom: 15,
         }
-        console.log(this.mapRef)
         const map = new google.maps.Map(this.mapRef.current, options);
         const marker = new google.maps.Marker({
             position: { lat, lng },
@@ -60,18 +58,23 @@ class LocationForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         const formData = new FormData();
-        
-        for (const key in this.state) {
-            if (key === "photos") {
-                for (let i = 0; i < this.state.photos.length; i++) {
-                    formData.append(`location[photos][]`, this.state[key[i]])
-                }
-            } else {
-                formData.append(`location[${key}]`, this.state[key])   
-            }
+
+        let id = this.props.location.id
+
+        formData.append('location[title]', this.state.title);
+        formData.append('location[summary]', this.state.summary);
+        formData.append('location[address]', this.state.address);
+        formData.append('location[lat]', this.state.lat);
+        formData.append('location[lng]', this.state.lng);
+        formData.append('location[description]', this.state.description);
+        formData.append('location[additional_info]', this.state.additional_info);
+        formData.append('location[official_website]', this.state.official_website);
+
+        for (let i = 0; i < this.state.photos.length; i++) {
+            formData.append("location[photos][]", this.state.photos[i])
         }
 
-        this.props.action(formData);
+        this.props.action(formData, id);
     }
 
     preventDefault(e) {
@@ -84,11 +87,107 @@ class LocationForm extends React.Component {
 
     handlePhotoAdd(e){
         const newPhotos = Array.from(e.target.files);
-        this.setState({photos: newPhotos});
+        const newPhotoObjectsArray = [];
+
+        if (newPhotos) {
+            newPhotos.forEach(photo => {
+                let reader = new FileReader();
+
+                reader.onloadend = () => {
+                    let photo_url = reader.result;
+                    let photoObject = {
+                        photo,
+                        photo_url
+                    };
+                    newPhotoObjectsArray.push(photoObject);
+                }
+            });
+        }
+
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+            let newPhotoObjectsArray = this.state.photos.slice();
+
+            newPhotos.forEach(photo => {
+                newPhotoObjectsArray.push({photo, photo_url: reader.result });
+            });
+
+            this.setState({photos: newPhotoObjectsArray});
+        }
+
+        if (newPhotos) {
+            newPhotos.forEach(photo => {
+                reader.readAsDataURL(photo);
+            });
+        }
+
+        // if (newPhotos) {
+        //     newPhotos.forEach(photo => {
+        //         console.log("inside handle photo conditional!!!")
+        //         let reader = new FileReader();
+        //         reader.onloadend = () => {
+        //             console.log("inside loadend!!")
+        //             let photo_url = reader.result   
+        //             let photoObject = {
+        //                 photo,
+        //                 photo_url
+        //             }
+        //             newPhotoObjectsArray.push(photoObject);
+        //             this.setState({photos: this.state});
+        //         }
+        //         reader.readAsDataURL(photo)
+        //     });
+        // }
+
+    }
+
+
+
+    imagesPreview() {
+        const photos = Array.from(this.state.photos);
+
+        if (!photos) return null;
+
+        if (photos.length > 0) {
+            
+            let display = photos.map((photo, idx) => {
+                return ( <img
+                key={idx}
+                onClick={this.removePhoto(idx)}
+                className="form-preview-image"
+                    src={URL.createObjectURL(photo)}
+                />)
+            })
+
+            console.log(display)
+
+            return (
+                <div className="photo-preview-container">
+                    <p className="photo-preview-helper form-help-text">
+                        Change your mind? Click on a photo to delete it.
+                    </p>
+                    <div className="photo-preview">{display}</div>
+                </div>
+            )
+        }
+    }
+
+    removePhoto(idx) {
+        return (e) => {
+            e.preventDefault();
+            console.log("hellooooo");
+            let photos = [...this.state.photos];
+            photos.splice(idx, 1);
+            this.setState({photos});
+        };
     }
 
 
     render(){
+
+        console.log(this.state);
+
         const location = this.state;
         const { formType } = this.props
 
@@ -160,11 +259,21 @@ class LocationForm extends React.Component {
                         <p className="form-help-text">
                             We’ll need at least one good photo to publish your submission. Use the Creative Commons Search  to find copyright-free images for your submission, or better yet, submit your own.
                         </p>
+                        <label
+                            id="photo-chooser-label"
+                            for="photo-chooser"
+                            className="form-help-text green-button"
+                        >
+                            Choose Files
+                        </label>
                         <input
+                            id="photo-chooser"
                             type="file"
-                            onChange={this.handlePhotoAdd}
+                            onChange={e => this.setState({photos: e.target.files})}
                             multiple
+                            hidden
                         />
+                        {this.imagesPreview()}
                         <p className="subheading">
                             Anything else?
                         </p>
@@ -186,7 +295,7 @@ class LocationForm extends React.Component {
                             value={location.official_website}
                         />
                         <button
-                            className="form-submit-button"
+                            className="form-submit-button green-button"
                             type="button"
                             onClick={this.handleSubmit}
                         >

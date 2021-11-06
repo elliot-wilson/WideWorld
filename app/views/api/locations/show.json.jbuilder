@@ -4,6 +4,7 @@ json.location do
         json.set! "initial_author" do
                 json.extract! @location.initial_author, :id, :username
         end
+        json.photoUrls @location.photos.map { |file| url_for(file) }
 end
 
 

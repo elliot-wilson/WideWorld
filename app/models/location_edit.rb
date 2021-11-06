@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: location_editors
+# Table name: location_edits
 #
 #  id          :bigint           not null, primary key
 #  editor_id   :integer          not null

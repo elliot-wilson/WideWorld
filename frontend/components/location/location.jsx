@@ -11,7 +11,7 @@ class Location extends React.Component {
     
     render() {
         const { location } = this.props;
-
+        
         if (!location) return null;
 
         let additionalInfo;
@@ -35,7 +35,7 @@ class Location extends React.Component {
                 </section>
                 <section className="location-bodies">
                     <section className="location-text">
-                            <div>{location.description}</div>
+                            <div className="location-description">{location.description}</div>
                             {additionalInfo}
                         <EditorsDetailContainer currLocation={location} />
                     </section>

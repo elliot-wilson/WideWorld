@@ -19,7 +19,7 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-    action: location => dispatch(createLocation(location))
+    action: (location) => dispatch(createLocation(location))
 });
 
 export default connect(mSTP, mDTP)(LocationForm);

@@ -52,6 +52,15 @@ class Location < ApplicationRecord
         through: :edits,
         source: :editor
 
+    has_many :listings,
+        primary_key: :id,
+        foreign_key: :location_id,
+        class_name: :LocationListing
+    
+    has_many :lists,
+        through: :listings,
+        source: :list
+
     has_many_attached :photos
 
     def initial_author

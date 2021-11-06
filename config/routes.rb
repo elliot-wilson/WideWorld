@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :location_visits, only: [:create, :destroy]
     resources :location_wanna_visits, only: [:create, :destroy]
     resources :location_edits, only: [:create]
+    resources :user_location_lists, only: [:create, :show, :update, :destroy]
+    resources :location_listings, only: [:create, :destroy]
     resource :session, only: [:create, :destroy]
   end
 

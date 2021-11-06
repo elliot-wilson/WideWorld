@@ -32,7 +32,7 @@ const mSTP = (state, ownProps) => ({
 });
 
 const mDTP = (dispatch) => ({
-    action: location => dispatch(updateLocation(location)),
+    action: (location, id) => dispatch(updateLocation(location, id)),
     fetchLocation: locationId => dispatch(fetchLocation(locationId))
 });
 

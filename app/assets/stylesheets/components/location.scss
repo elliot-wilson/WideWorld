@@ -97,6 +97,10 @@
             display: flex;
             flex-direction: column;
 
+            .location-description {
+                white-space: break-spaces;
+            }
+
             .addl-info-container {
 
                 margin: 2% 0 2% 0;

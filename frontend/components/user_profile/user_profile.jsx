@@ -1,4 +1,7 @@
 import React from "react";
+import UserDetailsBox from './user_details_box';
+import UserLocationsContainer from './user_locations_container';
+
 
 class UserProfile extends React.Component {
 
@@ -13,7 +16,12 @@ class UserProfile extends React.Component {
         if (!user) return null;
 
         return (
-            <div>{user.username}</div>
+            <section className="user-profile-container">
+                <div className="user-profile-body">
+                    <UserDetailsBox user={user}/>
+                    <UserLocationsContainer />
+                </div>
+            </section>
         )
     }
 

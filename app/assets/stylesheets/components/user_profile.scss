@@ -1,0 +1,62 @@
+.user-profile-container {
+    height: 100vh;
+
+    .user-profile-body {
+        padding: 5% 8% 5% 8%;
+        display: flex;
+        justify-content: space-around;
+
+        .user-details-box {
+            border: 1px solid lightgrey;
+            padding: 10px;
+            width: max-content;
+
+            .user-photo-box {
+                height: 100px;
+                background-image: url(asset-path('AO_topography.png'));
+                background-position: center;
+                background-size: 150%;
+                background-color: rgba(204,180,141, .1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 160px;
+
+                .user-photo {
+                    width: 130px;
+                    border-radius: 50%;
+                }
+
+            }
+
+        }
+
+        .user-locations-box {
+            display: flex;
+            flex-direction: column;
+
+            .user-locations-map-box {
+                display: flex;
+                flex-direction: column;
+
+                ul {
+                    display: flex;
+
+                    .user-map-button {
+                        font-size: 15px;
+                        height: 50px;
+                        padding: 18px 10px;
+                    }
+
+                    .active {
+                        background: #ccb48d;
+                    }
+                }
+            }
+
+        }
+
+
+    }
+}

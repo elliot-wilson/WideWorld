@@ -5,16 +5,37 @@ import { faUserAlt } from '@fortawesome/free-solid-svg-icons'
 
 const AuthIndex = (props) => {
     const { currentUser } = props;
-    let authIndex, authLink;
+    let authIndex, authImage;
+    let userIcon = (<FontAwesomeIcon icon={faUserAlt} />)
     if (currentUser) {
+        let icon = currentUser.photoUrl ? 
+            (
+                <img className="navbar-photo" src={currentUser.photoUrl}/>
+            )
+            :
+            (
+                userIcon
+            );
+
+        authImage = (
+            <Link to={`/users/${currentUser.id}`}> {icon} </Link>
+             )
         authIndex = (
             <ul className="auth-index">
-                <li><a>{currentUser.username}</a></li>
-                <li onClick={props.logout}><a>LOGOUT</a></li>
+                <li>
+                    <Link to={`/users/${currentUser.id}`}>
+                        {currentUser.username}
+                    </Link>
+                </li>
+                <li onClick={props.logout}>
+                    <a>LOGOUT</a>
+                </li>
             </ul>
         );
-        authLink = `/users/${currentUser.id}`
     } else {
+        authImage = (
+            <Link to="/login">{userIcon}</Link>
+        )
         authIndex = (
             <ul className="auth-index">
                 <li><Link to="/signup">SIGN UP</Link></li>
@@ -22,12 +43,11 @@ const AuthIndex = (props) => {
                 <li><a onClick={props.login}>DEMO USER</a></li>
             </ul>
         );
-        authLink = '/signin'
     }
 
     return (
         <div className="auth-index-container">
-            <Link to={authLink}><FontAwesomeIcon icon={faUserAlt}/></Link>
+            {authImage}
             {authIndex}
         </div>
     )

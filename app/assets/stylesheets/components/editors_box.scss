@@ -6,6 +6,8 @@
     align-self: center;
     flex-direction: column;
     width: 100%;
+    width: 90%;
+    min-width: 350px;
 
     h2 {
         font-weight: 600;
@@ -39,6 +41,7 @@
     .edit-location-links-box {
         border-top: 1px solid lightgrey;
         padding: 2% 0 0 0;
+        margin: 2% 0 0 0;
 
         a {
             color: #d36a55;

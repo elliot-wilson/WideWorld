@@ -3,7 +3,7 @@ import { logout, login } from "../../actions/session_actions";
 import AuthIndex from './auth_index';
 
 const mSTP = (state) => ({
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.session
 });
 
 const mDTP = (dispatch) => ({

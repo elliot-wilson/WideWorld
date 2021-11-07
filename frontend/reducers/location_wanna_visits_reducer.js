@@ -2,6 +2,8 @@ import { RECEIVE_LOCATION } from "../actions/location_actions";
 import { RECEIVE_LOCATION_WANNA_VISIT, REMOVE_LOCATION_WANNA_VISIT } from "../actions/location_wanna_visit_actions";
 import { RECEIVE_USER } from "../actions/user_actions";
 
+const _nullState = {};
+
 const locationWannaVisitsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let newState;
@@ -9,7 +11,7 @@ const locationWannaVisitsReducer = (oldState = {}, action) => {
     switch (action.type) {
         case RECEIVE_LOCATION:
             let wannaVisitors = action.locationPayload.wanna_visitors;
-            return wannaVisitors ? wannaVisitors : oldState
+            return wannaVisitors ? wannaVisitors : _nullState
         case RECEIVE_LOCATION_WANNA_VISIT:
             newState = Object.assign({}, oldState);
             newState[action.locationWannaVisit.id] = action.locationWannaVisit;
@@ -20,7 +22,7 @@ const locationWannaVisitsReducer = (oldState = {}, action) => {
             return newState;
         case RECEIVE_USER:
             let wannaVisits = action.userPayload.locationWannaVisits;
-            return wannaVisits ? wannaVisits : oldState;
+            return wannaVisits ? wannaVisits : _nullState;
         default:
             return oldState;
     }

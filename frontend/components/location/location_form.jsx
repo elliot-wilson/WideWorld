@@ -41,7 +41,14 @@ class LocationForm extends React.Component {
     }
 
     setMap() {
-        const { lat, lng } = this.state;
+        let { lat, lng } = this.state;
+        let markerBlock = false;
+
+        if (!lat) {
+            markerBlock = true;
+            lat = 40.7204807
+            lng = -73.9950969
+        }
         const options = {
             mapTypeControlOptions: { mapTypeIds: [] },
             streetViewControl: false,
@@ -49,10 +56,13 @@ class LocationForm extends React.Component {
             zoom: 15,
         }
         const map = new google.maps.Map(this.mapRef.current, options);
-        const marker = new google.maps.Marker({
-            position: { lat, lng },
-            map: map 
-        });
+        
+        if (!markerBlock) {
+            const marker = new google.maps.Marker({
+                position: { lat, lng },
+                map: map 
+            });
+        }
     }
 
     handleSubmit(e){
@@ -69,12 +79,14 @@ class LocationForm extends React.Component {
         formData.append('location[description]', this.state.description);
         formData.append('location[additional_info]', this.state.additional_info);
         formData.append('location[official_website]', this.state.official_website);
+        formData.append('location[initial_author_id]', this.state.initial_author_id);
 
         for (let i = 0; i < this.state.photos.length; i++) {
             formData.append("location[photos][]", this.state.photos[i])
         }
 
-        this.props.action(formData, id);
+        this.props.action(formData, id)
+            .then((response) => this.props.history.push(`/locations/${response.locationPayload.location.id}`));
     }
 
     preventDefault(e) {
@@ -212,7 +224,7 @@ class LocationForm extends React.Component {
                             What is this place commonly called?
                         </p>
                         <input
-                            placeholder="E.g. World's Largest Collection of Small Tophats"
+                            placeholder="E.g. World's Largest Collection of Tophats"
                             type="text"
                             onChange={this.handleChange('title')}
                             value={location.title}
@@ -221,7 +233,7 @@ class LocationForm extends React.Component {
                             In a single sentence, what makes this place special?
                         </p>
                         <textarea
-                            placeholder="E.g. You've seen larger tophats, but not a larger COLLECTION of small tophats"
+                            placeholder="E.g. Maybe you've seen larger tophats, and maybe you've seen larger collections, but you definitely haven't seen a larger collection of tophats"
                             type="text"
                             onChange={this.handleChange('summary')}
                             value={location.summary}
@@ -261,7 +273,7 @@ class LocationForm extends React.Component {
                         </p>
                         <label
                             id="photo-chooser-label"
-                            for="photo-chooser"
+                            htmlFor="photo-chooser"
                             className="form-help-text green-button"
                         >
                             Choose Files

@@ -9,6 +9,14 @@ class Location extends React.Component {
         this.props.fetchLocation(this.props.match.params.locationId);
     }
     
+    componentDidUpdate() {
+        let { location } = this.props;
+        
+        if (!location) {
+            this.props.fetchLocation(this.props.match.params.locationId);
+        }
+    }
+
     render() {
         const { location } = this.props;
         

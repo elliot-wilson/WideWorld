@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 class SessionForm extends React.Component {
 
@@ -34,9 +34,11 @@ class SessionForm extends React.Component {
         }
 
         if (this.props.formType === "Sign Up") {
-            this.props.login(demoUser);
+            this.props.login(demoUser)
+                .then(() => this.props.history.push("/"));
         } else {
-            this.props.processForm(demoUser);
+            this.props.processForm(demoUser)
+                .then(() => this.props.history.push("/"));
         }
     }
 

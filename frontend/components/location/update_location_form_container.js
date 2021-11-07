@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { updateLocation, fetchLocation } from "../../actions/location_actions";
 import LocationForm from "./location_form";
+import { withRouter } from "react-router";
 
 class UpdateLocationForm extends React.Component {
 
@@ -36,4 +37,4 @@ const mDTP = (dispatch) => ({
     fetchLocation: locationId => dispatch(fetchLocation(locationId))
 });
 
-export default connect(mSTP, mDTP)(UpdateLocationForm)
+export default withRouter(connect(mSTP, mDTP)(UpdateLocationForm));

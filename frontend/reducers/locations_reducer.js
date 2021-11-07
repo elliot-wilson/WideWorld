@@ -1,4 +1,7 @@
 import { RECEIVE_LOCATIONS, RECEIVE_LOCATION, REMOVE_LOCATION } from "../actions/location_actions";
+import { RECEIVE_USER } from "../actions/user_actions";
+
+const _nullState = {};
 
 const locationsReducer = (oldState ={}, action) => {
     Object.freeze(oldState);
@@ -8,12 +11,12 @@ const locationsReducer = (oldState ={}, action) => {
         case RECEIVE_LOCATIONS:
             return action.locations;
         case RECEIVE_LOCATION:
-            newState = Object.assign({}, oldState);
-            newState[action.locationPayload.location.id] = action.locationPayload.location;
-            return newState;
+            return { [action.locationPayload.location.id]: action.locationPayload.location };
         case REMOVE_LOCATION:
             delete newState[action.locationId];
             return newState;
+        case RECEIVE_USER:
+            return _nullState;
         default:
             return oldState;
     }

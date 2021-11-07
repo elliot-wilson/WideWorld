@@ -2,45 +2,67 @@ import React from "react";
 
 class UserLocationsMap extends React.Component {
 
-    componentDidUpdate() {
+    constructor(props) {
+        super(props)
 
-        console.log("UserLocationsMap");
-        console.log(this.props);
-
-        let locations = this.props.locationVisits;
-
-        console.log(locations)
-
-        const mapOptions = {
-            mapTypeControlOptions: { mapTypeIds: [] },
-            streetViewControl: false,
-        }
-
-        this.map = new google.maps.Map(this.mapNode, mapOptions)
-
-        let bounds = new google.maps.LatLngBounds();
-        let infowindow = new google.maps.InfoWindow();
-
-        for (let i = 0; i < locations.length; i++) {
-            let { lat, lng } = locations[i];
-            let marker = new google.maps.Marker({
-                position: { lat, lng },
-                map: this.map
-            });
-            bounds.extend(marker.position);
-
-            google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                return function () {
-                    infowindow.setContent(locations[i][0]);
-                    infowindow.open(map, marker);
-                }
-            })(marker, i));
-        }
-
-        this.map.fitBounds(bounds);
+        this.markers = [];
 
     }
 
+    componentDidMount() {
+        this.renderInitialMap();
+    }
+
+    
+    componentDidUpdate() {
+        this.clearMarkers();
+        this.addMarkers();  
+    }
+
+    renderInitialMap() {
+        const mapOptions = {
+            mapTypeControlOptions: { mapTypeIds: [] },
+            streetViewControl: false,
+            zoomControlOptions: {
+                position: google.maps.ControlPosition.TOP_LEFT,
+            },
+            center: { lat: 21.543729, lng: 176.0355309 },
+            zoom: 2
+        }
+
+        this.map = new google.maps.Map(this.mapNode, mapOptions)
+    }
+
+    clearMarkers() {
+        if (this.markers.length > 0) {
+            for (let i = 0; i < this.markers.length; i++) {
+                this.markers[i].setMap(null);
+            }
+            this.markers = [];
+        }
+    }
+
+    addMarkers() {
+        let { locations } = this.props
+
+        if (!locations) return null;
+
+        if (locations.length > 0) {
+            let bounds = new google.maps.LatLngBounds();
+            for (let i = 0; i < locations.length; i++) {
+                let { lat, lng } = locations[i];
+                let marker = new google.maps.Marker({
+                    position: { lat, lng },
+                    map: this.map
+                });
+                this.markers.push(marker);
+                bounds.extend(marker.position);
+            }
+
+            this.map.fitBounds(bounds);
+        }
+    }
+    
     render() {
         return (
             <div

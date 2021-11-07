@@ -2,14 +2,14 @@
     height: 100vh;
 
     .user-profile-body {
-        padding: 5% 8% 5% 8%;
+        padding: 5% 5% 5% 5%;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
 
         .user-details-box {
             border: 1px solid lightgrey;
             padding: 10px;
-            width: max-content;
+            width: 33.33333333%;
 
             .user-photo-box {
                 height: 100px;
@@ -30,11 +30,31 @@
 
             }
 
+            .username {
+                font-size: 32px;
+                color: #382c14;
+                font-weight: 600;
+            }
+
+            .user-stat-li {
+                display: flex;
+                align-items: center;
+                border-top: 1px solid lightgrey;
+                padding: 3% 0 3% 0;
+
+                .user-stat {
+                    margin-right: 3%;
+                    padding-bottom: 3px;
+                }
+            }
+
         }
 
         .user-locations-box {
             display: flex;
             flex-direction: column;
+            margin-left: 3%;
+            width: 66.66666666%;
 
             .user-locations-map-box {
                 display: flex;
@@ -47,6 +67,9 @@
                         font-size: 15px;
                         height: 50px;
                         padding: 18px 10px;
+                        color: #ccb48d;
+                        background: rgba(204,180,141, .1);
+                        margin-right: 2px;
                     }
 
                     .active {
@@ -59,4 +82,9 @@
 
 
     }
+}
+
+#user-location-map-container {
+    width: 100%;
+    height: 500px;
 }

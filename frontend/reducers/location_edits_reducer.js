@@ -1,5 +1,6 @@
 import { RECEIVE_LOCATION } from "../actions/location_actions";
 import { RECEIVE_LOCATION_EDIT } from "../actions/location_edit_actions";
+import { RECEIVE_USER } from "../actions/user_actions";
 
 const locationEditsReducer = (oldState = {}, action) => {
     Object.freeze(oldState)
@@ -13,6 +14,9 @@ const locationEditsReducer = (oldState = {}, action) => {
             newState = Object.assign({}, oldState);
             newState[action.locationEdit.id] = action.locationEdit;
             return newState;
+        case RECEIVE_USER:
+            let edits = action.userPayload.locationEdits;
+            return edits ? edits : oldState;
         default:
             return oldState;
     }

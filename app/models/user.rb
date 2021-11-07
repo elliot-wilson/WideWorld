@@ -48,7 +48,7 @@ class User < ApplicationRecord
         foreign_key: :editor_id,
         class_name: :LocationEdit
 
-    has_many :edited_location,
+    has_many :edited_locations,
         through: :edits,
         source: :location
 

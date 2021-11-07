@@ -10,7 +10,9 @@ class UserLocationsBox extends React.Component {
 
         return (
             <section className="user-locations-box">
-                <UserLocationsMapBox />
+                <UserLocationsMapBox
+                    locationVisits={this.props.locationVisits}
+                />
                 <UserLocationsIndex />
             </section>
         )

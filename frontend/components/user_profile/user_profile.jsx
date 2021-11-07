@@ -11,15 +11,32 @@ class UserProfile extends React.Component {
 
     render() {
 
-        const { user } = this.props;
+        const { 
+            user,
+            locationVisits,
+            locationWannaVisits,
+            locationAdds,
+            locationEdits,
+        } = this.props;
 
         if (!user) return null;
 
         return (
             <section className="user-profile-container">
                 <div className="user-profile-body">
-                    <UserDetailsBox user={user}/>
-                    <UserLocationsContainer />
+                    <UserDetailsBox 
+                        user={user}
+                        locationVisits={locationVisits}
+                        locationWannaVisits={locationWannaVisits}
+                        locationAdds={locationAdds}
+                        locationEdits={locationEdits}
+                        />
+                    <UserLocationsContainer
+                        locationVisits={locationVisits}
+                        locationWannaVisits={locationWannaVisits}
+                        locationAdds={locationAdds}
+                        locationEdits={locationEdits}
+                    />
                 </div>
             </section>
         )

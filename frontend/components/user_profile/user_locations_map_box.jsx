@@ -3,6 +3,7 @@ import UserLocationsMap from './user_locations_map';
 
 const UserLocationsMapBox = (props) => {
 
+    console.log("UserLocationsMapBox")
 
     return (
         <section className="user-locations-map-box">
@@ -11,7 +12,9 @@ const UserLocationsMapBox = (props) => {
                 <li className="user-map-button">WANT GO</li>
                 <li className="user-map-button">EDITED</li>
             </ul>
-            <UserLocationsMap />
+            <UserLocationsMap
+                locationVisits={props.locationVisits}
+            />
         </section>
     )
 

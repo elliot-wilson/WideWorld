@@ -1,5 +1,6 @@
 import { RECEIVE_LOCATION } from "../actions/location_actions";
 import { RECEIVE_LOCATION_WANNA_VISIT, REMOVE_LOCATION_WANNA_VISIT } from "../actions/location_wanna_visit_actions";
+import { RECEIVE_USER } from "../actions/user_actions";
 
 const locationWannaVisitsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -17,6 +18,9 @@ const locationWannaVisitsReducer = (oldState = {}, action) => {
             newState = Object.assign({}, oldState);
             delete newState[action.locationWannaVisitId];
             return newState;
+        case RECEIVE_USER:
+            let wannaVisits = action.userPayload.locationWannaVisits;
+            return wannaVisits ? wannaVisits : oldState;
         default:
             return oldState;
     }

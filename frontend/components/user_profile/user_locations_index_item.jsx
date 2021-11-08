@@ -4,7 +4,9 @@ const UserLocationsIndexItem = (props) => {
 
 
     return (
-        <li>INDEX ITEM!!!</li>
+        <li className="user-locations-index-item">
+            <p className="user-submedium-text">{props.location.title}</p>
+        </li>
     )
 
 }

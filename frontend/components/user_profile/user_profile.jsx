@@ -23,7 +23,8 @@ class UserProfile extends React.Component {
     
     componentDidUpdate() {
         if (!this.props.user) {
-            this.props.fetchUser(this.props.match.params.userId);
+            this.props.fetchUser(this.props.match.params.userId)
+                .then(() => this.setState({locations: this.props.locationVisits, selectedHeaderIdx: 0}));
         }
     }
 
@@ -49,11 +50,7 @@ class UserProfile extends React.Component {
             locationEdits,
         } = this.props;
 
-        console.log(this.state);
-
         if (!user) return null;
-        console.log("up next: user from props")
-        console.log(this.props.user)
 
         return (
             <section className="user-profile-container">

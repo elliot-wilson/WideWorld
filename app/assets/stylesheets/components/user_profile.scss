@@ -2,7 +2,8 @@
     height: 100vh;
 
     .user-profile-body {
-        padding: 5% 5% 5% 5%;
+        padding: 2.5% 18% 5% 18%;
+        min-width: 1000px;
         display: flex;
         justify-content: space-between;
 
@@ -31,17 +32,19 @@
 
             }
 
-            .username {
-                font-size: 32px;
-                color: #382c14;
-                font-weight: 600;
-            }
-
             .user-stat-li {
                 display: flex;
                 align-items: center;
                 border-top: 1px solid lightgrey;
                 padding: 3% 0 3% 0;
+                
+                &:hover {
+                    cursor: pointer;
+                }
+
+                &:first-child:hover {
+                    cursor: unset;
+                }
 
                 .user-stat {
                     margin-right: 3%;
@@ -83,6 +86,22 @@
                     }
                 }
             }
+
+            .user-locations-index {
+                width: 100%;
+                margin: 2% 0 0 0;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+                .user-locations-index-item {
+                    width: 25%;
+                    height: 144px;
+                    border-bottom: 1px solid lightgrey;
+                }
+            }
+
+
 
         }
 

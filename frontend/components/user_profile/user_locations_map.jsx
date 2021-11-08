@@ -10,16 +10,18 @@ class UserLocationsMap extends React.Component {
     }
 
     componentDidMount() {
-        this.renderInitialMap();
+        this.renderMap();
     }
 
     
     componentDidUpdate() {
+        console.log("map did update")
         this.clearMarkers();
+        this.renderMap();
         this.addMarkers();  
     }
 
-    renderInitialMap() {
+    renderMap() {
         const mapOptions = {
             mapTypeControlOptions: { mapTypeIds: [] },
             streetViewControl: false,
@@ -64,6 +66,9 @@ class UserLocationsMap extends React.Component {
     }
     
     render() {
+
+        console.log("rendering map")
+
         return (
             <div
                 className="user-location-map"

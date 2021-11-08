@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 class LocationForm extends React.Component {
     constructor(props){
@@ -16,7 +17,6 @@ class LocationForm extends React.Component {
 
     bindFuncs(){
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handlePhotoAdd = this.handlePhotoAdd.bind(this);
     }
 
     componentDidMount() {
@@ -97,65 +97,6 @@ class LocationForm extends React.Component {
         return (e) => this.setState({[element]: e.currentTarget.value})
     }
 
-    handlePhotoAdd(e){
-        const newPhotos = Array.from(e.target.files);
-        const newPhotoObjectsArray = [];
-
-        if (newPhotos) {
-            newPhotos.forEach(photo => {
-                let reader = new FileReader();
-
-                reader.onloadend = () => {
-                    let photo_url = reader.result;
-                    let photoObject = {
-                        photo,
-                        photo_url
-                    };
-                    newPhotoObjectsArray.push(photoObject);
-                }
-            });
-        }
-
-        const reader = new FileReader();
-
-        reader.onloadend = () => {
-            let newPhotoObjectsArray = this.state.photos.slice();
-
-            newPhotos.forEach(photo => {
-                newPhotoObjectsArray.push({photo, photo_url: reader.result });
-            });
-
-            this.setState({photos: newPhotoObjectsArray});
-        }
-
-        if (newPhotos) {
-            newPhotos.forEach(photo => {
-                reader.readAsDataURL(photo);
-            });
-        }
-
-        // if (newPhotos) {
-        //     newPhotos.forEach(photo => {
-        //         console.log("inside handle photo conditional!!!")
-        //         let reader = new FileReader();
-        //         reader.onloadend = () => {
-        //             console.log("inside loadend!!")
-        //             let photo_url = reader.result   
-        //             let photoObject = {
-        //                 photo,
-        //                 photo_url
-        //             }
-        //             newPhotoObjectsArray.push(photoObject);
-        //             this.setState({photos: this.state});
-        //         }
-        //         reader.readAsDataURL(photo)
-        //     });
-        // }
-
-    }
-
-
-
     imagesPreview() {
         const photos = Array.from(this.state.photos);
 
@@ -203,15 +144,17 @@ class LocationForm extends React.Component {
         const location = this.state;
         const { formType } = this.props
 
-        let header, bodyHeader, buttonText;
+        let header, bodyHeader, buttonText, cancelPath;
         if (formType === 'create') {
             header = 'Add a Place';
             bodyHeader = 'Write your entry';
-            buttonText = 'Submit Location'
+            buttonText = 'Submit Location';
+            cancelPath = '/';
         } else {
             header = `Edit ${this.initialTitle}`;
             bodyHeader = 'Edit the entry';
-            buttonText = 'Submit Edit'
+            buttonText = 'Submit Edit';
+            cancelPath = `/locations/${this.location.id}`
         }
 
         return (
@@ -219,7 +162,7 @@ class LocationForm extends React.Component {
                 <div className="location-form-container">
                     <h2 className="title">{header}</h2>
                     <form className="location-form" onSubmit={this.preventDefault}>
-                        <p className="subheading">Basic Information</p>
+                        <p className="subheading">Basic information</p>
                         <p className="form-question-text">
                             What is this place commonly called?
                         </p>
@@ -289,17 +232,23 @@ class LocationForm extends React.Component {
                         <p className="subheading">
                             Anything else?
                         </p>
-                        <p className="form-help-text">
-                            Any additional directions or tips people should know before visiting?
-                        </p>
+                            <div className="optional-container">
+                            <p className="form-help-text">
+                                Any additional directions or tips people should know before visiting?
+                            </p>
+                            <p className="form-help-text greyed-out">Optional</p>
+                        </div>
                         <textarea
                             className="addl-info-textarea"
                             onChange={this.handleChange('additional_info')}
                             value={location.additional_info}
                         />
-                        <p>
-                            Official website
-                        </p>
+                        <div className="optional-container">
+                            <p className="form-help-text">
+                                Official website
+                            </p>
+                            <p className="form-help-text greyed-out">Optional</p>
+                        </div>
                         <input
                             placeholder="E.g. http://wide-world.herokuapp.com/#/"
                             type="text"
@@ -313,6 +262,7 @@ class LocationForm extends React.Component {
                         >
                             {buttonText}
                         </button>
+                        <NavLink to={cancelPath}>Cancel</NavLink>
                     </form>
                 </div>
             </div>

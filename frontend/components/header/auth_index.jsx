@@ -7,7 +7,7 @@ const AuthIndex = (props) => {
     const { currentUser } = props;
     let authIndex, authImage;
     let userIcon = (<FontAwesomeIcon icon={faUserAlt} />)
-    if (currentUser) {
+    if (currentUser.id) {
         let icon = currentUser.photoUrl ? 
             (
                 <img className="navbar-photo" src={currentUser.photoUrl}/>

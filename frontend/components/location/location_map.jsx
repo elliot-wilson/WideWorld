@@ -9,6 +9,7 @@ class LocationMap extends React.Component {
         const mapOptions = {
             mapTypeControlOptions: { mapTypeIds: [] },
             streetViewControl: false,
+            zoomControl: false,
             center: { lat, lng },
             zoom: 16
         }

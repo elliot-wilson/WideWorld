@@ -44,13 +44,14 @@ class UserProfile extends React.Component {
 
         const { 
             user,
+            locations,
             locationVisits,
             locationWannaVisits,
             locationAdds,
             locationEdits,
         } = this.props;
 
-        if (!user) return null;
+        if (!user || locations.length > 0 || !Array.isArray(this.state.locations)) return null;
 
         return (
             <section className="user-profile-container">

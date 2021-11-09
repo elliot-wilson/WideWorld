@@ -3,7 +3,7 @@ import { fetchRandomLocations, clearLocations } from "../../actions/location_act
 import SplashLocationsBox from "./splash_locations_box";
 
 const mSTP = (state) => ({
-    locations: Object.values(state.entities.locations).slice(0, 9)
+    locations: state.entities.locations
 });
 
 const mDTP = (dispatch) => ({

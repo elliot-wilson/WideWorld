@@ -8,7 +8,7 @@ const UserLocationsIndex = (props) => {
             {
                 props.locations.map(location => (
                     <UserLocationsIndexItem
-                        key={location.id}
+                        key={`index-${location.id}`}
                         location={location}
                     />
                 ))

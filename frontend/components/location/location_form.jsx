@@ -21,6 +21,7 @@ class LocationForm extends React.Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0,0);
         this.generateAutoComplete();
         this.setMap();
     }
@@ -207,7 +208,7 @@ class LocationForm extends React.Component {
                             className="description-textarea"
                             onChange={this.handleChange('description')}
                             value={location.description}
-                            placeholder="Jim Garnsey won his first tophat at a circus in 1955. It changed his life. Ever since then..."
+                            placeholder="E.g. Jim Garnsey won his first tophat at a circus in 1955. It changed his life. Ever since then..."
                         />
                         <p className="subheading">
                             Add photos
@@ -243,7 +244,7 @@ class LocationForm extends React.Component {
                             className="addl-info-textarea"
                             onChange={this.handleChange('additional_info')}
                             value={location.additional_info}
-                            placeholder="Visitors often bring snacks for Jim's pet cat Freckles."
+                            placeholder="E.g. Visitors often bring snacks for Jim's pet cat Freckles."
                         />
                         <div className="optional-container">
                             <p className="form-help-text">

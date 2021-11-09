@@ -4,8 +4,8 @@ import { createLocationVisit, deleteLocationVisit } from "../../actions/location
 import Location from "./location";
 
 const mSTP = (state, ownProps) => ({
-    locations: Object.values(state.entities.locations),
-    location: state.entities.locations[ownProps.match.params.locationId]
+    locations: state.entities.locations,
+    location: state.entities.locations.find(location => location.id.toString() === ownProps.match.params.locationId)
 });
 
 const mDTP = (dispatch) => ({

@@ -1,15 +1,16 @@
 .user-profile-container {
     height: 100vh;
+    padding: 5% 0 0 0;
+    display: flex;
+    justify-content: center;
 
     .user-profile-body {
-        padding: 2.5% 18% 5% 18%;
-        min-width: 1000px;
+        width: 1160px;
         display: flex;
         justify-content: space-between;
 
         .user-details-box {
             border: 1px solid lightgrey;
-            padding: 10px;
             width: 33.33333333%;
             height: min-content;
 
@@ -33,25 +34,33 @@
 
             }
 
-            .user-stat-li {
-                display: flex;
-                align-items: center;
-                border-top: 1px solid lightgrey;
-                padding: 3% 0 3% 0;
-                
-                &:hover {
-                    cursor: pointer;
+            .user-details-list-box {
+
+                > * {
+                    padding: 10px;
                 }
 
-                &:first-child:hover {
-                    cursor: unset;
-                }
-
-                .user-stat {
-                    margin-right: 3%;
-                    padding-bottom: 3px;
+                .user-stat-li {
+                    display: flex;
+                    align-items: center;
+                    border-top: 1px solid lightgrey;
+                    padding: 3% 0 3% 0;
+                    
+                    &:hover {
+                        cursor: pointer;
+                    }
+    
+                    &:first-child:hover {
+                        cursor: unset;
+                    }
+    
+                    .user-stat {
+                        margin-right: 3%;
+                        padding-bottom: 3px;
+                    }
                 }
             }
+
 
         }
 
@@ -96,14 +105,20 @@
                 flex-wrap: wrap;
 
                 .user-locations-index-item {
-                    width: 20%;
-                    height: 144px;
+                    width: 33.3%;
+                    margin: 2% 0 0 0;
+                    padding: 0 15px 30px 0;
                     border-bottom: 1px solid lightgrey;
-                    margin: 2% 10px 0 0;
-
+                    
                     a:hover {
                         text-decoration: underline 2px #1b624f;
-                    } 
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 144px;
+                    }
+
                 }
             }
 

@@ -3,25 +3,25 @@ json.user do
 end
 
 json.locationVisits do 
-    @user.visited_locations.each do |visitedLocation|
+    json.array! @user.visited_locations do |visitedLocation|
         json.partial! 'api/locations/snapshot.json.jbuilder', location: visitedLocation
     end
 end
 
 json.locationWannaVisits do 
-    @user.wanna_visit_locations.each do |wannaVisitLocation|
+    json.array! @user.wanna_visit_locations do |wannaVisitLocation|
         json.partial! 'api/locations/snapshot.json.jbuilder', location: wannaVisitLocation
     end
 end
 
 json.locationAdds do 
-    @user.locations_authored.each do |authoredLocation|
+    json.array! @user.locations_authored do |authoredLocation|
         json.partial! 'api/locations/snapshot.json.jbuilder', location: authoredLocation
     end
 end
 
 json.locationEdits do 
-    @user.edited_locations.each do |editedLocation|
+    json.array! @user.edited_locations do |editedLocation|
         json.partial! 'api/locations/snapshot.json.jbuilder', location: editedLocation
     end
 end

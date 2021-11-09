@@ -4,13 +4,15 @@ import { NavLink } from "react-router-dom";
 const UserLocationsIndexItem = (props) => {
 
     const { location } = props;
+
     return (
         <li className="user-locations-index-item">
             <NavLink
                 className="user-submedium-text"
                 to={`/locations/${location.id}`}
             >
-                    {location.title}
+                <img src={location.photoURLs[0]}/>
+                <p>{location.title}</p>
             </NavLink>
         </li>
     )

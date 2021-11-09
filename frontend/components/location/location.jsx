@@ -6,6 +6,7 @@ import EditorsDetailContainer from './editors_detail_container';
 class Location extends React.Component {
     
     componentDidMount(){
+        window.scrollTo(0,0);
         this.props.fetchLocation(this.props.match.params.locationId);
     }
     
@@ -20,10 +21,6 @@ class Location extends React.Component {
     render() {
         const { location, locations } = this.props;
 
-        console.log("hello! rendering loc!")
-        console.log(location)
-        console.log(locations)
-        
         if (!location || locations.length > 1) return null;
 
         let additionalInfo;

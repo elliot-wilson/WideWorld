@@ -24,7 +24,7 @@ texaspecan = User.create(username: "TexasPecan", email: "texaspecan@example.com"
 loslobos = User.create(username: "LosLobos", email: "loslobos@example.com", password: "123456")
 parkerT = User.create(username: "ParkerT", email: "parkerT@example.com", password: "123456")
 
-icecream = Location.create(
+icecream = Location.new(
     title: "Chinatown Ice Cream Factory",
     summary: "Where the menu lists lychee under 'Regular' and vanilla under 'Exotic'",
     address: "65 Bayard Street B, New York, New York, 10013, United States",
@@ -35,7 +35,7 @@ icecream = Location.create(
     lng: -73.9982
 )
 
-stonehenge = Location.create(
+stonehenge = Location.new(
     title: "Stonehenge II",
     summary: "A recreated Stonehenge stands in a country field, complete with Easter Island moai heads standing as sentries.",
     address: "120 Point Theatre Rd S, Ingram, Texas, 78025, United States",
@@ -46,7 +46,7 @@ stonehenge = Location.create(
     lng: -99.2474
 )
 
-pecan = Location.create(
+pecan = Location.new(
     title: "World's Largest Pecan",
     summary: "The saga of the massive nut begins and ends in Texas.",
     address: "390 Cordova Rd, Seguin, Texas, United States",
@@ -56,7 +56,7 @@ pecan = Location.create(
     lng: -97.9701
 )
 
-horseman = Location.create(
+horseman = Location.new(
     title: "Headless Horseman Bridge",
     summary: "The real-life site of Ichabod Crane's infamous gourd attack.",
     address: "415 Broadway, Sleepy Hollow, New York, United States",
@@ -66,7 +66,7 @@ horseman = Location.create(
     lng: -73.8619
 )
 
-unicorns = Location.create(
+unicorns = Location.new(
     title: "Unicorn Tapestries at the Cloisters",
     summary: "Mysterious 500-year-old tapestries depict a unicorn hunt.",
     address: "99 Margaret Corbin Drive, New York, New York, 10040, United States",
@@ -76,7 +76,7 @@ unicorns = Location.create(
     lng: -73.9318
 )
 
-santa = Location.create(
+santa = Location.new(
     title: "Santa Claus, Indiana",
     summary: "You thought Santa Claus didn't exist, but it turns out you were wrong.",
     address: "Santa Claus, Indiana, 47579, United States",
@@ -87,7 +87,7 @@ santa = Location.create(
     lng: -86.9173
 )
 
-bunyon = Location.create(
+bunyon = Location.new(
     title: "Paul Bunyon of Atlanta, Illinois",
     summary: "While he no longer has an eatery to give him context, this off-brand Paul Bunyan still holds his giant hot dog with pride.",
     address: "Arch Street, Atlanta, Illinois, 61723, United States",
@@ -98,7 +98,7 @@ bunyon = Location.create(
     lng: -89.2657
 )
 
-hotdog = Location.create(
+hotdog = Location.new(
     title: "Jimmy Carter's Hot Dog Bun",
     summary: "This restaurant proudly displays bread signed by the 39th president.",
     address: "1902 Front St., Toledo, Ohio, United States",
@@ -109,7 +109,7 @@ hotdog = Location.create(
     lng: -83.5021
 )
 
-hobbit = Location.create(
+hobbit = Location.new(
     title: "The Hobbit Café",
     summary: "A taste of Middle Earth, in the middle of the Bayou City.",
     address: "2243 Richmond Avenue, Houston, Texas, 77098, United States",
@@ -120,7 +120,7 @@ hobbit = Location.create(
     lng: -95.4148
 )
 
-serpent = Location.create(
+serpent = Location.new(
     title: "The Great Serpent Mound",
     summary: "The largest earthwork effigy in the world.",
     address: "3850 OH-73, Peebles, Ohio, 45660, United States",
@@ -128,6 +128,111 @@ serpent = Location.create(
     initial_author_id: 8,
     lat: 39.0252,
     lng: -83.4302
+)
+
+texas = Location.new(
+    title: "The London Embassy of the Republic of Texas",
+    summary: "An alleyway plaque in London is all that remains of the envoy from the Republic of Texas that forgot to pay their rent for over a century.",
+    address: "4 St James's Street, London, England, SW1A 1EF, United Kingdom",
+    description: "BERRY BROTHERS & RUDD IS one of London’s most venerable wine merchants. Located a few doors down from St. James’s Palace in the City of Westminster, they have been providing wines, ports, and whiskeys to the monarchs of England since King George II, but they were also the onetime landlords for the Embassy of the Republic of Texas.\n\nBuilt in 1730, the distinguished property at 4 St James’s Street is steeped in history and peculiar secrets. Under the shop floor lies two whole acres of wine cellars and caves which run underneath St. James’s Street. The Georgian rooms had once held a brothel and a notorious gambling den, and the courtyard at the back was also home to bear-baiting, cock-fighting and London’s last ever public duel. Napoleon III even lived here in exile whilst plotting his return to France.\n\nBut between 1836 and 1845 it was home to perhaps one its most unusual tenants; for the space above the wine shop was briefly home to the Embassy of the Republic of Texas. At the time of its founding, Texas was an independent sovereign country with its borders under threat from both the United States and Mexico. Then-President-of-Texas Sam Houston sent Dr. Ashbel Smith, the Secretary of State, to be the Texan diplomatic representative in England in an effort to build international sentiment for their country. A second Embassy was also established in France, located in what is now the Hôtel de Vendôme.\n\nTexas finally joined the Union in 1845, despite the Crown’s support of its independence, and the Embassy in London was closed. Taking full advantage of their desirable location above one of London’s best wine shops, the Texan delegation departed the capital leaving a £160 rent bill outstanding.\n\nToday, the historic wine shop is still thriving, but the peculiar chapter of their Texan tenants is long forgotten. Next door is a tiny alleyway called Pickering Place; where a small plaque marks the entrance to the Embassy’s rooms. Still proudly bearing the name of “The Republic Of Texas” it reads,\n\n“Texas Legation in this building was the legation for the ministers from the Republic of Texas to the Court of St. James 1842 - 1845.”\n\nThe onetime Republic of Texas, although consigned to history, still lives on in the hearts of Texans; in 1986 to mark the Texas sesquicentennial, 26 members of the Anglo-Texan society visited the wine shop, dressed in full buckskins, to settle the outstanding rent debt still owed by the Republic of Texas.",
+    initial_author_id: 11,
+    lat: 51.5055,
+    lng: -0.1379
+)
+
+dunstan = Location.new(
+    title: "The Ruins of St. Dunstan-in-the-East",
+    summary: "One of the few remaining casualties of the London Blitz, this destroyed church has become an enchanting public garden.",
+    address: "St. Dunstan-in-the-East, St. Dunstan's Hill, London, England, EC3R 8PP, United Kingdom",
+    description: "THE CHURCH OF ST.DUNSTAN-IN-THE-EAST HAS survived a lot during its 900-year history, including the Great Fire of London in 1666.\n\nAn English parish church located halfway between the Tower of London and the London Bridge, it was originally built during Norman times. Although the Great Fire caused terrible damage to the church it was faithfully rebuilt, and topped with a steeple designed by Sir Christopher Wren.\n\nBut in 1941, the church was devastated by the Blitz. A direct hit destroyed everything apart from the north and south walls, and Wren’s steeple. The threat of German invasion of the United Kingdom had ended with the Battle of Britain a year earlier, but the sustained strategic bombing of the UK continued. By 1941, the Blitz was reaching its terrible crescendo. Starting on September 7th, 1940, London was bombed for nearly 60 consecutive nights. The night of December 29th saw the most ferocity, as the Luftwaffe blanketed London with bombs in what was called the Second Great Fire of London.\n\nBy the end of the Blitz, over 1,000,000 London homes were destroyed, including much of the old Saxon church. After the war, with much of London in rubble, the slow rebuilding process began. But St. Dunstan-in-the-East remained in ruins. In 1967, the City of London Corporation decided to turn the bombed out shell of the church into a public garden, which remains to this day.\n\nHidden away on a secluded side street, and long since dwarfed by the modern steel and chrome structures of the city, it remains one of London’s secret gardens. One of the last Blitz-damaged buildings left in the United Kingdom, overgrown with trees, ivy, and wall climbing flowers growing amongst the ruined arches, it’s a poignant living memorial to the horrors of the Blitz and a testament to the resilience of the City of London which survived it.",
+    initial_author_id: 4,
+    additional_info: "Be forewarned, this spot is popular for Instagrammers. Get there early and avoid the weekends, if you don't want to compete for photographs.",
+    lat: 51.5097,
+    lng: -0.0827
+)
+
+elephant = Location.new(
+    title: "Elephant Fountain",
+    summary: "An ancient elephant made of volanic rock and said to possess magic powers is now the symbol of a Sicilian city.",
+    address: "1 Piazza Duomo, Catania, Italy",
+    description: "IN THE MID-12TH CENTURY, GEOGRAPHER and traveler Muhammad al-Idrisi completed his life’s work—the most accurate map of the world yet produced, along with its accompanying commentaries. In this cartographic gem, he records that in the Sicilian city of Catania, locals venerated an ancient basalt elephant called “u Liotru” said to possess magic powers and he ability to predict the eruptions of nearby Mount Etna.\n\nToday, the enigmatic pachyderm mentioned by the geographer sits atop an 18th-century fountain in the middle of a piazza. The fountain was constructed in the 1730s by Sicilian architect Giovanni Battista Vaccarini, who appropriated the city’s by-then legendary elephant as its centerpiece. Vaccarini draped a marble saddle cloth over the elephant that bears the coat of arms of St. Agatha, Catania’s patroness. For the icing on his totemic cake, Vaccarini plopped an Egyptian obelisk of equally mysterious origin on the elephant’s back.\n\nThe facts surrounding the construction of the fountain are known, but pretty much everything else regarding u Liotru the elephant and the Egyptian obelisk he carries is not. Though the best guess at dating the elephant is during Roman times, and a local provenance makes sense given the statue’s volcanic rock construction, some have observed the statue’s design doesn’t appear to be Roman.\n\nThe mysterious elephant was a symbol of the city long before it was officially put on the map. During the 9th through 11th-century Muslim rule of Sicily, Catania was known in Arabic as Madinat al-fīl, “The City of the Elephant,” hinting at the existence of u Liotru prior to al-Idrisi’s 12th-century description. A folktale regarding the elephant is set even earlier, in eighth-century Byzantine Catania. It describes a Catanese nobleman named Heliodorus (from whom the name Liotru might have derived), who turned to necromancy after losing a bid to become bishop of Catania to a certain Leo (later sainted as St. Leo Thaumaturgus, or “The Wonderworker”).\n\nIn a plot that resembles the New Testament story of Simon Magus, Heliodorus dazzles the townsfolk with his mastery of the dark arts to outshine his pious rival. The sorcerer builds the elephant and brings it to life, at one point even riding it to Constantinople. As delighted as the simple townsfolk are by Heliodorus’ antics, Bishop Leo is enraged, and has the last laugh by ordering Heliodorus burned alive in the nearby thermal baths. Presumably the townsfolk are equally entertained by this outcome. Against Leo’s wishes, however, the people of Catania insist the magical elephant be kept intact inside the city walls.\n\nIn 1239, Catania rebelled successfully against its ruling bishop-count to become a royal city, free from previous feudal obligations (better to be ruled by a king in distant Palermo than a bishop next door). It was at this time the Catanese chose u Liotru as the city’s symbol, replacing St. George. The elephant can now be seen on the coat of arms of the city of Catania, the province of Catania, and the University of Catania, as well as on the insignia of many local organizations and sports clubs.",
+    initial_author_id: 2,
+    lat: 37.5024,
+    lng: 15.0872
+)
+
+cherry = Location.new(
+    title: "Spoonbridge and Cherry",
+    summary: "A toweringly silly piece of modern art has been delighting locals since the 1980s.",
+    address: "14357 Loring Greenway, Minneapolis, Minnesota, 55403, United States",
+    description: "AS FAR AS ICONIC PIECES of public art go, none may be as daringly modern or whimsical as Minneapolis’ iconic Spoonbridge and Cherry.\n\nThis giant spoon and cherry was erected in 1985 by artist Claes Oldenburg and his wife, Coosje van Bruggen and is the centerpiece of the Walker Art Center’s Minneapolis Sculpture Garden, the largest urban sculpture park in the world. Oldenburg was an artist who was known for making oversized versions of everyday objects and food products. Together with his wife he set up a number of public sculptures, including Chicago’s Batcolumn sculpture. The spoon was Oldenburg’s idea, who had a habit of doodling spoons ever since 1962 when he was inspired by a spoon resting on a piece of fake chocolate. The cherry in the piece was van Bruggen’s idea, wanting to use it as a comment on the garden’s otherwise staid layout.\n\nThe spoon itself weighs 5,800 pounds and the cherry, another 1,200 pounds. The cherry’s stem also acts as a fountain which sprays into the bowl of the spoon and off into the pond beneath. Even the pond itself has meaning, being shaped to resemble a linden seed, drawing attention to the rows of linden trees planted nearby.\n\nThe city of Minneapolis seems to have largely embraced the massive sculpture, expressing almost universal outrage when Spoonbridge and Cherry was vandalized in 2012 as part of a “Kony 2012” protest. The artwork was cleaned up and still remains as a somewhat goofy, definitely unforgettable icon of the Minnesota city.",
+    initial_author_id: 5,
+    lat: 44.9703,
+    lng: -93.2891
+)
+
+lunch = Location.new(
+    title: "Louis' Lunch",
+    summary: "While many places make the claim, the Library of Congress says this restaurant is the birthplace of the hamburger.",
+    address: "261-263 Crown Street, New Haven, Connecticut, 06511, United States",
+    description: "THE BIRTHPLACE OF THE HAMBURGER is an honor that many eateries have tried to claim over the years, but only one has been officially recognized by the Library of Congress as the real thing. It may also be the only one still cooking burgers on a vertical stove.\n\nLouis Lunch in New Haven, Connecticut is a historic little diner that has been around since at least 1900 in some form or another. The original iteration was a lunch truck owned by Louis Lassen. According to the story the current restaurant owner tells, in 1900, a customer ran up to the wagon and demanded a quick lunch “to go”. Lassen took some trimmings from the regular steak sandwiches he sold, put them between two pieces of toast, and gave it to his customer. The hamburger was born.\n\nThe honor of being the birthplace of the hamburger was confirmed by the Library of Congress with the help of a member of the House of Representatives. (Sorry, Hamburg, Germany.)\n\nThe lunch truck later evolved into a small restaurant that has been in the same location since the mid-1970s. But even as the restaurant has grown and changed, they continue to cook their burgers on unique, vertical stove towers that date back to 1898.\n\nToday, the restaurant continues to serves their burgers as they always have, with only cheese, tomato, or onions as accompaniments to the basic meat. They don’t offer other condiments, so don’t ask. Louis Lunch invented the hamburger, and you’ll have it their way, thank you very much.",
+    initial_author_id: 10,
+    additional_info: "This is a cash-only restaurant (i.e., debit/credit cards not accepted), so plan accordingly when visiting.",
+    lat: 41.3065,
+    lng: -72.9303
+)
+
+bigmac = Location.new(
+    title: "The Big Mac Museum",
+    summary: "This shrine to McDonalds' most iconic sandwich holds a 14-foot tall burger.",
+    address: "9061 U.S. 30, Irwin, Pennsylvania, 15642, United States",
+    description: "THE IRWIN, PENNSYLVANIA MCDONALD’S LOCATION details the history of the iconic sandwich. However, the location of the museum rankled the residents of the city where the Big Mac was first sold, almost 40 miles away.\n\nThe Big Mac was created by western Pennsylvania franchisee Jim Delligatti, and first served in 1967. The sandwich would then become part of the nationwide menu a year later, and would go on to worldwide fame along with the company. The Economist even uses the Big Mac Index as a way to compare the purchasing power of two currencies. In 2007 the Irwin location was remodeled and became the Big Mac Museum, with a Big Mac sculpture 14 feet tall and 12 feet in diameter, a timeline of the sandwich’s history, and various merchandise and packaging displays.\n\nWhile the sandwich was introduced in western Pennsylvania, some residents of Uniontown, where it was first served, wondered why the museum was placed at this location. A company spokesman said that the museum was established there because of the size of the property and the proximity of the busy Irwin Interchange of the Pennsylvania Turnpike. However, displays in the Big Mac Museum prominently herald Uniontown as the birthplace of an American icon.",
+    initial_author_id: 7,
+    lat: 40.3207,
+    lng: -79.6922
+)
+
+hell = Location.new(
+    title: "The Gates of Hell, Turkmenistan",
+    summary: "A fiery crater has been burning in the Karakum Desert since 1971.",
+    address: "Turkmenistan",
+    lat: 40.2522,
+    lng: 58.4397,
+    description: "IN THE HOT, EXPANSIVE KARAKUM desert in Turkmenistan, near the 350-person village of Darvaza, is a hole 230 feet wide that has been on fire for over 50 years. Though technically called the Darvaza gas crater, locals know the crater as “The Gates of Hell.” Its fiery glow can be seen for miles around.\n\nThe Gates of Hell crater was created in 1971 when a Soviet drilling rig accidentally punched into a massive underground natural gas cavern, causing the ground to collapse and the entire drilling rig to fall in. Having punctured a pocket of gas, poisonous fumes began leaking at an alarming rate.\n\nTo head off a potential environmental catastrophe, the Soviets set the hole alight, figuring it would stop burning within a few weeks. Decades later, and the fiery pit is still going strong. The Soviet drilling rig is believed to still be down there somewhere, on the other side of the “Gates of Hell.”\n\nAmazingly, despite the crater’s foreboding name and ever-present flames, people still trek into the desert to witness the site in all its blazing glory. The country’s government hopes it’ll become a tourist site, and the nearby desert has already become a popular place to wild camp.",
+    initial_author_id: 1
+)
+
+roots = Location.new(
+    title: "The Root Bridges of Cherrapunji",
+    summary: "The bridges are alive in the hills of Cherrapunji, where long tangles of rubber tree roots are an essential part of the village infrastructure.",
+    address: "Latikynsew Village, Cherrapunjee, 793004, India",
+    description: "IN THE DEPTHS OF NORTHEASTERN India, within sight of the India-Bangladesh border, in one of the wettest places on earth, bridges aren’t built—they’re grown.\n\nThe southern Khasi and Jaintia hills are humid and warm, crisscrossed by swift-flowing rivers and mountain streams. On the slopes of these hills, a species of Indian rubber tree with an incredibly strong root system thrives and flourishes.\n\nThe Ficus elastica produces a series of secondary roots from higher up its trunk and can comfortably perch atop huge boulders along the riverbanks, or even in the middle of the rivers themselves. The War-Khasis and War-Jaintias, two closely related tribes in Meghalaya, long ago noticed this tree and saw in its powerful roots an opportunity to easily cross the area’s many rivers. Now, whenever and wherever the need arises, they simply grow their bridges.\n\nIn order to make a rubber tree’s roots grow in the right direction—say, over a river—the people of southern Meghalaya have used several different strategies. Sometimes, the roots of the trees are simply pulled, tied, twisted, and encouraged by hand to merge with each other, until, over time, they form the desired architectural structure. Root bridges have also been made by creating scaffolds out of wood and bamboo, and then training the young roots out across these temporary structures, replacing the more perishable elements many times as they rot in the intense monsoon seasons.\n\nIn some places, such as around the village of Nongriat, betel nut trunks, sliced down the middle and hollowed out, are used to create root-guidance systems. The thin, tender roots of the rubber tree, prevented from fanning out by the betel nut trunks, grow straight out. The trunks also have the added advantage of providing the roots with additional nutrients as they decay. When they reach the other side of the river, they’re allowed to take root in the soil. Given enough time a sturdy, living bridge is produced.\n\nThe root bridges can grow for as long as the organism they are a part of remains healthy, though they can take many years to initially become functional, the length of time being dependent on local conditions such as the health of the tree, the way the bridge is being grown, and the availability of nutrients in the soil that its being grown in. However, once root bridges become established, they’re extraordinarily strong—strong enough that some of them can support the weight of 50 or more people at a time. In fact, because they are alive and still growing, the bridges actually gain strength over time—and some of the ancient root bridges used daily by the people of the villages around Cherrapunji may be well over 500 years old.\n\nThe roots bridges of southern Meghalaya come in a huge variety of shapes and sizes. They have been known to grow as long as 170 feet, and soar 80 feet above the streams they cross. Most living root bridges only have a single span, yet several have more than one, arranged as either as two parallel spans,  or as two bridges stacked one over the other, such as the famous “Umshiang Double-Decker Root Bridge.”\n\nThe practice of creating new living bridges, and of preserving ones already in existence, is over large parts of Southern Meghalaya slowly fading out. In many villages across the region, the root bridges are little more than a memory.  However, since they began attracting attention again in around 2004, local dedication to the bridges has, at least in a few places, kept them from being destroyed in favor of steel ones. What’s more, a few new root bridges are currently under construction. In the village of Rangthylliang, an entirely new bridge is being grown using a bamboo and wood scaffold, and at the double-decker site in Nongriat, a new, third span is currently being grown above the other two, and should be ready for use within a decade.",
+    additional_info: "While there are dozens of root bridges, which can be found all throughout the valleys between (very roughly!) the towns of Mawsynram and Dawki, few of these are easily accessible, or have nearby tourist facilities. To visit the bridges in the more remote areas, a local guide is an absolute must!",
+    initial_author_id: 1,
+    lat: 25.2186,
+    lng: 91.6626
+)
+
+buzludzha = Location.new(
+    title: "Buzludzha Monument",
+    summary: "An abandoned saucer-shaped monument in the Bulgarian mountains.",
+    address: "5005, Kazanlak, 6150, Bulgaria",
+    description: "ON THE REMOTE BUZLUDZHA PEAK in the mountains of Bulgaria stands an unusual abandoned monument.\n\nThe peak itself was the site of a battle between the Bulgarians and the Turks in 1868. In 1891 a group of socialists lead by Dimitar Blagoev met on the peak to plan for Bulgaria’s socialist future.\n\nTo celebrate these events, the government in power during the height of Soviet influence decided to erect a monument commemorating socialist communism.\n\nWork on the monument began in 1974, and was undertaken by units of the Bulgarian Army assisted by numerous artisans responsible for the large statues and murals. Large images of Lenin and Marx looked over the arena built for state functions and celebrations. Above it all blazed a red star-shaped window in honor of Soviet Russia.\n\nAfter the government’s fall from power in 1989, the site was abandoned and left open to vandalism. The main entrance has been sealed and therefore closed to public. However, there is still a little way to get into the building on the right hand side of the building. Inside the Buzludzha Monument, most of the artwork has been removed or destroyed, but the concrete structure still stands against the elements.\n\nA preservation team worked to get the monument listed as one of the seven most endangered heritage sites in Europe, and plans to preserve and restore the monuments are underway.\n\nA guard has been put in place 24/7, so it is no longer possible to break inside. Visitors are still encouraged to visit the outside to experience the unique architecture.",
+    additional_info: "Approximately 12 km down a side road from the Shipka Pass. As of January 2018, guards have been placed at the site to deter urban explorers from illegally enter the building. They are on duty 24/7.",
+    initial_author_id: 6,
+    lat: 42.7360,
+    lng: 25.3936
+)
+
+hand = Location.new(
+    title: "Hand of the Desert, Chile",
+    summary: "A sculpture of a giant hand reaches for the stars in the middle of the Atacama desert.",
+    address: "Unnamed Road, Chile",
+    description: "THE SCORCHED MOONSCAPE OF ATACAMA stretches for hundreds of miles on both sides of the Pan-American Highway, undisturbed by any sign of human activity. About 75km south-east of the town of Antofagasta, its monotony is shattered by a sight even more alien then the desert itself, and yet undoubtedly human: an 11-meter-tall hand protruding out of the sand.\n\nMano de Desierto is a work of the Chilean sculptor Mario Irarrázabal, built in the early 1980s. It was financed by a local booster organization called Corporación Pro Antofagasta.\n\nThe motion of hands rising from the ground is an obsession of Irarrázabal’s. His other famous works include another over-sized sculpture exploring the same idea: “Monument to the Drowned” is located on Parada 4 at Brava Beach in Punta del Este, a popular resort town in Uruguay. Another large sculpture, “The Awakening,” by American artist John Seward Johnson II expresses a similar idea and is located at National Harbor in Prince George’s County, Maryland.",
+    additional_info: "From Antofagasta, Route 26 or Route 28, both connect to Route 5. The Mano can be found between mile markers 1309 and 1310. It is easy to reach from either direction and can be seen well in advance. If you're going to drive out for a visit, be sure you have sun-screen, plenty of water, and a full tank of gas.",
+    initial_author_id: 11,
+    lat: -24.1585,
+    lng: -70.1564
 )
 
 sample_photo = File.open('app/assets/images/location_photos/pecan1.jpeg')
@@ -148,3 +253,283 @@ sample_photo = File.open('app/assets/images/location_photos/serpent1.jpg')
 serpent.photos.attach(io: sample_photo, filename: 'serpent1.jpg')
 sample_photo = File.open('app/assets/images/location_photos/santaclaus1.jpeg')
 santa.photos.attach(io: sample_photo, filename: 'santaclaus1.jpeg')
+sample_photo = File.open('app/assets/images/location_photos/unicorn1.jpeg')
+unicorns.photos.attach(io: sample_photo, filename: 'unicorn1.jpeg')
+sample_photo = File.open('app/assets/images/location_photos/texas1.jpeg')
+texas.photos.attach(io: sample_photo, filename: 'texas1.jpeg')
+sample_photo = File.open('app/assets/images/location_photos/dunstan1.jpeg')
+dunstan.photos.attach(io: sample_photo, filename: 'dunstan1.jpeg')
+sample_photo = File.open('app/assets/images/location_photos/elephant1.jpeg')
+elephant.photos.attach(io: sample_photo, filename: 'elephant1.jpeg')
+sample_photo = File.open('app/assets/images/location_photos/cherry1.jpeg')
+cherry.photos.attach(io: sample_photo, filename: 'cherry1.jpeg')
+sample_photo = File.open('app/assets/images/location_photos/lunch1.jpeg')
+lunch.photos.attach(io: sample_photo, filename: 'lunch1.jpeg')
+sample_photo = File.open('app/assets/images/location_photos/bigmac1.jpeg')
+bigmac.photos.attach(io: sample_photo, filename: 'bigmac1.jpeg')
+sample_photo = File.open('app/assets/images/location_photos/hell1.jpeg')
+hell.photos.attach(io: sample_photo, filename: 'hell1.jpeg')
+sample_photo = File.open('app/assets/images/location_photos/roots1.jpeg')
+roots.photos.attach(io: sample_photo, filename: 'roots1.jpeg')
+sample_photo = File.open('app/assets/images/location_photos/buzludzha1.jpeg')
+buzludzha.photos.attach(io: sample_photo, filename: 'buzludzha1.jpeg')
+sample_photo = File.open('app/assets/images/location_photos/hand1.jpeg')
+hand.photos.attach(io: sample_photo, filename: 'hand1.jpeg')
+
+pecan.save
+stonehenge.save
+icecream.save
+horseman.save
+bunyon.save
+hotdog.save
+hobbit.save
+serpent.save
+santa.save
+unicorns.save
+texas.save
+dunstan.save
+elephant.save
+cherry.save
+lunch.save
+bigmac.save
+hell.save
+roots.save
+buzludzha.save
+hand.save
+
+location_edits = LocationEdit.create([
+    {location_id: 1, editor_id: 1},
+    {location_id: 1, editor_id: 2},
+    {location_id: 1, editor_id: 3},
+    {location_id: 2, editor_id: 4},
+    {location_id: 2, editor_id: 5},
+    {location_id: 2, editor_id: 6},
+    {location_id: 3, editor_id: 7},
+    {location_id: 3, editor_id: 8},
+    {location_id: 3, editor_id: 9},
+    {location_id: 4, editor_id: 15},
+    {location_id: 4, editor_id: 4},
+    {location_id: 4, editor_id: 14},
+    {location_id: 5, editor_id: 13},
+    {location_id: 5, editor_id: 12},
+    {location_id: 5, editor_id: 11},
+    {location_id: 6, editor_id: 10},
+    {location_id: 6, editor_id: 9},
+    {location_id: 6, editor_id: 1},
+    {location_id: 7, editor_id: 12},
+    {location_id: 7, editor_id: 13},
+    {location_id: 7, editor_id: 4},
+    {location_id: 8, editor_id: 5},
+    {location_id: 8, editor_id: 6},
+    {location_id: 9, editor_id: 15},
+    {location_id: 9, editor_id: 1},
+    {location_id: 10, editor_id: 1},
+    {location_id: 11, editor_id: 15},
+    {location_id: 11, editor_id: 2},
+    {location_id: 11, editor_id: 3},
+    {location_id: 11, editor_id: 1},
+    {location_id: 12, editor_id: 2},
+    {location_id: 12, editor_id: 5},
+    {location_id: 13, editor_id: 12},
+    {location_id: 13, editor_id: 1},
+    {location_id: 13, editor_id: 2},
+    {location_id: 14, editor_id: 2},
+    {location_id: 14, editor_id: 1},
+    {location_id: 15, editor_id: 1},
+    {location_id: 15, editor_id: 2},
+    {location_id: 15, editor_id: 3},
+    {location_id: 16, editor_id: 4},
+    {location_id: 16, editor_id: 5},
+    {location_id: 17, editor_id: 6},
+    {location_id: 17, editor_id: 7},
+    {location_id: 17, editor_id: 8},
+    {location_id: 18, editor_id: 9},
+    {location_id: 18, editor_id: 10},
+    {location_id: 19, editor_id: 11},
+    {location_id: 19, editor_id: 12},
+    {location_id: 20, editor_id: 13},
+    {location_id: 20, editor_id: 14},
+    {location_id: 20, editor_id: 15}
+])
+
+location_visits = LocationVisit.create([
+    {visitor_id: 1, location_id: 1},
+    {visitor_id: 1, location_id: 2},
+    {visitor_id: 1, location_id: 3},
+    {visitor_id: 1, location_id: 4},
+    {visitor_id: 1, location_id: 5},
+    {visitor_id: 1, location_id: 6},
+    {visitor_id: 1, location_id: 7},
+    {visitor_id: 1, location_id: 8},
+    {visitor_id: 1, location_id: 9},
+    {visitor_id: 1, location_id: 10},
+    {visitor_id: 2, location_id: 20},
+    {visitor_id: 2, location_id: 19},
+    {visitor_id: 2, location_id: 18},
+    {visitor_id: 2, location_id: 17},
+    {visitor_id: 2, location_id: 16},
+    {visitor_id: 2, location_id: 15},
+    {visitor_id: 2, location_id: 14},
+    {visitor_id: 2, location_id: 13},
+    {visitor_id: 2, location_id: 12},
+    {visitor_id: 3, location_id: 11},
+    {visitor_id: 3, location_id: 10},
+    {visitor_id: 3, location_id: 9},
+    {visitor_id: 3, location_id: 8},
+    {visitor_id: 4, location_id: 7},
+    {visitor_id: 4, location_id: 6},
+    {visitor_id: 4, location_id: 5},
+    {visitor_id: 4, location_id: 4},
+    {visitor_id: 4, location_id: 2},
+    {visitor_id: 4, location_id: 1},
+    {visitor_id: 4, location_id: 14},
+    {visitor_id: 5, location_id: 1},
+    {visitor_id: 5, location_id: 12},
+    {visitor_id: 5, location_id: 3},
+    {visitor_id: 5, location_id: 4},
+    {visitor_id: 5, location_id: 5},
+    {visitor_id: 5, location_id: 6},
+    {visitor_id: 5, location_id: 12},
+    {visitor_id: 5, location_id: 19},
+    {visitor_id: 6, location_id: 1},
+    {visitor_id: 6, location_id: 19},
+    {visitor_id: 6, location_id: 18},
+    {visitor_id: 6, location_id: 13},
+    {visitor_id: 7, location_id: 12},
+    {visitor_id: 7, location_id: 10},
+    {visitor_id: 7, location_id: 20},
+    {visitor_id: 8, location_id: 2},
+    {visitor_id: 8, location_id: 1},
+    {visitor_id: 8, location_id: 3},
+    {visitor_id: 8, location_id: 4},
+    {visitor_id: 9, location_id: 5},
+    {visitor_id: 9, location_id: 11},
+    {visitor_id: 9, location_id: 10},
+    {visitor_id: 9, location_id: 9},
+    {visitor_id: 10, location_id: 8},
+    {visitor_id: 10, location_id: 2},
+    {visitor_id: 10, location_id: 1},
+    {visitor_id: 11, location_id: 2},
+    {visitor_id: 11, location_id: 3},
+    {visitor_id: 12, location_id: 4},
+    {visitor_id: 12, location_id: 5},
+    {visitor_id: 12, location_id: 6},
+    {visitor_id: 13, location_id: 7},
+    {visitor_id: 13, location_id: 11},
+    {visitor_id: 13, location_id: 12},
+    {visitor_id: 13, location_id: 15},
+    {visitor_id: 13, location_id: 16},
+    {visitor_id: 13, location_id: 17},
+    {visitor_id: 13, location_id: 13},
+    {visitor_id: 14, location_id: 11},
+    {visitor_id: 14, location_id: 8},
+    {visitor_id: 14, location_id: 7},
+    {visitor_id: 14, location_id: 6},
+    {visitor_id: 15, location_id: 1},
+    {visitor_id: 15, location_id: 18},
+    {visitor_id: 15, location_id: 15},
+    {visitor_id: 15, location_id: 12},
+    {visitor_id: 15, location_id: 9},
+    {visitor_id: 15, location_id: 6},
+    {visitor_id: 15, location_id: 3},
+    {visitor_id: 15, location_id: 20},
+    {visitor_id: 15, location_id: 16},
+    {visitor_id: 15, location_id: 12},
+    {visitor_id: 15, location_id: 8},
+    {visitor_id: 15, location_id: 4},
+    {visitor_id: 15, location_id: 5},
+    {visitor_id: 15, location_id: 10},
+    {visitor_id: 15, location_id: 15},
+    {visitor_id: 15, location_id: 20}
+])
+
+location_wanna_visits = LocationWannaVisit.create([
+    {wanna_visitor_id: 1, location_id: 20},
+    {wanna_visitor_id: 1, location_id: 19},
+    {wanna_visitor_id: 1, location_id: 18},
+    {wanna_visitor_id: 1, location_id: 17},
+    {wanna_visitor_id: 1, location_id: 16},
+    {wanna_visitor_id: 1, location_id: 15},
+    {wanna_visitor_id: 1, location_id: 14},
+    {wanna_visitor_id: 1, location_id: 13},
+    {wanna_visitor_id: 1, location_id: 12},
+    {wanna_visitor_id: 1, location_id: 11},
+    {wanna_visitor_id: 2, location_id: 1},
+    {wanna_visitor_id: 2, location_id: 2},
+    {wanna_visitor_id: 2, location_id: 3},
+    {wanna_visitor_id: 2, location_id: 4},
+    {wanna_visitor_id: 3, location_id: 5},
+    {wanna_visitor_id: 3, location_id: 6},
+    {wanna_visitor_id: 3, location_id: 7},
+    {wanna_visitor_id: 3, location_id: 8},
+    {wanna_visitor_id: 4, location_id: 9},
+    {wanna_visitor_id: 4, location_id: 10},
+    {wanna_visitor_id: 4, location_id: 11},
+    {wanna_visitor_id: 4, location_id: 12},
+    {wanna_visitor_id: 4, location_id: 13},
+    {wanna_visitor_id: 5, location_id: 14},
+    {wanna_visitor_id: 5, location_id: 15},
+    {wanna_visitor_id: 6, location_id: 16},
+    {wanna_visitor_id: 7, location_id: 17},
+    {wanna_visitor_id: 7, location_id: 18},
+    {wanna_visitor_id: 7, location_id: 19},
+    {wanna_visitor_id: 7, location_id: 20},
+    {wanna_visitor_id: 7, location_id: 1},
+    {wanna_visitor_id: 7, location_id: 2},
+    {wanna_visitor_id: 8, location_id: 3},
+    {wanna_visitor_id: 8, location_id: 4},
+    {wanna_visitor_id: 8, location_id: 5},
+    {wanna_visitor_id: 9, location_id: 6},
+    {wanna_visitor_id: 9, location_id: 7},
+    {wanna_visitor_id: 9, location_id: 8},
+    {wanna_visitor_id: 10, location_id: 9},
+    {wanna_visitor_id: 10, location_id: 10},
+    {wanna_visitor_id: 10, location_id: 11},
+    {wanna_visitor_id: 10, location_id: 12},
+    {wanna_visitor_id: 10, location_id: 13},
+    {wanna_visitor_id: 10, location_id: 14},
+    {wanna_visitor_id: 11, location_id: 15},
+    {wanna_visitor_id: 11, location_id: 16},
+    {wanna_visitor_id: 11, location_id: 17},
+    {wanna_visitor_id: 11, location_id: 18},
+    {wanna_visitor_id: 12, location_id: 19},
+    {wanna_visitor_id: 12, location_id: 20},
+    {wanna_visitor_id: 13, location_id: 1},
+    {wanna_visitor_id: 14, location_id: 2},
+    {wanna_visitor_id: 15, location_id: 3},
+    {wanna_visitor_id: 15, location_id: 4},
+    {wanna_visitor_id: 15, location_id: 5},
+    {wanna_visitor_id: 15, location_id: 6},
+    {wanna_visitor_id: 15, location_id: 7},
+    {wanna_visitor_id: 15, location_id: 8},
+    {wanna_visitor_id: 15, location_id: 9},
+])
+
+sample_photo = File.open('app/assets/images/profile_photos/photo2.jpg')
+elliot.photo.attach(io: sample_photo, filename: 'photo2.jpeg')
+sample_photo = File.open('app/assets/images/profile_photos/photo3.jpg')
+evan.photo.attach(io: sample_photo, filename: 'photo3.jpeg')
+sample_photo = File.open('app/assets/images/profile_photos/photo4.jpg')
+worldtraveler.photo.attach(io: sample_photo, filename: 'photo4.jpeg')
+sample_photo = File.open('app/assets/images/profile_photos/photo5.jpg')
+explorer2000.photo.attach(io: sample_photo, filename: 'photo5.jpeg')
+sample_photo = File.open('app/assets/images/profile_photos/photo6.jpg')
+mansoo.photo.attach(io: sample_photo, filename: 'photo6.jpeg')
+sample_photo = File.open('app/assets/images/profile_photos/photo7.jpg')
+victor.photo.attach(io: sample_photo, filename: 'photo7.jpeg')
+sample_photo = File.open('app/assets/images/profile_photos/photo8.jpg')
+jonb.photo.attach(io: sample_photo, filename: 'photo8.jpeg')
+sample_photo = File.open('app/assets/images/profile_photos/photo9.jpg')
+trekkie.photo.attach(io: sample_photo, filename: 'photo9.jpeg')
+sample_photo = File.open('app/assets/images/profile_photos/photo10.jpg')
+macdonald2.photo.attach(io: sample_photo, filename: 'photo10.jpeg')
+sample_photo = File.open('app/assets/images/profile_photos/photo11.jpg')
+matteo.photo.attach(io: sample_photo, filename: 'photo11.jpeg')
+sample_photo = File.open('app/assets/images/profile_photos/photo12.jpg')
+roadside.photo.attach(io: sample_photo, filename: 'photo12.jpeg')
+sample_photo = File.open('app/assets/images/profile_photos/photo13.jpg')
+texaspecan.photo.attach(io: sample_photo, filename: 'photo13.jpeg')
+sample_photo = File.open('app/assets/images/profile_photos/photo14.jpg')
+loslobos.photo.attach(io: sample_photo, filename: 'photo14.jpeg')
+sample_photo = File.open('app/assets/images/profile_photos/photo15.jpg')
+parkerT.photo.attach(io: sample_photo, filename: 'photo15.jpeg')

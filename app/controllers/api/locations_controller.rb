@@ -7,7 +7,7 @@ class Api::LocationsController < ApplicationController
     end
 
     def random_locations
-        @locations = Location.order('RANDOM()').first(9)
+        @locations = Location.with_attached_photos.order('RANDOM()').first(9)
 
         render :index
     end

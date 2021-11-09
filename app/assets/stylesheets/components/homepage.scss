@@ -1,23 +1,38 @@
 .homepage-container {
-
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .homepage-searchbar-backdrop {
+    .homepage-searchbar-container {
         width: 100%;
-        background-image: url(asset-path('AO_topography.png'));
-        background-size: 25%;
-        background-color: #1b624f;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
+        color: #333333;
+        background-color: #1b624f;
+        z-index: -2;
         height: 212px;
+        
+        &::before {
+            height: 100%;
+            width: 100%;
+            content: "";
+            background-image: url(asset-path('AO_topography.png'));
+            background-size: 425px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.33;
+            z-index: -1;
+        }
 
         .headline {
             text-align: center;
-            margin: 0 25% 0 25%;
+            margin: 0 30% 0 30%;
             color: white;
             font-size: 60px;
             font-weight: 600;
@@ -33,13 +48,13 @@
 
         .featured-loc-box {
             display: flex;
-            margin: 0 0 15px 0;
+            padding: 0 0 15px 0;
             width: 100%;
 
             .featured-loc-text-container {
                 display: flex;
                 flex-direction: column;
-                margin: 0 15px 0 0;
+                padding: 0 15px 0 0;
                 width: 33.33333333%;
             }
 
@@ -49,7 +64,7 @@
 
             img {
                 width: 66.6666%;
-                height: 568px;
+                height: 525px;
             }
         }
 
@@ -66,10 +81,7 @@
                     width: 50%;
                     display: flex;
                     flex-direction: column;
-
-                    &:nth-of-type(2) {
-                        margin: 0 15px 0 15px;
-                    }
+                    padding: 0 15px 0 0;
 
                     .sub-loc-main-summary-text {
                         margin: 5px 0 0 0;

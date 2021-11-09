@@ -5,7 +5,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const HomePageContainer = () => (
     <div className="homepage-container">
-        <div className="homepage-searchbar-backdrop">
+        <div className="homepage-searchbar-container">
             <p className="headline">The definitive guide to the world's hidden wonders.</p>
             <div className="searchbar">
                 <input

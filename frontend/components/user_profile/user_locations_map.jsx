@@ -11,6 +11,7 @@ class UserLocationsMap extends React.Component {
 
     componentDidMount() {
         this.renderMap();
+        this.addMarkers();  
     }
 
     

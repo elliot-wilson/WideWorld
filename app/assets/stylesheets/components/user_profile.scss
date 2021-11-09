@@ -1,6 +1,5 @@
 .user-profile-container {
-    height: 100vh;
-    padding: 5% 0 0 0;
+    padding: 2% 0 5% 0;
     display: flex;
     justify-content: center;
 
@@ -15,11 +14,7 @@
             height: min-content;
 
             .user-photo-box {
-                height: 100px;
-                background-image: url(asset-path('AO_topography.png'));
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: 150%;
+                position: relative;
                 background-color: rgba(204,180,141, .1);
                 display: flex;
                 justify-content: center;
@@ -27,9 +22,26 @@
                 width: 100%;
                 height: 160px;
 
+                &::before {
+                    height: 100%;
+                    width: 100%;
+                    background-size: 425px;
+                    content: "";
+                    background-image: url(asset-path('AO_topography.png'));
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    bottom: 0px;
+                    left: 0px;
+                    opacity: 0.05;
+                    z-index: -1;
+                }
+
                 .user-photo {
-                    width: 130px;
                     border-radius: 50%;
+                    width: 130px;
+                    height: 130px;
+                    object-fit: cover;
                 }
 
             }
@@ -37,7 +49,7 @@
             .user-details-list-box {
 
                 > * {
-                    padding: 10px;
+                    padding: 20px;
                 }
 
                 .user-stat-li {
@@ -67,7 +79,7 @@
         .user-locations-box {
             display: flex;
             flex-direction: column;
-            margin-left: 3%;
+            margin-left: 2%;
             width: 66.66666666%;
 
             .user-locations-map-box {

@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   end
 
   root "static_pages#root"
+
+  get "api/random_location", to: "api/locations#random"
+
+  get "api/random_locations", to: "api/locations#random_locations"
 end

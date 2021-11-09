@@ -22,8 +22,8 @@ const App = () => (
             <ProtectedRoute exact path="/locations/new" component={CreateLocationFormContainer} />
             <ProtectedRoute exact path="/locations/:locationId/edit" component={UpdateLocationFormContainer} />
             <Route exact path="/locations/:locationId" component={LocationContainer}/>
-            <Route exact path="/" component={HomePageContainer}/>
             <Route path="/users/:userId" component={UserProfileContainer}/>
+            <Route exact path="/" component={HomePageContainer}/>
             <Route component={NotFound} />
         </Switch>
     </div>

@@ -11,6 +11,7 @@
             border: 1px solid lightgrey;
             padding: 10px;
             width: 33.33333333%;
+            height: min-content;
 
             .user-photo-box {
                 height: 100px;
@@ -91,13 +92,18 @@
                 width: 100%;
                 margin: 2% 0 0 0;
                 display: flex;
-                justify-content: space-between;
+                justify-content: flex-start;
                 flex-wrap: wrap;
 
                 .user-locations-index-item {
-                    width: 25%;
+                    width: 20%;
                     height: 144px;
                     border-bottom: 1px solid lightgrey;
+                    margin: 2% 10px 0 0;
+
+                    a:hover {
+                        text-decoration: underline 2px #1b624f;
+                    } 
                 }
             }
 

@@ -49,6 +49,7 @@ const UserLocationsMapBox = (props) => {
                 selectedHeaderIdx={props.selectedHeaderIdx}
             />
             <UserLocationsMap
+                user={props.user}
                 locations={props.locations}
             />
         </section>

@@ -1,0 +1,111 @@
+.homepage-container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .homepage-searchbar-backdrop {
+        width: 100%;
+        background-image: url(asset-path('AO_topography.png'));
+        background-size: 25%;
+        background-color: #1b624f;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 212px;
+
+        .headline {
+            text-align: center;
+            margin: 0 25% 0 25%;
+            color: white;
+            font-size: 60px;
+            font-weight: 600;
+        }
+    }
+
+    .splash-locations-box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 5% 18% 5% 18%;
+        width: 1150px;
+
+        .featured-loc-box {
+            display: flex;
+            margin: 0 0 15px 0;
+            width: 100%;
+
+            .featured-loc-text-container {
+                display: flex;
+                flex-direction: column;
+                margin: 0 15px 0 0;
+                width: 33.33333333%;
+            }
+
+            .featured-loc-title-text {
+                margin: 0 0 10px 0;
+            }
+
+            img {
+                width: 66.6666%;
+            }
+        }
+
+        .subordinate-locations-box {
+            display: flex;
+            width: 100%;
+
+
+            .sub-loc-main-items-index {
+                display: flex;
+                width: 66.66666%;
+                
+                .sub-loc-main-item {
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0 15px 0 0;
+
+                    .sub-loc-main-summary-text {
+                        margin: 5px 0 0 0;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 282px;
+                    }
+                }
+            }
+
+            .sub-loc-list-items-index {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                width: 33.33333333%;
+
+                .sub-loc-list-item {
+                    display: flex;
+                    align-items: center;
+                    padding: 10px 0 10px 0;
+                    border-bottom: 1px solid lightgrey;
+                }
+            }
+        }
+
+        .homepage-add-button {
+            align-self: center;
+            margin: 5% 0 0 0;
+            padding: 15px;
+            font-size: 19px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 66.6666%;
+
+            p {
+                margin: 0 0 0 1%;
+            }
+        }
+    }
+}

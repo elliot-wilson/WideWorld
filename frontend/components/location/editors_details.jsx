@@ -11,6 +11,8 @@ class EditorsDetails extends React.Component {
         const { editors, location, initialEditor } = this.props
         let editorsDiv;
 
+        console.log(editors)
+
         if (editors.length > 0) {
 
             const editorMap = editors.map((editor, index) => {

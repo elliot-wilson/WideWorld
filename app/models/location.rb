@@ -20,6 +20,8 @@ class Location < ApplicationRecord
     validates :summary, presence: true, length: {maximum: 280}
     validates :additional_info, length: {maximum: 500}
 
+    # validates :ensure_photo
+
     belongs_to :author,
         primary_key: :id,
         foreign_key: :initial_author_id,
@@ -66,6 +68,12 @@ class Location < ApplicationRecord
     def initial_author
         id = initial_author_id
         User.find(id)
+    end
+
+    def ensure_photo
+        unless self.photo.attached?
+            errors[:photos] << "Must have at least one attached photo"
+        end
     end
 
 end

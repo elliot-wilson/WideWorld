@@ -18,9 +18,13 @@ class Location extends React.Component {
     }
 
     render() {
-        const { location } = this.props;
+        const { location, locations } = this.props;
+
+        console.log("hello! rendering loc!")
+        console.log(location)
+        console.log(locations)
         
-        if (!location) return null;
+        if (!location || locations.length > 1) return null;
 
         let additionalInfo;
         if (location.additional_info) {

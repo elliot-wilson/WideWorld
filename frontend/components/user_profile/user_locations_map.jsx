@@ -15,10 +15,11 @@ class UserLocationsMap extends React.Component {
 
     
     componentDidUpdate() {
-        console.log("map did update")
-        this.clearMarkers();
-        this.renderMap();
-        this.addMarkers();  
+        if (this.props.user) {
+            this.clearMarkers();
+            this.renderMap();
+            this.addMarkers();  
+        }
     }
 
     renderMap() {
@@ -67,7 +68,6 @@ class UserLocationsMap extends React.Component {
     
     render() {
 
-        console.log("rendering map")
 
         return (
             <div

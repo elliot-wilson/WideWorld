@@ -1,4 +1,4 @@
-import { RECEIVE_LOCATIONS, RECEIVE_LOCATION, REMOVE_LOCATION } from "../actions/location_actions";
+import { RECEIVE_LOCATIONS, RECEIVE_LOCATION, REMOVE_LOCATION, CLEAR_LOCATIONS } from "../actions/location_actions";
 import { RECEIVE_USER } from "../actions/user_actions";
 
 const _nullState = {};
@@ -16,6 +16,8 @@ const locationsReducer = (oldState ={}, action) => {
             delete newState[action.locationId];
             return newState;
         case RECEIVE_USER:
+            return _nullState;
+        case CLEAR_LOCATIONS:
             return _nullState;
         default:
             return oldState;

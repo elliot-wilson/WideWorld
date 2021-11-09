@@ -1,11 +1,17 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const UserLocationsIndexItem = (props) => {
 
-
+    const { location } = props;
     return (
         <li className="user-locations-index-item">
-            <p className="user-submedium-text">{props.location.title}</p>
+            <NavLink
+                className="user-submedium-text"
+                to={`/locations/${location.id}`}
+            >
+                    {location.title}
+            </NavLink>
         </li>
     )
 

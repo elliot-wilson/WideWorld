@@ -46,6 +46,19 @@
             align-self: center;
         }
 
+        .cancel-button {
+            align-self: center;
+            padding: 10px;
+            border-radius: 4px;
+            color: #a16a3a;
+
+            &:hover {
+                background-color: lightgrey;
+                opacity: 0.8;
+                cursor: pointer;
+            }
+        }
+
         .optional-container {
             display: flex;
             align-items: center;
@@ -60,6 +73,33 @@
     }
 
 }
+
+.location-tips-container {
+    margin: 2% 0 0 0;
+    
+    .location-tips-list {
+        display: flex;
+        margin: 2% 0 0 0;
+    
+        .location-tip {
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+            margin: 0 3% 0 0;
+    
+            svg {
+                color: #a16a3a;
+                font-size: 36px;
+            }
+
+            .location-tip-text {
+                margin: 4% 0 0 0;
+            }
+        }
+    }
+
+}
+
 
 #location-form-map {
     width: 100%;

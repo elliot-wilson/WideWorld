@@ -3,6 +3,7 @@ import * as LocationAPIUtil from '../util/location_api_util';
 export const RECEIVE_LOCATIONS = "RECEIVE_LOCATIONS";
 export const RECEIVE_LOCATION = "RECEIVE_LOCATION";
 export const REMOVE_LOCATION = "REMOVE_LOCATION";
+export const CLEAR_LOCATIONS = "CLEAR_LOCATIONS";
 
 const receiveLocations = (locations) => ({
     type: RECEIVE_LOCATIONS,
@@ -19,8 +20,16 @@ const removeLocation = (locationId) => ({
     locationId
 });
 
+export const clearLocations = () => ({
+    type: CLEAR_LOCATIONS
+})
+
 export const fetchLocations = () => dispatch =>
     LocationAPIUtil.fetchLocations()
+        .then((locations) => dispatch(receiveLocations(locations)))
+
+export const fetchRandomLocations = () => dispatch =>
+    LocationAPIUtil.fetchRandomLocations()
         .then((locations) => dispatch(receiveLocations(locations)))
 
 export const fetchLocation = (locationId) => dispatch =>

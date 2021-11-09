@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import NewLocationOverview from "./new_location_overview";
 
 class LocationForm extends React.Component {
     constructor(props){
@@ -113,8 +114,6 @@ class LocationForm extends React.Component {
                 />)
             })
 
-            console.log(display)
-
             return (
                 <div className="photo-preview-container">
                     <p className="photo-preview-helper form-help-text">
@@ -129,7 +128,6 @@ class LocationForm extends React.Component {
     removePhoto(idx) {
         return (e) => {
             e.preventDefault();
-            console.log("hellooooo");
             let photos = [...this.state.photos];
             photos.splice(idx, 1);
             this.setState({photos});
@@ -139,28 +137,30 @@ class LocationForm extends React.Component {
 
     render(){
 
-        console.log(this.state);
-
         const location = this.state;
         const { formType } = this.props
 
-        let header, bodyHeader, buttonText, cancelPath;
+        let header, overview, bodyHeader, descriptionVerb, buttonText, cancelPath;
         if (formType === 'create') {
             header = 'Add a Place';
+            overview = (<NewLocationOverview />)
             bodyHeader = 'Write your entry';
             buttonText = 'Submit Location';
+            descriptionVerb = 'Write'
             cancelPath = '/';
         } else {
             header = `Edit ${this.initialTitle}`;
             bodyHeader = 'Edit the entry';
+            descriptionVerb = 'Edit'
             buttonText = 'Submit Edit';
-            cancelPath = `/locations/${this.location.id}`
+            cancelPath = `/locations/${location.id}`
         }
 
         return (
             <div className="page-body">
                 <div className="location-form-container">
                     <h2 className="title">{header}</h2>
+                    {overview}
                     <form className="location-form" onSubmit={this.preventDefault}>
                         <p className="subheading">Basic information</p>
                         <p className="form-question-text">
@@ -201,12 +201,13 @@ class LocationForm extends React.Component {
                             Please use your own words to tell the unique story of the place in an engaging, concise way. If you need some help, here's a great example of an entry our users love.
                         </p>
                         <p className="form-question-text">
-                            Edit entry below
+                            {descriptionVerb} entry below:
                         </p>
                         <textarea
                             className="description-textarea"
                             onChange={this.handleChange('description')}
                             value={location.description}
+                            placeholder="Jim Garnsey won his first tophat at a circus in 1955. It changed his life. Ever since then..."
                         />
                         <p className="subheading">
                             Add photos
@@ -242,6 +243,7 @@ class LocationForm extends React.Component {
                             className="addl-info-textarea"
                             onChange={this.handleChange('additional_info')}
                             value={location.additional_info}
+                            placeholder="Visitors often bring snacks for Jim's pet cat Freckles."
                         />
                         <div className="optional-container">
                             <p className="form-help-text">
@@ -262,7 +264,7 @@ class LocationForm extends React.Component {
                         >
                             {buttonText}
                         </button>
-                        <NavLink to={cancelPath}>Cancel</NavLink>
+                        <NavLink className="cancel-button" to={cancelPath}>Cancel</NavLink>
                     </form>
                 </div>
             </div>

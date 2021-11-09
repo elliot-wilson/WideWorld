@@ -1,5 +1,17 @@
 class Api::LocationsController < ApplicationController
 
+    def index
+        @locations = Location.with_attached_photos.all
+
+        render :index
+    end
+
+    def random_locations
+        @locations = Location.order('RANDOM()').first(9)
+
+        render :index
+    end
+
     def create
         @location = Location.new(location_params)
         
@@ -12,7 +24,7 @@ class Api::LocationsController < ApplicationController
     end
     
     def show
-        @location = Location.find(params[:id])
+        @location = Location.with_attached_photos.find(params[:id])
         render :show
     end
     

@@ -28,7 +28,6 @@ class TagButtons extends React.Component {
                 })
             }
         } else {
-            console.log(location)
             if (wannaVisit) {
                 this.props.deleteWannaVisit(wannaVisit.id)
             } else {

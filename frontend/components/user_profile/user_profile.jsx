@@ -65,6 +65,7 @@ class UserProfile extends React.Component {
                         />
                     <section className="user-locations-box">
                         <UserLocationsMapBox
+                            user={user}
                             locations={this.state.locations}
                             selectedHeaderIdx={this.state.selectedHeaderIdx}
                             updateLocationSelection={this.updateLocationSelection}

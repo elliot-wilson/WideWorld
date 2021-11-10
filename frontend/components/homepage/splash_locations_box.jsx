@@ -15,7 +15,7 @@ class SplashLocationsBox extends React.Component {
 
         const { locations } = this.props;
 
-        if (locations.length < 8) return null;
+        if (locations.length < 8) return (<div className="placeholder"></div>);
 
         const featuredLoc = locations[0];
         const subLocs = locations.slice(1);

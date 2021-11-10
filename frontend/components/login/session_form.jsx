@@ -8,7 +8,7 @@ class SessionForm extends React.Component {
         this.state = {
             username: "",
             email: "",
-            password: "",
+            password: ""
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,8 +17,16 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+
+        const formData = new FormData();
+
+        if (this.state.username) formData.append('user[username]', this.state.username);
+        if (this.state.photo) formData.append('user[photo]', this.state.photo);
+
+        formData.append('user[email]', this.state.email);
+        formData.append('user[password', this.state.password);
+
+        this.props.processForm(formData);
     }
 
     handleChange(element) {
@@ -28,16 +36,16 @@ class SessionForm extends React.Component {
     }
 
     submitDemo() {
-        const demoUser = {
-            email: "example@example.com",
-            password: "123456"
-        }
+        const formData = new FormData();
+
+        formData.append('user[email]', 'example@example.com');
+        formData.append('user[password]', '123456');
 
         if (this.props.formType === "Sign Up") {
-            this.props.login(demoUser)
+            this.props.login(formData)
                 .then(() => this.props.history.push("/"));
         } else {
-            this.props.processForm(demoUser)
+            this.props.processForm(formData)
                 .then(() => this.props.history.push("/"));
         }
     }
@@ -52,7 +60,7 @@ class SessionForm extends React.Component {
             errors = null;
         }
 
-        let linkTo, linkTitle, username, linkLeadin;
+        let linkTo, linkTitle, username, addPhoto, linkLeadin;
 
         if (this.props.formType === "Sign Up") {
             linkTitle = 'Log in';
@@ -65,6 +73,16 @@ class SessionForm extends React.Component {
                     value={this.state.username}
                 />
             );
+            addPhoto = (
+                <div className="photo-input">
+                    <p>Optional: Add a photo</p>
+                    <input
+                        id="profile-photo-chooser"
+                        type="file"
+                        onChange={e => this.setState({photo: e.target.files[0]})}
+                    />                
+                </div>
+            )
             linkLeadin = 'Already a member?'
         } else {
             linkTitle = 'Sign Up';
@@ -86,18 +104,19 @@ class SessionForm extends React.Component {
                             type="text"
                             onChange={this.handleChange('email')}
                             value={this.state.email}
-                        />
+                            />
                         <input
                             placeholder="Password"
                             type="password"
                             onChange={this.handleChange('password')}
                             value={this.state.password}
-                        />
-                        <button>{this.props.formType}</button>
+                            />
+                        {addPhoto}
+                        <button className="green-button">{this.props.formType}</button>
                     </form>
                     {errors}
                     <div>
-                        <p>Still deciding? Preview as a
+                        <p>Still deciding? Preview as a &nbsp;
                         <span><button onClick={this.submitDemo}>Guest</button></span>
                         </p>
                     </div>

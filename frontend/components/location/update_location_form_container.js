@@ -28,7 +28,7 @@ class UpdateLocationForm extends React.Component {
 
 
 const mSTP = (state, ownProps) => ({
-    location: state.entities.locations[ownProps.match.params.locationId],
+    location: state.entities.locations.find(location => location.id.toString() === ownProps.match.params.locationId),
     formType: 'update'
 });
 

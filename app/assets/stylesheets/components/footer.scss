@@ -1,0 +1,27 @@
+.footer {
+    background: #382c14;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 5% 2% 5%;
+    line-height: 1.2em;
+    color: white;
+
+    p {
+        padding: 5px;
+
+        a:hover {
+            border-bottom: 2px solid #c3ad85;
+        }
+    }
+
+    .personal-links {
+        display: flex;
+        font-size: 54px;
+
+        li {
+            padding: 5px;
+        }
+    }
+}

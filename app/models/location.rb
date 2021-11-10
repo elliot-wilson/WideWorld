@@ -59,9 +59,13 @@ class Location < ApplicationRecord
         foreign_key: :location_id,
         class_name: :LocationListing
     
-    has_many :lists,
+    has_many :lists_that_list_it,
         through: :listings,
         source: :list
+
+    has_many :users_that_list_it,
+        through: :lists_that_list_it,
+        source: :author
 
     has_many_attached :photos
 

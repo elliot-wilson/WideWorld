@@ -51,7 +51,7 @@ class UserProfile extends React.Component {
             locationEdits,
         } = this.props;
 
-        if (!user || locations.length > 0 || !Array.isArray(this.state.locations)) return null;
+        if (!user || locations.length > 0 || !Array.isArray(this.state.locations)) return (<div className="placeholder"></div>);
 
         return (
             <section className="user-profile-container">

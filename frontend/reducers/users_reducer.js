@@ -15,7 +15,8 @@ const usersReducer = (oldState = {}, action) => {
         case RECEIVE_USER:
             return { [action.userPayload.user.id]: action.userPayload.user };
         case RECEIVE_LOCATION:
-            return _nullState;
+            let locationListers = action.locationPayload.users;
+            return locationListers ? locationListers : _nullState;
         default:
             return oldState;
     };

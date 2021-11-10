@@ -5,11 +5,12 @@ import LoginFormContainer from './login/login_form_container';
 import SignupFormContainer from './login/signup_form_container';
 import CreateLocationFormContainer from './location/create_location_form_container';
 import UpdateLocationFormContainer from './location/update_location_form_container';
-import NavBar from './header/navbar';
+import NavBar from './header-footer/navbar';
 import LocationContainer from './location/location_container';
 import HomePageContainer from './homepage/homepage_container';
 import UserProfileContainer from './user_profile/user_profile_container';
 import NotFound from './not_found';
+import Footer from './header-footer/footer.jsx'
 
 const App = () => (
     <div>
@@ -26,6 +27,7 @@ const App = () => (
             <Route exact path="/" component={HomePageContainer}/>
             <Route component={NotFound} />
         </Switch>
+        <Route path="/" component={Footer}/>
     </div>
 )
 

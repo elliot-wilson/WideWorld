@@ -49,13 +49,20 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        margin: 5% 18% 5% 18%;
+        margin: 5% 18% 2% 18%;
         width: 1150px;
 
         .featured-loc-box {
             display: flex;
             padding: 0 0 15px 0;
             width: 100%;
+
+            &:hover {
+                
+                .featured-loc-title-text {
+                    text-decoration: 4px #888071 underline;
+                }
+            }
 
             .featured-loc-text-container {
                 display: flex;
@@ -89,6 +96,12 @@
                     flex-direction: column;
                     padding: 0 15px 0 0;
 
+                    &:hover {
+                        .sub-loc-main-title-text {
+                            text-decoration: 3px #888071 underline;
+                        }
+                    }
+
                     .sub-loc-main-summary-text {
                         margin: 5px 0 0 0;
                     }
@@ -111,13 +124,20 @@
                     align-items: center;
                     padding: 10px 0 10px 0;
                     border-bottom: 1px solid lightgrey;
+
+                    &:hover{
+                        
+                        a {
+                            text-decoration: 2px #888071 underline;
+                        }
+                    }
                 }
             }
         }
 
         .homepage-add-button {
             align-self: center;
-            margin: 5% 0 0 0;
+            margin: 3% 0 0 0;
             padding: 15px;
             font-size: 19px;
             display: flex;

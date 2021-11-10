@@ -57,6 +57,32 @@
                     background: lightgrey;
                 }
             }
+
+            .photo-input {
+
+                margin: 15px 0;
+
+                p {
+                    text-align: center;
+                }
+
+                input[type=file]::file-selector-button {
+                    color: dimgrey;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                #profile-photo-chooser {
+                    color: black;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+            }
         }
     }
 }

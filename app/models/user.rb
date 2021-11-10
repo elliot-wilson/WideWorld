@@ -52,6 +52,11 @@ class User < ApplicationRecord
         through: :edits,
         source: :location
 
+    has_many :location_lists,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: :UserLocationList
+
     has_one_attached :photo
 
     

@@ -29,3 +29,19 @@ json.editors do
                 json.extract! editor, :id, :username
         end
 end
+
+json.user_location_lists do
+        @location.lists_that_list_it.each do |list|
+                json.set! list.id do
+                        json.extract! list, :id, :title, :author_id
+                end
+        end
+end
+
+json.users do
+        @location.users_that_list_it.each do |user|
+                json.set! user.id do
+                        json.extract! user, :id
+                end
+        end
+end

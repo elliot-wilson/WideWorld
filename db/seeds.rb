@@ -193,8 +193,8 @@ bigmac = Location.new(
 )
 
 hell = Location.new(
-    title: "The Gates of Hell, Turkmenistan",
-    summary: "A fiery crater has been burning in the Karakum Desert since 1971.",
+    title: "Turkmenistan's Gates of Hell",
+    summary: "A fiery crater has been burning in the Karakum Desert in Turkmenistan since 1971.",
     address: "Turkmenistan",
     lat: 40.2522,
     lng: 58.4397,
@@ -225,8 +225,8 @@ buzludzha = Location.new(
 )
 
 hand = Location.new(
-    title: "Hand of the Desert, Chile",
-    summary: "A sculpture of a giant hand reaches for the stars in the middle of the Atacama desert.",
+    title: "Hand of the Desert",
+    summary: "A sculpture of a giant hand reaches for the stars in the middle of the Atacama desert in Chile.",
     address: "Unnamed Road, Chile",
     description: "THE SCORCHED MOONSCAPE OF ATACAMA stretches for hundreds of miles on both sides of the Pan-American Highway, undisturbed by any sign of human activity. About 75km south-east of the town of Antofagasta, its monotony is shattered by a sight even more alien then the desert itself, and yet undoubtedly human: an 11-meter-tall hand protruding out of the sand.\n\nMano de Desierto is a work of the Chilean sculptor Mario Irarrázabal, built in the early 1980s. It was financed by a local booster organization called Corporación Pro Antofagasta.\n\nThe motion of hands rising from the ground is an obsession of Irarrázabal’s. His other famous works include another over-sized sculpture exploring the same idea: “Monument to the Drowned” is located on Parada 4 at Brava Beach in Punta del Este, a popular resort town in Uruguay. Another large sculpture, “The Awakening,” by American artist John Seward Johnson II expresses a similar idea and is located at National Harbor in Prince George’s County, Maryland.",
     additional_info: "From Antofagasta, Route 26 or Route 28, both connect to Route 5. The Mano can be found between mile markers 1309 and 1310. It is easy to reach from either direction and can be seen well in advance. If you're going to drive out for a visit, be sure you have sun-screen, plenty of water, and a full tank of gas.",

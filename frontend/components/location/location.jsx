@@ -21,7 +21,7 @@ class Location extends React.Component {
     render() {
         const { location, locations } = this.props;
 
-        if (!location || locations.length > 1) return null;
+        if (!location || locations.length > 1) return (<div className="placeholder"></div>);
 
         let additionalInfo;
         if (location.additional_info) {

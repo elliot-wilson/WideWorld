@@ -1,88 +1,105 @@
 .location-container {
     width: 100%;
     margin-top: 2%;
-    
-    .location-headers {
+
+    .location-topline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         padding: 0 10% 2% 10%;
+
+        .location-headers {
         display: flex;
         justify-content: space-between;
 
-        .location-title-container {
-            .location-summary {
-                font-size: 28px;
-                padding: 1% 0 0 0;
-            }
-        }
-
-
-        .tag-buttons {
-            display: flex;
-            color: #888071;
-            margin: 0 0 0 1%;
-
-            .tag-button-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                > p {
-                    font-size: 30px;
-                    color: #1b624f;
+            .location-title-container {
+                .location-summary {
+                    font-size: 28px;
+                    padding: 1% 0 0 0;
                 }
             }
 
-            .tag-button {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                border: 2px solid #888071;
-                border-radius: 5px;
-                padding: 10px;
-                height: 95px;
-                width: 95px;
-                margin: 4px;
-                letter-spacing: 0.1em;
 
-                svg {
-                    font-size: 30px;
-                    margin: 2px;
+            .tag-buttons {
+                display: flex;
+                color: #888071;
+                margin: 0 0 0 1%;
+
+                .tag-button-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    > p {
+                        font-size: 30px;
+                        color: #1b624f;
+                    }
                 }
 
-                p {
-                    font-size: 12px;
-                    text-align: center;
-                    line-height: 14px;
+                .tag-button {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border: 2px solid #888071;
+                    border-radius: 5px;
+                    padding: 10px;
+                    height: 95px;
+                    width: 95px;
                     margin: 4px;
-                    width: 100%;
-                }
+                    letter-spacing: 0.1em;
 
-                &:hover {
-                    border-color: #8ed486;
-                    cursor: pointer;
+                    svg {
+                        font-size: 30px;
+                        margin: 2px;
+                    }
+
+                    p {
+                        font-size: 12px;
+                        text-align: center;
+                        line-height: 14px;
+                        margin: 4px;
+                        width: 100%;
+                    }
+
+                    &:hover {
+                        border-color: #8ed486;
+                        cursor: pointer;
+                    }
+                    
                 }
                 
-            }
-            
-            > div:last-child:hover {
-                // border-color: #50416d;
-                // border-color: #dcd9e2;
-                border-color: #00527d;
-            } 
+                > div:last-child:hover {
+                    // border-color: #50416d;
+                    // border-color: #dcd9e2;
+                    border-color: #00527d;
+                } 
 
-            .tagged {
-                background: #8ed486;
-                border: 2px solid #8ed486;
-                color: white;
+                .tagged {
+                    background: #8ed486;
+                    border: 2px solid #8ed486;
+                    color: white;
 
-                &:hover {
-                    color: #8ed486;
-                    background: white;
+                    &:hover {
+                        color: #8ed486;
+                        background: white;
+                    }
                 }
-            }
 
+            }
+    }
+
+        .photo-container {
+            padding: 2% 0 0 0;
+            height: 400px;
+            display: flex;
+            img {
+                max-height: 100%;
+                margin: 0 10px;
+            }
         }
     }
+    
 
     .location-bodies {
         background: #efe8dc;

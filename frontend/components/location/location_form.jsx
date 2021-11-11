@@ -73,6 +73,8 @@ class LocationForm extends React.Component {
 
         let id = this.props.location.id
 
+        console.log(this.props)
+
         formData.append('location[title]', this.state.title);
         formData.append('location[summary]', this.state.summary);
         formData.append('location[address]', this.state.address);
@@ -81,7 +83,7 @@ class LocationForm extends React.Component {
         formData.append('location[description]', this.state.description);
         formData.append('location[additional_info]', this.state.additional_info);
         formData.append('location[official_website]', this.state.official_website);
-        formData.append('location[initial_author_id]', this.state.initial_author_id);
+        formData.append('location[initial_author_id]', this.state.initial_author.id);
 
         for (let i = 0; i < this.state.photos.length; i++) {
             formData.append("location[photos][]", this.state.photos[i])
@@ -140,6 +142,8 @@ class LocationForm extends React.Component {
 
         const location = this.state;
         const { formType } = this.props
+
+        console.log(this.props)
 
         let header, overview, bodyHeader, descriptionVerb, buttonText, cancelPath;
         if (formType === 'create') {

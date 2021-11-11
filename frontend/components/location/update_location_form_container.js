@@ -11,11 +11,12 @@ class UpdateLocationForm extends React.Component {
     };
 
     render() {
-        const { action, formType, location } = this.props;
+        const { action, formType, location, history } = this.props;
         if (!location) return null;
 
         return (
             <LocationForm
+                history={history}
                 location={location}
                 action={action}
                 formType={formType}

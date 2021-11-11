@@ -13,7 +13,7 @@ const mSTP = (state) => ({
         description: "",
         additional_info: "",
         official_website: "",
-        initial_author_id: state.session.id
+        initial_author: { id: state.session.id }
     },
     formType: 'create'
 });

@@ -237,6 +237,8 @@ hand = Location.new(
 
 sample_photo = File.open('app/assets/images/location_photos/pecan1.jpeg')
 pecan.photos.attach(io: sample_photo, filename: 'pecan1.jpeg')
+sample_photo = File.open('app/assets/images/location_photos/pecan2.jpeg')
+pecan.photos.attach(io: sample_photo, filename: 'pecan2.jpeg')
 sample_photo = File.open('app/assets/images/location_photos/stonehenge1.jpeg')
 stonehenge.photos.attach(io: sample_photo, filename: 'stonehenge1.jpeg')
 sample_photo = File.open('app/assets/images/location_photos/icecream1.jpeg')
@@ -389,7 +391,6 @@ location_visits = LocationVisit.create([
     {visitor_id: 5, location_id: 4},
     {visitor_id: 5, location_id: 5},
     {visitor_id: 5, location_id: 6},
-    {visitor_id: 5, location_id: 12},
     {visitor_id: 5, location_id: 19},
     {visitor_id: 6, location_id: 1},
     {visitor_id: 6, location_id: 19},
@@ -427,20 +428,17 @@ location_visits = LocationVisit.create([
     {visitor_id: 14, location_id: 6},
     {visitor_id: 15, location_id: 1},
     {visitor_id: 15, location_id: 18},
-    {visitor_id: 15, location_id: 15},
     {visitor_id: 15, location_id: 12},
     {visitor_id: 15, location_id: 9},
     {visitor_id: 15, location_id: 6},
     {visitor_id: 15, location_id: 3},
     {visitor_id: 15, location_id: 20},
     {visitor_id: 15, location_id: 16},
-    {visitor_id: 15, location_id: 12},
     {visitor_id: 15, location_id: 8},
     {visitor_id: 15, location_id: 4},
     {visitor_id: 15, location_id: 5},
     {visitor_id: 15, location_id: 10},
     {visitor_id: 15, location_id: 15},
-    {visitor_id: 15, location_id: 20}
 ])
 
 location_wanna_visits = LocationWannaVisit.create([

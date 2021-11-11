@@ -23,6 +23,14 @@
         font-size: 16px;
     }
 
+    .initial-editor-photo {
+        margin: 5px 0 0 0;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+    }
+
     .editor-name > a {
         color: #888071;
         text-transform: lowercase;

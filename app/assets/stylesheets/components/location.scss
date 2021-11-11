@@ -157,6 +157,21 @@
                 svg {
                     font-size: 18px;
                 }
+
+                a {
+                    color: #a16a3a;
+                    
+                    &:hover {
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
+                }
+
+                &.google-maps-link {
+                    svg {
+                        font-size: 14px;
+                    }
+                }
             }
 
             #map-container {

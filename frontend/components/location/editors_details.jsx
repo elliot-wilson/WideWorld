@@ -39,6 +39,11 @@ class EditorsDetails extends React.Component {
             )
         }
 
+        let editorPhoto;
+        if (initialEditor.photoURL) {
+            editorPhoto = (<img className="initial-editor-photo" src={initialEditor.photoURL}/>)
+        }
+
 
         return (
             <div className="editors-box">
@@ -47,7 +52,10 @@ class EditorsDetails extends React.Component {
                     <div><img></img></div>
                     <p className="editor-leadin">ADDED BY</p>
                     <p className="editor-name">
-                        <Link to={`/users/${initialEditor.id}`}>{initialEditor.username}</Link>
+                        <Link to={`/users/${initialEditor.id}`}>
+                            {editorPhoto}
+                            <p>{initialEditor.username}</p>
+                        </Link>
                     </p>
                 </div>
                 {editorsDiv}

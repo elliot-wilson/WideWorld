@@ -1,0 +1,27 @@
+.not-found-container {
+    background-color: #efe8dc;
+}
+
+.not-found-text {
+    height: 82vh;
+    padding: 5% 0 0 0;
+    width: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+        width: 75%;
+    }
+
+    .user-submedium-text {
+        width: 60%;
+        margin: 1% 0 0 0;
+    }
+
+    a {
+        color: #a16a3a;
+        text-decoration: underline;
+    }
+}

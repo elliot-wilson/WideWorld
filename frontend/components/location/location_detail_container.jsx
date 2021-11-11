@@ -1,12 +1,23 @@
 import React from "react";
 import LocationMap from "./location_map";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCompass, faLocationArrow } from '@fortawesome/free-solid-svg-icons';
+import { faCompass, faExternalLinkAlt, faGlobe, faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 
 class LocationDetailContainer extends React.Component {
 
     render() {
-        const {location} = this.props
+        const {location} = this.props;
+
+        let officialWebsite;
+        if (location.official_website) {
+            officialWebsite = (
+                <div className="loc-det-item">
+                    <FontAwesomeIcon icon={faGlobe}/>
+                    <p> Official Website: {location.official_website}</p>
+                </div>
+            )
+        }
+
         return (
             <div className="location-details-container">
                 <LocationMap location={location} />
@@ -18,7 +29,16 @@ class LocationDetailContainer extends React.Component {
                     <FontAwesomeIcon icon={faCompass}/>
                     <p>Coordinates: {location.lat}, {location.lng}</p>
                 </div>
-                <div className="loc-det-item"><a>View on Google Maps</a></div>
+                <div className="loc-det-item">
+                    <a
+                        className="google-maps-link"
+                        href={`https://www.google.com/maps/search/?api=1&query=${location.lat},${location.lng}`}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                            View on Google Maps <FontAwesomeIcon icon={faExternalLinkAlt}/>
+                    </a>
+                </div>
+                {officialWebsite}
             </div>
         )
     }

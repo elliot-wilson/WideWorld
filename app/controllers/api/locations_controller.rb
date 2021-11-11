@@ -12,6 +12,12 @@ class Api::LocationsController < ApplicationController
         render :index
     end
 
+    def random
+        @location = Location.with_attached_photos.order('RANDOM()').first
+
+        render :show
+    end
+
     def create
         @location = Location.new(location_params)
         

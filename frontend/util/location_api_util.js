@@ -5,6 +5,13 @@ export const fetchLocations = () => (
     })
 );
 
+export const fetchLocation = (locationId) => (
+    $.ajax({
+        method: 'GET',
+        url: `api/locations/${locationId}`
+    })
+);
+
 export const fetchRandomLocations = () => (
     $.ajax({
         method: 'GET',
@@ -12,12 +19,13 @@ export const fetchRandomLocations = () => (
     })
 );
 
-export const fetchLocation = (locationId) => (
+export const fetchRandomLocation = () => (
     $.ajax({
         method: 'GET',
-        url: `api/locations/${locationId}`
+        url: `api/random_location`
     })
 )
+
 
 export const createLocation = (location) => (
     $.ajax({

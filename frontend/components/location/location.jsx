@@ -8,7 +8,10 @@ class Location extends React.Component {
     
     componentDidMount(){
         window.scrollTo(0,0);
-        this.props.fetchLocation(this.props.match.params.locationId);
+
+        if (!this.props.randomCheck) {
+            this.props.fetchLocation(this.props.match.params.locationId);
+        }
     }
     
     componentDidUpdate() {

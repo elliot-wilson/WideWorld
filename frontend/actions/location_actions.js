@@ -28,13 +28,18 @@ export const fetchLocations = () => dispatch =>
     LocationAPIUtil.fetchLocations()
         .then((locations) => dispatch(receiveLocations(locations)))
 
-export const fetchRandomLocations = () => dispatch =>
-    LocationAPIUtil.fetchRandomLocations()
-        .then((locations) => dispatch(receiveLocations(locations)))
-
+        
 export const fetchLocation = (locationId) => dispatch =>
     LocationAPIUtil.fetchLocation(locationId)
         .then((locationPayload) => dispatch(receiveLocation(locationPayload)))
+
+export const fetchRandomLocation = () => dispatch =>
+    LocationAPIUtil.fetchRandomLocation()
+        .then((locationPayload) => dispatch(receiveLocation(locationPayload)))
+
+export const fetchRandomLocations = () => dispatch =>
+    LocationAPIUtil.fetchRandomLocations()
+        .then((locations) => dispatch(receiveLocations(locations)))
 
 export const createLocation = (location) => dispatch =>
     LocationAPIUtil.createLocation(location)

@@ -6,6 +6,7 @@ import SignupFormContainer from './login/signup_form_container';
 import CreateLocationFormContainer from './location/create_location_form_container';
 import UpdateLocationFormContainer from './location/update_location_form_container';
 import NavBar from './header-footer/navbar';
+import RandomLocationContainer from './location/random_location_container';
 import LocationContainer from './location/location_container';
 import HomePageContainer from './homepage/homepage_container';
 import UserProfileContainer from './user_profile/user_profile_container';
@@ -22,6 +23,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/locations/new" component={CreateLocationFormContainer} />
             <ProtectedRoute exact path="/locations/:locationId/edit" component={UpdateLocationFormContainer} />
+            <Route exact path="/locations/random" component={RandomLocationContainer}/>
             <Route exact path="/locations/:locationId" component={LocationContainer}/>
             <Route path="/users/:userId" component={UserProfileContainer}/>
             <Route exact path="/" component={HomePageContainer}/>

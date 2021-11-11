@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 
 const UserDetailsBox = (props) => {
 
@@ -11,10 +13,17 @@ const UserDetailsBox = (props) => {
         locationEdits
     } = props;
 
+    let profilePhoto;
+    if (user.photoUrl) {
+        profilePhoto = (<img className="user-photo" src={user.photoUrl} />);
+    } else {
+        profilePhoto = (<FontAwesomeIcon className="user-photo" icon={faUserAlt}/>);
+    }
+
     return (
         <section className="user-details-box">
             <div className="user-photo-box">
-                <img className="user-photo" src={user.photoUrl}/>
+                {profilePhoto}
             </div>
             <div className="user-details-list-box">
                 <div>

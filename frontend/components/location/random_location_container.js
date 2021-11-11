@@ -26,8 +26,6 @@ class RandomLocation extends React.Component {
 
         if (!this.state.fetchComplete) return (<div className="placeholder"></div>)
 
-        console.log(location)
-
         return (
             <Redirect
                 to={{

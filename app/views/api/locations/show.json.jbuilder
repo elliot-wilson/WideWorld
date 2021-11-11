@@ -3,7 +3,9 @@ json.location do
                 :description, :additional_info, :official_website
         json.set! "initial_author" do
                 json.extract! @location.initial_author, :id, :username
-                json.photoURL url_for(@location.initial_author.photo)
+                if (@location.initial_author.photo.attached?)
+                        json.photoURL url_for(@location.initial_author.photo)
+                end
         end
         json.photoUrls @location.photos.map { |file| url_for(file) }
 end

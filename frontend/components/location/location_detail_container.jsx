@@ -13,7 +13,15 @@ class LocationDetailContainer extends React.Component {
             officialWebsite = (
                 <div className="loc-det-item">
                     <FontAwesomeIcon icon={faGlobe}/>
-                    <p> Official Website: {location.official_website}</p>
+                    <p> Official Website:
+                        <a
+                            href={location.official_website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {location.official_website}
+                        </a>
+                    </p>
                 </div>
             )
         }
@@ -29,6 +37,7 @@ class LocationDetailContainer extends React.Component {
                     <FontAwesomeIcon icon={faCompass}/>
                     <p>Coordinates: {location.lat}, {location.lng}</p>
                 </div>
+                {officialWebsite}
                 <div className="loc-det-item">
                     <a
                         className="google-maps-link"
@@ -38,7 +47,6 @@ class LocationDetailContainer extends React.Component {
                             View on Google Maps <FontAwesomeIcon icon={faExternalLinkAlt}/>
                     </a>
                 </div>
-                {officialWebsite}
             </div>
         )
     }

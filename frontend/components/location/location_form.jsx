@@ -73,8 +73,6 @@ class LocationForm extends React.Component {
 
         let id = this.props.location.id
 
-        console.log(this.props)
-
         formData.append('location[title]', this.state.title);
         formData.append('location[summary]', this.state.summary);
         formData.append('location[address]', this.state.address);
@@ -142,8 +140,6 @@ class LocationForm extends React.Component {
 
         const location = this.state;
         const { formType } = this.props
-
-        console.log(this.props)
 
         let header, overview, bodyHeader, descriptionVerb, buttonText, cancelPath;
         if (formType === 'create') {
@@ -259,7 +255,7 @@ class LocationForm extends React.Component {
                         <input
                             placeholder="E.g. http://wide-world.herokuapp.com/#/"
                             type="text"
-                            onChange={this.handleChange('officialWebsite')}
+                            onChange={this.handleChange('official_website')}
                             value={location.official_website}
                         />
                         <button

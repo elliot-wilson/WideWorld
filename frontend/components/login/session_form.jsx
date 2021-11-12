@@ -15,6 +15,10 @@ class SessionForm extends React.Component {
         this.submitDemo = this.submitDemo.bind(this);
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     handleSubmit(e) {
         e.preventDefault();
 

@@ -1,8 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchRandomLocation } from "../../actions/location_actions";
-import { createLocationVisit, deleteLocationVisit } from "../../actions/location_visit_actions";
-import Location from "./location";
 import { Redirect, withRouter } from "react-router";
 
 

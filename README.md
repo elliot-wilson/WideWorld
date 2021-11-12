@@ -1,24 +1,14 @@
-# README
+# Wide World
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The world is full of magical places. Some are under your doorstep, and some require a little travel. But how can you find out about them? That's where Wide World comes in. Wide World is a social, wikified travel and culture website modeled after [Atlas Obscura](https://www.atlasobscura.com). Users write and edit articles about special locations, which other users can check in to or collect into lists (e.g. 'Roadtrip 2021', 'Haunted houses'). Users' profiles display maps of the places they've been or want to visit using the Google Maps API.
 
-Things you may want to cover:
+## [Live Site](https://wide-world.herokuapp.com/#/)
 
-* Ruby version
+## Technologies
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby on Rails
+> > A model-view-controller web application framework
+* React
+* Redux
+* PostgreSQL
+* Google Maps API

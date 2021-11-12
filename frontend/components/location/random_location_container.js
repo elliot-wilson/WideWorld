@@ -22,7 +22,7 @@ class RandomLocation extends React.Component {
     }
 
     render() {
-        const { addVisit, deleteVisit, location, locations } = this.props;
+        const { location } = this.props;
 
         if (!this.state.fetchComplete) return (<div className="placeholder"></div>)
 
@@ -32,10 +32,7 @@ class RandomLocation extends React.Component {
                     pathname: `/locations/${location.id}`,
                     state: {
                         randomLocation: location,
-                        randomCheck: true,
-                        locations,
-                        addVisit,
-                        deleteVisit
+                        isRandom: true,
                     }
                 }}
             />
@@ -46,14 +43,11 @@ class RandomLocation extends React.Component {
 
 
 const mSTP = (state) => ({
-    locations: state.entities.locations,
     location: state.entities.locations[0]
 });
 
 const mDTP = (dispatch) => ({
     fetchRandomLocation: () => dispatch(fetchRandomLocation()),
-    addVisit: locationVisit => dispatch(createLocationVisit(locationVisit)),
-    deleteVisit: locationVisitId => dispatch(deleteLocationVisit(locationVisitId))
 });
 
 export default withRouter(connect(mSTP, mDTP)(RandomLocation));

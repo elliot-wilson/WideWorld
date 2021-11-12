@@ -7,7 +7,7 @@ The world is full of magical places. Some are under your doorstep, and some requ
 ## Technologies
 
 * Ruby on Rails
-> > A model-view-controller web application framework
+     A model-view-controller web application framework
 * React
 * Redux
 * PostgreSQL

@@ -13,7 +13,7 @@ class LocationDetailContainer extends React.Component {
             officialWebsite = (
                 <div className="loc-det-item">
                     <FontAwesomeIcon icon={faGlobe}/>
-                    <p> Official Website:
+                    <p> Official Website:&nbsp;
                         <a
                             href={location.official_website}
                             target="_blank"

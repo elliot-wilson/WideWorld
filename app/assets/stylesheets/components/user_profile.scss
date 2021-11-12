@@ -53,6 +53,24 @@
                     padding: 20px;
                 }
 
+                .username-plus-links {
+                    display: flex;
+                    flex-direction: column;
+
+                    > * {
+                        margin: 10px 0 0 0;
+                    }
+
+                    a {
+                        color: #bd8049;
+
+                        &:hover {
+                            cursor: pointer;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
                 .user-stat-li {
                     display: flex;
                     align-items: center;

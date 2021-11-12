@@ -26,7 +26,7 @@ const UserDetailsBox = (props) => {
                 {profilePhoto}
             </div>
             <div className="user-details-list-box">
-                <div>
+                <div className="username-plus-links">
                     <h2 className="user-medium-text">{user.username}</h2>
                     <Link to={`/users/${user.id}/lists`}>My Lists</Link>
                 </div>

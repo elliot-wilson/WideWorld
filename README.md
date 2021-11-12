@@ -4,6 +4,8 @@ The world is full of magical places. Some are under your doorstep, and some requ
 
 ## [Live Site](https://wide-world.herokuapp.com/#/)
 
+![alt text](https://github.com/elliot-wilson/WideWorld/blob/main/docs/images/homepage.png "Wide World Home Page")
+
 ## Technologies
 
 * Ruby on Rails

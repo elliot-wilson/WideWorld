@@ -7,12 +7,12 @@ The world is full of magical places. Some are under your doorstep, and some requ
 ## Technologies
 
 * Ruby on Rails
-* * Model-view-controller web application framework
+    * Model-view-controller web application framework
 * React
-* * JS library for building interactive user interfaces
+    * JS library for building interactive user interfaces
 * Redux
-* * JS library that manages and centralizes application state
+    * JS library that manages and centralizes application state
 * PostgreSQL
-* * Relational database management system
+    * Relational database management system
 * Google Maps API / Google Places API
-* * Tools for getting location information and rendering awesome maps
+    * Tool for getting location information and rendering awesome maps

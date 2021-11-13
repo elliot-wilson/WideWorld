@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 class SplashLocationsBox extends React.Component {
     
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.props.fetchRandomLocations();
     }
 

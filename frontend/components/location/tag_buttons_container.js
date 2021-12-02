@@ -8,6 +8,7 @@ const mSTP = (state, ownProps) => {
 
     const visits = Object.values(state.entities.locationVisits);
     const wannaVisits = Object.values(state.entities.locationWannaVisits);
+    const currentUserLists = Object.values(state.entities.userLocationLists)
     const currentUser = state.session.id;
 
     const visit = visits.find(visit => visit.visitor_id === currentUser);
@@ -19,7 +20,8 @@ const mSTP = (state, ownProps) => {
         visits: visits,
         wannaVisits: wannaVisits,
         visit: visit,
-        wannaVisit: wannaVisit
+        wannaVisit: wannaVisit,
+        currentUserLists: currentUserLists
     }
 }
 

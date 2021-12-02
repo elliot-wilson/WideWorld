@@ -74,7 +74,26 @@
                     // border-color: #50416d;
                     // border-color: #dcd9e2;
                     border-color: #00527d;
-                } 
+                }
+
+                .add-to-list {
+                    position: relative;
+                }
+
+                .add-to-list-modal {
+                    display: none;
+
+                    &.clicked {
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                        right: 100%;
+                        width: max-content;
+                        background-color: white;
+                        border: 1px solid #888071;
+                        padding: 9px 14px;
+                    }
+                }
 
                 .tagged {
                     background: #8ed486;

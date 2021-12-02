@@ -48,3 +48,13 @@ json.users do
                 end
         end
 end
+
+if current_user
+        json.current_user_lists do
+                current_user.location_lists.each do |list|
+                        json.set! list.id do 
+                                json.extract! list, :id, :title
+                        end
+                end
+        end
+end

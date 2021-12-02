@@ -16,7 +16,7 @@ const userLocationListsReducer = (oldState = _nullState, action) => {
             delete newState[action.userLocationListId];
             return newState;
         case RECEIVE_LOCATION:
-            let userLocationLists = action.locationPayload.user_location_lists;
+            let userLocationLists = action.locationPayload.current_user_lists;
             return userLocationLists ? userLocationLists : _nullState;
         default:
             return oldState;

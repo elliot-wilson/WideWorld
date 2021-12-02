@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 class AddToListModal extends React.Component {
     constructor(props) {
@@ -17,14 +18,12 @@ class AddToListModal extends React.Component {
         let listsDisplay;
         if (currentUserLists) {
             listsDisplay = currentUserLists.map((list, idx) => (
-                <div>
+                <div className="lists-list">
                     <div>
                         <input type="checkbox" id={`list-${idx}`}/>
                         <label for={`list-${idx}`}>{list.title}</label>
                     </div>
-                    <div>
-                        <p>VIEW</p>
-                    </div>
+                    <Link to="/">VIEW</Link>
                 </div>
             ))
         } else {

@@ -82,16 +82,37 @@
 
                 .add-to-list-modal {
                     display: none;
+                    position: absolute;
+                    right: 100%;
+                    width: max-content;
+                    background-color: white;
+                    border: 1px solid #888071;
+                    padding: 9px 14px;
+
+                    & > *:last-child {
+                        border-top: 1px solid #888071;
+                    }
+
+                    .lists-list {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        font-size: 16px;
+
+                        div {
+                            display: flex;
+                            align-items: center;
+                            width: max-content;
+
+                            label {
+                                width: max-content;
+                            }
+                        }
+                    }
 
                     &.clicked {
                         display: flex;
                         flex-direction: column;
-                        position: absolute;
-                        right: 100%;
-                        width: max-content;
-                        background-color: white;
-                        border: 1px solid #888071;
-                        padding: 9px 14px;
                     }
                 }
 

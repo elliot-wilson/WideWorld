@@ -83,6 +83,7 @@
                 .add-to-list-modal {
                     display: none;
                     position: absolute;
+                    top: 0px;
                     right: 100%;
                     width: max-content;
                     background-color: white;
@@ -93,11 +94,11 @@
                         padding: 3px;
                     }
 
-                    & > *:nth-last-child(2) {
+                    & > *:nth-last-child(3) {
                         padding-bottom: 6px;
                     }
 
-                    & > *:last-child {
+                    .create-new-list {
                         border-top: 1px solid #888071;
                         padding-top: 6px;
 
@@ -127,6 +128,70 @@
                         display: flex;
                         flex-direction: column;
                     }
+
+                    .create-list-modal-background {
+                        display: none;
+                        position: fixed;
+                        width: 127vw;
+                        top: 0;
+                        left: 0;
+                        height: 145vh;
+                        background: #1515159e;
+
+                        &.opened {
+                            display: block;
+                        }
+                    }
+                    
+                    .create-list-modal {
+                        display: flex;
+                        flex-direction: column;
+                        position: fixed;
+                        top: 25%;
+                        left: 35%;
+                        background-color: rgb(238, 238, 238);
+                        padding: 20px;
+
+                        .create-list-modal-close {
+                            position: absolute;
+                            top: 0%;
+                            left: calc(100% + 10px);
+                            font-size: 40px;
+                            font-weight: 200;
+                            color: white;
+                        }
+
+                        form {
+                            display: flex;
+                            flex-direction: column;
+
+                            & > * {
+                                margin: 0 0 15px 0;
+                            }
+                        }
+
+                        h2 {
+                            font-size: 24px;
+                            color: #382c14;
+                        }
+
+                        .create-list-input {
+                            font-size: 19px;
+                            padding: 0px 15px;
+                            border: 1px solid #e7e7e7;
+                            height: 50px;
+                        }
+
+                        button {
+                            background-color: #d36a55;
+                            color: white;
+                            border: none;
+                            padding: 17px 30px;
+                        }
+
+                    }
+
+
                 }
 
                 .tagged {

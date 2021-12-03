@@ -1,9 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import CreateListModalContainer from './create_list_modal_container';
 
 class AddToListModal extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            createListClicked: false
+        }
 
         this.bindFuncs();
     }
@@ -13,6 +18,7 @@ class AddToListModal extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         this.findListing = this.findListing.bind(this);
         this.isChecked = this.isChecked.bind(this);
+        this.openCreateListModal = this.openCreateListModal.bind(this);
     }
 
     handleClick(listId) {
@@ -37,9 +43,12 @@ class AddToListModal extends React.Component {
     }
 
     isChecked(listId) {
-        const { locationListings } = this.props;
         let checked = this.findListing(listId);
         return !!checked;
+    }
+
+    openCreateListModal() {
+        this.setState({createListClicked: true});
     }
     
     displayLists() {
@@ -58,7 +67,7 @@ class AddToListModal extends React.Component {
                         />
                         <label htmlFor={`list-${idx}`}>{list.title}</label>
                     </div>
-                    <Link to="/">VIEW</Link>
+                    <Link to={`/lists/${list.id}`}>VIEW</Link>
                 </div>
             ))
         } else {
@@ -70,16 +79,23 @@ class AddToListModal extends React.Component {
 
     render() {
         
-        const { clicked } = this.props;
+        const { clicked,
+                location,
+                addLocationListing } = this.props;
 
         const klass = clicked ? "clicked" : null;
 
         return (
             <div className={`add-to-list-modal ${klass}`}>
                 {this.displayLists()}
-                <div>
+                <div className="create-new-list" onClick={this.openCreateListModal}>
                     <p>+ CREATE NEW LIST</p>
                 </div>
+                <CreateListModalContainer
+                    addLocationListing={addLocationListing}
+                    location={location}
+                    opened={this.state.createListClicked}
+                />
             </div>
         )
     }

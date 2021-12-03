@@ -42,12 +42,17 @@ class TagButtons extends React.Component {
     }
 
     render() {
+
         const { 
             visits,
             wannaVisits,
             visit,
             wannaVisit,
-            currentUserLists } = this.props;
+            currentUserLists,
+            addLocationListing,
+            deleteLocationListing,
+            location,
+            locationListings } = this.props;
 
         let visitedClass, visitedText;
         let wannaVisitClass, wannaVisitText;
@@ -100,6 +105,11 @@ class TagButtons extends React.Component {
                 </div>
                 <AddToListButton
                     currentUserLists={currentUserLists}
+                    currLocation={location}
+                    addLocationListing={addLocationListing}
+                    deleteLocationListing={deleteLocationListing}
+                    location={location}
+                    locationListings={locationListings}
                 />
             </div>
         )

@@ -87,10 +87,22 @@
                     width: max-content;
                     background-color: white;
                     border: 1px solid #888071;
-                    padding: 9px 14px;
+                    padding: 5px 14px;
+
+                    & > * {
+                        padding: 3px;
+                    }
+
+                    & > *:nth-last-child(2) {
+                        padding-bottom: 6px;
+                    }
 
                     & > *:last-child {
                         border-top: 1px solid #888071;
+                        padding-top: 6px;
+
+                        display: flex;
+                        justify-content: flex-start;
                     }
 
                     .lists-list {
@@ -106,6 +118,7 @@
 
                             label {
                                 width: max-content;
+                                margin-right: 30px;
                             }
                         }
                     }

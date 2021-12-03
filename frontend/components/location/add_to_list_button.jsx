@@ -14,7 +14,12 @@ class AddToListButton extends React.Component {
 
     render () {
 
-        const { currentUserLists } = this.props;
+        const {
+            currentUserLists,
+            addLocationListing,
+            deleteLocationListing,
+            location,
+            locationListings } = this.props;
 
         return (
             <div
@@ -26,6 +31,10 @@ class AddToListButton extends React.Component {
                 <AddToListModal
                     clicked={this.state.clicked}
                     currentUserLists={currentUserLists}
+                    addLocationListing={addLocationListing}
+                    deleteLocationListing={deleteLocationListing}
+                    location={location}
+                    locationListings={locationListings}
                 />
             </div>
         )

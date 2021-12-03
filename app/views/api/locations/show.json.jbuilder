@@ -33,10 +33,10 @@ json.editors do
         end
 end
 
-json.user_location_lists do
-        @location.lists_that_list_it.each do |list|
-                json.set! list.id do
-                        json.extract! list, :id, :title, :author_id
+json.location_listings do
+        @location.listings.each do |listing|
+                json.set! listing.id do
+                        json.extract! listing, :id, :list_id
                 end
         end
 end

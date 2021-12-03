@@ -10,6 +10,36 @@ class AddToListModal extends React.Component {
 
     bindFuncs() {
         this.displayLists = this.displayLists.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.findListing = this.findListing.bind(this);
+        this.isChecked = this.isChecked.bind(this);
+    }
+
+    handleClick(listId) {
+        let listingId = this.findListing(listId);
+        if (listingId) {
+            this.props.deleteLocationListing(listingId);
+        } else {
+            this.props.addLocationListing({
+                location_id: this.props.location.id,
+                list_id: listId
+            });
+        }
+    }
+
+    findListing(listId) {
+        const { locationListings } = this.props;
+        for (let listing of locationListings) {
+            if (listing.list_id === listId) {
+                return listing.id
+            }
+        }
+    }
+
+    isChecked(listId) {
+        const { locationListings } = this.props;
+        let checked = this.findListing(listId);
+        return !!checked;
     }
     
     displayLists() {
@@ -20,8 +50,13 @@ class AddToListModal extends React.Component {
             listsDisplay = currentUserLists.map((list, idx) => (
                 <div className="lists-list">
                     <div>
-                        <input type="checkbox" id={`list-${idx}`}/>
-                        <label for={`list-${idx}`}>{list.title}</label>
+                        <input
+                            checked={this.isChecked(list.id)}
+                            onClick={() => this.handleClick(list.id)}
+                            type="checkbox"
+                            id={`list-${idx}`}
+                        />
+                        <label htmlFor={`list-${idx}`}>{list.title}</label>
                     </div>
                     <Link to="/">VIEW</Link>
                 </div>
@@ -34,7 +69,7 @@ class AddToListModal extends React.Component {
     }
 
     render() {
-
+        
         const { clicked } = this.props;
 
         const klass = clicked ? "clicked" : null;

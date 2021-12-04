@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { withRouter } from "react-router";
 import { logout, login } from "../../actions/session_actions";
 import AuthIndex from './auth_index';
 
@@ -17,4 +18,4 @@ const mDTP = (dispatch) => {
     });
 };
 
-export default connect(mSTP, mDTP)(AuthIndex);
+export default withRouter(connect(mSTP, mDTP)(AuthIndex));

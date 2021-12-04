@@ -30,7 +30,8 @@ class SessionForm extends React.Component {
         formData.append('user[email]', this.state.email);
         formData.append('user[password', this.state.password);
 
-        this.props.processForm(formData);
+        this.props.processForm(formData)
+            .then((res) => this.props.history.push(`/users/${res.user.id}`));
     }
 
     handleChange(element) {
@@ -47,10 +48,10 @@ class SessionForm extends React.Component {
 
         if (this.props.formType === "Sign Up") {
             this.props.login(formData)
-                .then(() => this.props.history.push("/"));
+                .then(() => this.props.history.push("/users/1"));
         } else {
             this.props.processForm(formData)
-                .then(() => this.props.history.push("/"));
+                .then(() => this.props.history.push("/users/1"));
         }
     }
 

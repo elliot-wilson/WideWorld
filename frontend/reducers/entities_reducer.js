@@ -6,6 +6,7 @@ import locationWannaVisitsReducer from "./location_wanna_visits_reducer";
 import locationEditsReducer from "./location_edits_reducer";
 import locationAddsReducer from "./location_adds_reducer";
 import userLocationListsReducer from "./user_location_lists";
+import locationListingsReducer from './location_listings_reducer';
 
 const entitiesReducer = combineReducers({
     users: usersReducer,
@@ -14,7 +15,8 @@ const entitiesReducer = combineReducers({
     locationWannaVisits: locationWannaVisitsReducer,
     locationAdds: locationAddsReducer,
     locationEdits: locationEditsReducer,
-    userLocationLists: userLocationListsReducer
+    userLocationLists: userLocationListsReducer,
+    locationListings: locationListingsReducer
 });
 
 export default entitiesReducer;

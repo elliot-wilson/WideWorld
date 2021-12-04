@@ -74,7 +74,185 @@
                     // border-color: #50416d;
                     // border-color: #dcd9e2;
                     border-color: #00527d;
-                } 
+                }
+
+                .add-to-list {
+                    position: relative;
+
+                    &.clicked {
+                        color: white;
+                        background-color: #00527d;
+                    }
+
+                    > *:hover {
+                        cursor: default;
+                    }
+                }
+                
+                .add-to-list-modal {
+                    display: none;
+                    position: absolute;
+                    top: -2px;
+                    right: calc(100% + 10px);
+                    width: max-content;
+                    background-color: white;
+                    border: 1px solid #866e41;
+                    padding: 5px 14px;
+                    z-index: 900;
+                    color: #866e41;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: calc(0% + 20px);
+                        left: 100%;
+                        border-width: 7px;
+                        border-style: solid;
+                        border-color: transparent transparent transparent #866e41;
+                    }
+
+                    &.clicked {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .add-to-list-modal-background {
+                        position: fixed;
+                        width: 127vw;
+                        top: 0;
+                        left: 0;
+                        height: 145vh;
+                        z-index: -1;
+                    }
+
+
+                    & > * {
+                        padding: 3px;
+                    }
+
+                    & > *:nth-last-child(2) {
+                        padding-bottom: 6px;
+                    }
+
+                    .create-new-list {
+                        border-top: 1px solid #888071;
+                        padding-top: 6px;
+
+                        display: flex;
+                        justify-content: flex-start;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    .lists-list {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        font-size: 16px;
+
+                        div {
+                            display: flex;
+                            align-items: center;
+                            width: max-content;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+
+                            *:hover {
+                                cursor: pointer;
+                            }
+
+                            label {
+                                width: max-content;
+                                margin-right: 30px;
+                            }
+                        }
+                    }
+
+                    .create-list-modal-background {
+                        display: none;
+                        position: fixed;
+                        width: 127vw;
+                        top: 0;
+                        left: 0;
+                        height: 145vh;
+                        background: #1515159e;
+
+                        &.opened {
+                            display: block;
+                        }
+                    }
+                    
+                    .create-list-modal {
+                        display: flex;
+                        flex-direction: column;
+                        position: fixed;
+                        top: 25%;
+                        left: 35%;
+                        background-color: rgb(238, 238, 238);
+                        padding: 20px;
+
+                        .create-list-modal-close {
+                            position: absolute;
+                            top: 0%;
+                            left: calc(100% + 10px);
+                            font-size: 40px;
+                            font-weight: 100;
+                            color: white;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+
+                        form {
+                            display: flex;
+                            flex-direction: column;
+
+                            & > * {
+                                margin: 0 0 15px 0;
+                            }
+                        }
+
+                        h2 {
+                            font-size: 24px;
+                            color: #382c14;
+
+                            span {
+                                font-weight: 600;
+                            }
+                        }
+
+                        .create-list-input {
+                            font-size: 19px;
+                            padding: 0px 15px;
+                            border: 1px solid #e7e7e7;
+                            height: 50px;
+
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+
+                        button {
+                            background-color: #d36a55;
+                            color: white;
+                            border: none;
+                            padding: 17px 30px;
+
+                            &:hover {
+                                cursor: pointer;
+                                background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+                            }
+                        }
+
+                    }
+
+
+                }
 
                 .tagged {
                     background: #8ed486;

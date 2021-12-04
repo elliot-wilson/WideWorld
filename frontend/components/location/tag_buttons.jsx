@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFlag, faStar, faListUl } from '@fortawesome/free-solid-svg-icons';
+import AddToListButton from './add_to_list_button';
 
 class TagButtons extends React.Component {
 
@@ -41,11 +42,17 @@ class TagButtons extends React.Component {
     }
 
     render() {
+
         const { 
             visits,
             wannaVisits,
             visit,
-            wannaVisit } = this.props;
+            wannaVisit,
+            currentUserLists,
+            addLocationListing,
+            deleteLocationListing,
+            location,
+            locationListings } = this.props;
 
         let visitedClass, visitedText;
         let wannaVisitClass, wannaVisitText;
@@ -96,10 +103,14 @@ class TagButtons extends React.Component {
                     </div>
                     <p>{wannaVisits.length}</p>
                 </div>
-                <div className="add-to-list tag-button">
-                    <FontAwesomeIcon icon={faListUl}/>
-                    <p>ADD TO LIST</p>
-                </div>
+                <AddToListButton
+                    currentUserLists={currentUserLists}
+                    currLocation={location}
+                    addLocationListing={addLocationListing}
+                    deleteLocationListing={deleteLocationListing}
+                    location={location}
+                    locationListings={locationListings}
+                />
             </div>
         )
     }

@@ -72,7 +72,7 @@ class CreateListModal extends React.Component {
                     </div>
                     <form>
                         <h2>
-                            Add {location.title} to a New List
+                            Add <span>{location.title}</span> to a New List
                         </h2>
                         <input
                             className="create-list-input"

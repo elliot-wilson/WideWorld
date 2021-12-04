@@ -202,6 +202,10 @@
                             font-size: 40px;
                             font-weight: 100;
                             color: white;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
                         }
 
                         form {
@@ -216,6 +220,10 @@
                         h2 {
                             font-size: 24px;
                             color: #382c14;
+
+                            span {
+                                font-weight: 600;
+                            }
                         }
 
                         .create-list-input {
@@ -234,6 +242,11 @@
                             color: white;
                             border: none;
                             padding: 17px 30px;
+
+                            &:hover {
+                                cursor: pointer;
+                                background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+                            }
                         }
 
                     }

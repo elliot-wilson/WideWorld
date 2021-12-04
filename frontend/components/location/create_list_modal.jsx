@@ -68,7 +68,7 @@ class CreateListModal extends React.Component {
                         onClick={this.props.closeCreateListModal}
                         className="create-list-modal-close"
                     >
-                        X
+                        &times;
                     </div>
                     <form>
                         <h2>

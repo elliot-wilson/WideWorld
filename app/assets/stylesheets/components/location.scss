@@ -83,6 +83,10 @@
                         color: white;
                         background-color: #00527d;
                     }
+
+                    > *:hover {
+                        cursor: default;
+                    }
                 }
                 
                 .add-to-list-modal {
@@ -136,6 +140,10 @@
 
                         display: flex;
                         justify-content: flex-start;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
                     }
 
                     .lists-list {
@@ -148,6 +156,14 @@
                             display: flex;
                             align-items: center;
                             width: max-content;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+
+                            *:hover {
+                                cursor: pointer;
+                            }
 
                             label {
                                 width: max-content;

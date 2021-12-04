@@ -63,10 +63,9 @@ class AddToListModal extends React.Component {
         if (currentUserLists) {
             listsDisplay = currentUserLists.map((list, idx) => (
                 <div className="lists-list">
-                    <div>
+                    <div onClick={() => this.handleClick(list.id)}>
                         <input
                             checked={this.isChecked(list.id)}
-                            onClick={() => this.handleClick(list.id)}
                             type="checkbox"
                             id={`list-${idx}`}
                         />

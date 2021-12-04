@@ -32,6 +32,7 @@ class CreateListModal extends React.Component {
         const modalBg = document.querySelector('.create-list-modal-background');
         if (e.target === modalBg) {
             this.props.closeCreateListModal();
+            this.setState({title:""})
         }
     }
     handleChange(e) {
@@ -51,7 +52,8 @@ class CreateListModal extends React.Component {
                     list_id: res.userLocationList.id
                 })
             })
-            .then(this.props.closeCreateListModal);
+            .then(this.props.closeCreateListModal)
+            .then(this.setState({title:""}));
     }
 
     render() {

@@ -10,6 +10,20 @@ class AddToListButton extends React.Component {
         this.state = {
             clicked: false
         }
+
+        this.closeAddToListModal = this.closeAddToListModal.bind(this);
+        this.openAddToListModal = this.openAddToListModal.bind(this);
+    }
+
+    closeAddToListModal() {
+        this.setState({clicked: false});
+    }
+
+    openAddToListModal(e) {
+        const modalBg = document.querySelector('.add-to-list-modal-background');
+        if (e.target !== modalBg) {
+            this.setState({clicked: true})
+        };
     }
 
     render () {
@@ -21,10 +35,12 @@ class AddToListButton extends React.Component {
             location,
             locationListings } = this.props;
 
+        const klass = this.state.clicked ? "clicked" : null;
+
         return (
             <div
-                onClick={() => this.setState({clicked: true})}
-                className="add-to-list tag-button"
+                onClick={this.openAddToListModal}
+                className={`add-to-list tag-button ${klass}`}
             >
                 <FontAwesomeIcon icon={faListUl}/>
                 <p>ADD TO LIST</p>
@@ -35,6 +51,7 @@ class AddToListButton extends React.Component {
                     deleteLocationListing={deleteLocationListing}
                     location={location}
                     locationListings={locationListings}
+                    closeAddToListModal={this.closeAddToListModal}
                 />
             </div>
         )

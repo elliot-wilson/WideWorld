@@ -10,6 +10,7 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = (dispatch, ownProps) => ({
     addLocationListing: ownProps.addLocationListing,
+    closeCreateListModal: ownProps.closeCreateListModal,
     createUserLocationList: (userLocationList) => dispatch(createUserLocationList(userLocationList))
 });
 

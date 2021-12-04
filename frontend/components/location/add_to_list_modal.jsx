@@ -19,6 +19,7 @@ class AddToListModal extends React.Component {
         this.findListing = this.findListing.bind(this);
         this.isChecked = this.isChecked.bind(this);
         this.openCreateListModal = this.openCreateListModal.bind(this);
+        this.closeCreateListModal = this.closeCreateListModal.bind(this);
     }
 
     handleClick(listId) {
@@ -49,6 +50,10 @@ class AddToListModal extends React.Component {
 
     openCreateListModal() {
         this.setState({createListClicked: true});
+    }
+
+    closeCreateListModal() {
+        this.setState({createListClicked: false});
     }
     
     displayLists() {
@@ -95,6 +100,11 @@ class AddToListModal extends React.Component {
                     addLocationListing={addLocationListing}
                     location={location}
                     opened={this.state.createListClicked}
+                    closeCreateListModal={this.closeCreateListModal}
+                />
+                <div
+                    className="add-to-list-modal-background"
+                    onClick={this.props.closeAddToListModal}
                 />
             </div>
         )

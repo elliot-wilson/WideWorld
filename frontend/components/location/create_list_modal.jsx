@@ -14,8 +14,26 @@ class CreateListModal extends React.Component {
     bindFuncs() {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleOutsideCreateListModal = this.handleOutsideCreateListModal.bind(this);
     }
 
+    componentDidMount() {
+        document.addEventListener("click", this.handleOutsideCreateListModal);
+    }
+
+    componentWillUnmount() {
+        // to-do: rethink this. after all, the component isn't UNMOUNTED when the modal
+        // disappears -- its display is just set to none; that means that the event listener
+        // doesn't actaully get removed until the user goes to a different page
+        document.removeEventListener("click", this.handleOutsideCreateListModal);
+    }
+
+    handleOutsideCreateListModal(e) {
+        const modalBg = document.querySelector('.create-list-modal-background');
+        if (e.target === modalBg) {
+            this.props.closeCreateListModal();
+        }
+    }
     handleChange(e) {
         this.setState({title: e.currentTarget.value});
     }
@@ -32,7 +50,8 @@ class CreateListModal extends React.Component {
                     location_id: this.props.location.id,
                     list_id: res.userLocationList.id
                 })
-            });
+            })
+            .then(this.props.closeCreateListModal);
     }
 
     render() {
@@ -44,6 +63,7 @@ class CreateListModal extends React.Component {
             <div className={`create-list-modal-background ${klass}`}>
                 <div className="create-list-modal">
                     <div
+                        onClick={this.props.closeCreateListModal}
                         className="create-list-modal-close"
                     >
                         X

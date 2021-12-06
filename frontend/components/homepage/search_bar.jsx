@@ -102,7 +102,7 @@ class SearchBar extends React.Component {
             document.querySelector('.searchbar-input').style.width = "700px";
             this.setState({searchClicked: true});
         } else if (e.target === document.querySelector('.search-modal-background')) {
-            document.querySelector('.searchbar').style.top = "50px";
+            document.querySelector('.searchbar').style.top = "35px";
             document.querySelector('.searchbar-input').style.width = "500px";
             this.setState({searchClicked: false, query: ""})
         }

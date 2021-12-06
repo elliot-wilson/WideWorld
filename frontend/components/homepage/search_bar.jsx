@@ -42,12 +42,12 @@ class SearchBar extends React.Component {
     
                     resultsDisplay = (
                         <ul className="search-results">
+                            <p>Search Results</p>
                             {searchResults.map((result, i) => {
                                 liCount += 1;
                                     return (
                                         <Link
                                             // onClick={this.props.closeSearch}
-                                            // onKeyDown={this.handleKeyDown}
                                             id={`results-${liCount}`}
                                             key={`results-${liCount}`}
                                             to={`/locations/${result.id}`}>
@@ -64,6 +64,7 @@ class SearchBar extends React.Component {
                 } else {
                     resultsDisplay = (
                         <ul className="search-results">
+                            <p>Search Results</p>
                             <li>No results found</li>
                         </ul>
                     )

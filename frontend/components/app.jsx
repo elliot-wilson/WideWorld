@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LoginFormContainer from './login/login_form_container';
 import SignupFormContainer from './login/signup_form_container';
@@ -16,7 +17,7 @@ import Footer from './header-footer/footer.jsx'
 const App = () => (
     <div>
         <header>
-            <Route path="/" component={NavBar}/>
+            <Route path="/" component={withRouter(NavBar)}/>
         </header>
         <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} />

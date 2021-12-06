@@ -8,7 +8,18 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 const NavBar = (props) => (
     <section className="navbar">
         <div className="logo">
-            <Link to="/"><img src={window.logoURL} alt="Logo"/></Link>
+            <div onClick={
+                (e) => {
+                    e.preventDefault();
+                    if (props.location.pathname === '/') {
+                        window.location.reload(false);
+                    } else {
+                        props.history.push('/');
+                    }
+                }
+            }>
+                <img src={window.logoURL} alt="Logo"/>
+            </div>
         </div>
         <div className="nav-links">
             <ul>

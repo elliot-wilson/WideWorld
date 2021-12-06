@@ -97,11 +97,13 @@ class SearchBar extends React.Component {
     }
 
     transformSearch(e) {
+        const background = document.querySelector('.search-modal-background');
+        const logo = document.querySelector('.logo');
         if (!this.state.searchClicked) {
             document.querySelector('.searchbar').style.top = "-100px";
             document.querySelector('.searchbar-input').style.width = "700px";
             this.setState({searchClicked: true});
-        } else if (e.target === document.querySelector('.search-modal-background')) {
+        } else if (e.target === background || e.target === logo) {
             document.querySelector('.searchbar').style.top = "35px";
             document.querySelector('.searchbar-input').style.width = "500px";
             this.setState({searchClicked: false, query: ""})

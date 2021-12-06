@@ -100,11 +100,11 @@ class SearchBar extends React.Component {
         const background = document.querySelector('.search-modal-background');
         const logo = document.querySelector('.logo');
         if (!this.state.searchClicked) {
-            document.querySelector('.searchbar').style.top = "-100px";
+            document.querySelector('.searchbar').style.top = "35px";
             document.querySelector('.searchbar-input').style.width = "700px";
             this.setState({searchClicked: true});
         } else if (e.target === background || e.target === logo) {
-            document.querySelector('.searchbar').style.top = "35px";
+            document.querySelector('.searchbar').style.top = "175px";
             document.querySelector('.searchbar-input').style.width = "500px";
             this.setState({searchClicked: false, query: ""})
         }
@@ -115,23 +115,25 @@ class SearchBar extends React.Component {
         const klass = this.state.searchClicked ? "clicked" : null;
 
         return (
-            <div className="searchbar" onClick={this.transformSearch}>
-                <div className="searchbar-form">
-                    <input
-                        onChange={this.handleChange}
-                        type="text"
-                        className="searchbar-input"
-                        placeholder="Search destinations and more..."
-                        value={this.state.query}
+            <div className="searchbar-positioner">
+                <div className="searchbar" onClick={this.transformSearch}>
+                    <div className="searchbar-form">
+                        <input
+                            onChange={this.handleChange}
+                            type="text"
+                            className="searchbar-input"
+                            placeholder="Search destinations and more..."
+                            value={this.state.query}
+                        />
+                        <button className="searchbar-button">
+                            <FontAwesomeIcon icon={faSearch} />
+                        </button>
+                    </div>
+                    {this.generateResults()}
+                    <div
+                        className={`search-modal-background ${klass}`}
                     />
-                    <button className="searchbar-button">
-                        <FontAwesomeIcon icon={faSearch} />
-                    </button>
                 </div>
-                {this.generateResults()}
-                <div
-                    className={`search-modal-background ${klass}`}
-                />
             </div>
         )
     }

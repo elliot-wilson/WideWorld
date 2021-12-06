@@ -122,7 +122,9 @@ class SearchBar extends React.Component {
                         placeholder="Search destinations and more..."
                         value={this.state.query}
                     />
-                    <button className="searchbar-button"><FontAwesomeIcon icon={faSearch} /></button>
+                    <button className="searchbar-button">
+                        <FontAwesomeIcon icon={faSearch} />
+                    </button>
                 </div>
                 {this.generateResults()}
                 <div

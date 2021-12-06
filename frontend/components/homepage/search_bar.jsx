@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkedAlt, faRandom, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
 
 class SearchBar extends React.Component {
@@ -9,7 +9,8 @@ class SearchBar extends React.Component {
 
         this.state = {
             query: "",
-            resultsReceived: false
+            resultsReceived: false,
+            searchClicked: false
         }
 
         this.liCount = 0;
@@ -19,6 +20,7 @@ class SearchBar extends React.Component {
 
     bindFuncs() {
         this.handleChange = this.handleChange.bind(this);
+        this.transformSearch = this.transformSearch.bind(this);
     }
 
     handleChange(e) {
@@ -31,44 +33,56 @@ class SearchBar extends React.Component {
 
         let resultsDisplay;
         let liCount = 0;
-        
-        if (this.state.resultsReceived) {
 
-            if (searchResults.length > 0) {
+        if (this.state.searchClicked) {
 
-                resultsDisplay = (
-                    <ul className="search-results">
-                        {searchResults.map((result, i) => {
-                            liCount += 1;
-                                return (
-                                    <Link
-                                        // onClick={this.props.closeSearch}
-                                        // onKeyDown={this.handleKeyDown}
-                                        id={`results-${liCount}`}
-                                        key={`results-${liCount}`}
-                                        to={`/locations/${result.id}`}>
-                                        <li>
-                                            {/* <FontAwesomeIcon icon={faUserAlt}/> */}
-                                            {result.title}
-                                        </li>
-                                    </Link>
-                                )                            
-                            }
-                        )}
-                    </ul>
-                )
-            } else {
-                resultsDisplay = (
-                    <ul className="search-results">
-                        <li>No results found</li>
-                    </ul>
-                )
+            if (this.state.resultsReceived) {
+    
+                if (searchResults.length > 0) {
+    
+                    resultsDisplay = (
+                        <ul className="search-results">
+                            {searchResults.map((result, i) => {
+                                liCount += 1;
+                                    return (
+                                        <Link
+                                            // onClick={this.props.closeSearch}
+                                            // onKeyDown={this.handleKeyDown}
+                                            id={`results-${liCount}`}
+                                            key={`results-${liCount}`}
+                                            to={`/locations/${result.id}`}>
+                                            <li>
+                                                <FontAwesomeIcon icon={faMapMarkedAlt}/>
+                                                <p>{result.title}</p>
+                                            </li>
+                                        </Link>
+                                    )                            
+                                }
+                            )}
+                        </ul>
+                    )
+                } else {
+                    resultsDisplay = (
+                        <ul className="search-results">
+                            <li>No results found</li>
+                        </ul>
+                    )
+                }
+    
             }
-
+    
+            this.liCount = liCount;
+            return (
+                <div className="search-results-display">
+                    {resultsDisplay}
+                    <div className="search-results-random">
+                        <FontAwesomeIcon icon={faRandom}/>
+                        <Link to="/locations/random">Random Place</Link>
+                    </div>
+                </div>
+            );
         }
-
-        this.liCount = liCount;
-        return resultsDisplay;
+        
     }
 
     search() {
@@ -81,19 +95,38 @@ class SearchBar extends React.Component {
         }
     }
 
+    transformSearch(e) {
+        if (!this.state.searchClicked) {
+            document.querySelector('.searchbar').style.top = "-100px";
+            document.querySelector('.searchbar-input').style.width = "700px";
+            this.setState({searchClicked: true});
+        } else if (e.target === document.querySelector('.search-modal-background')) {
+            document.querySelector('.searchbar').style.top = "50px";
+            document.querySelector('.searchbar-input').style.width = "500px";
+            this.setState({searchClicked: false, query: ""})
+        }
+    }
+
     render() {
 
+        const klass = this.state.searchClicked ? "clicked" : null;
 
         return (
-            <div className="searchbar">
-                <input
-                    onChange={this.handleChange}
-                    type="text"
-                    className="searchbar-input"
-                    placeholder="Search destinations and more..."
-                />
-                <button className="searchbar-button"><FontAwesomeIcon icon={faSearch} /></button>
+            <div className="searchbar" onClick={this.transformSearch}>
+                <div className="searchbar-form">
+                    <input
+                        onChange={this.handleChange}
+                        type="text"
+                        className="searchbar-input"
+                        placeholder="Search destinations and more..."
+                        value={this.state.query}
+                    />
+                    <button className="searchbar-button"><FontAwesomeIcon icon={faSearch} /></button>
+                </div>
                 {this.generateResults()}
+                <div
+                    className={`search-modal-background ${klass}`}
+                />
             </div>
         )
     }

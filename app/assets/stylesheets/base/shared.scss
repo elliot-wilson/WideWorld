@@ -62,32 +62,6 @@ a:hover {
     font-weight: 600;
 }
 
-.searchbar {
-    background: white;
-    border-radius: 4px;
-    padding: 5px;
-
-    .searchbar-input {
-        padding: 0 17px;
-        font-size: 19px;
-        border: none;
-        width: 500px;
-
-        &:focus {
-            outline: none;
-        }
-    }
-
-    .searchbar-button {
-        font-size: 19px;
-        background: #bd8049;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        padding: 17px 30px;
-    }
-}
-
 .featured-loc-title-text {
     font-size: 60px;
     color: #382c14;

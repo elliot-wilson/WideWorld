@@ -1,5 +1,5 @@
 .searchbar-positioner {
-    position: fixed;
+    position: absolute;
     height: 75px;
     width: 100vw;
     display: flex;
@@ -8,7 +8,7 @@
 
 .searchbar {
     position: relative;
-    top: 175px;
+    top: 250px;
     z-index: 10;
     transition: top 0.3s;
 

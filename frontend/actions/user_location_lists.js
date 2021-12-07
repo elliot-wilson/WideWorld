@@ -3,9 +3,9 @@ import * as UserLocationListAPIUtil from '../util/user_location_list_api_util'
 export const RECEIVE_USER_LOCATION_LIST = "RECEIVE_USER_LOCATION_LIST";
 export const REMOVE_USER_LOCATION_LIST = "REMOVE_USER_LOCATION_LIST";
 
-const receiveUserLocationList = (userLocationList) => ({
+const receiveUserLocationList = (userLocationListPayload) => ({
     type: RECEIVE_USER_LOCATION_LIST,
-    userLocationList
+    userLocationListPayload
 });
 
 const removeUserLocationList = (userLocationListId) => ({

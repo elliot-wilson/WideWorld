@@ -73,7 +73,7 @@ class UserLocationsMap extends React.Component {
         return (
             <div
                 className="user-location-map"
-                id="user-location-map-container"
+                id="location-map-container"
                 ref={ map => this.mapNode = map}
             >
     

@@ -7,7 +7,7 @@ json.location do
                         json.photoURL url_for(@location.initial_author.photo)
                 end
         end
-        json.photoUrls @location.photos.map { |file| url_for(file) }
+        json.photoURLs @location.photos.map { |file| url_for(file) }
 end
 
 

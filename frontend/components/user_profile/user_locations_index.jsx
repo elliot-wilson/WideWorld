@@ -4,7 +4,7 @@ import UserLocationsIndexItem from './user_locations_index_item';
 const UserLocationsIndex = (props) => {
 
     return (
-        <ul className="user-locations-index">
+        <ul className="locations-index">
             {
                 props.locations.map(location => (
                     <UserLocationsIndexItem

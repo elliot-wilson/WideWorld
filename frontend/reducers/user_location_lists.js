@@ -11,7 +11,7 @@ const userLocationListsReducer = (oldState = _nullState, action) => {
 
     switch(action.type) {
         case RECEIVE_USER_LOCATION_LIST:
-            newState = Object.assign({}, oldState, {[action.userLocationList.id]: action.userLocationList});
+            newState = Object.assign({}, oldState, {[action.userLocationListPayload.list.id]: action.userLocationListPayload.list});
             return newState;
         case REMOVE_USER_LOCATION_LIST:
             newState = Object.assign({}, oldState);

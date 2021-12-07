@@ -14,6 +14,7 @@ import UserProfileContainer from './user_profile/user_profile_container';
 import NotFound from './not_found';
 import Footer from './header-footer/footer.jsx'
 import About from './about';
+import ListContainer from './lists/list_container';
 
 const App = () => (
     <div>
@@ -27,7 +28,8 @@ const App = () => (
             <ProtectedRoute exact path="/locations/:locationId/edit" component={UpdateLocationFormContainer} />
             <Route exact path="/locations/random" component={RandomLocationContainer}/>
             <Route exact path="/locations/:locationId" component={LocationContainer}/>
-            <Route path="/users/:userId" component={UserProfileContainer}/>
+            <Route exact path="/users/:userId" component={UserProfileContainer}/>
+            <Route exact path="/lists/:listId" component={ListContainer}/>
             <Route exact path="/about" component={About}/>
             <Route exact path="/" component={HomePageContainer}/>
             <Route component={NotFound} />

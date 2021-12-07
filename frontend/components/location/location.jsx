@@ -47,7 +47,7 @@ class Location extends React.Component {
                         </div>
                         <TagButtonsContainer currLocation={location}/>
                     </section>
-                    <PhotoContainer photos={location.photoUrls} />
+                    <PhotoContainer photos={location.photoURLs} />
                 </section>
                 <section className="location-bodies">
                     <section className="location-text">

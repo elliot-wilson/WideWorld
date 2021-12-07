@@ -1,0 +1,1 @@
+json.partial! 'api/user_location_lists/user.json.jbuilder', list: @user_location_list

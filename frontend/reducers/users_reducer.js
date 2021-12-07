@@ -1,6 +1,7 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 import { RECEIVE_USER } from "../actions/user_actions";
 import { RECEIVE_LOCATION } from "../actions/location_actions";
+import { RECEIVE_USER_LOCATION_LIST } from "../actions/user_location_lists";
 
 const _nullState = {};
 
@@ -17,6 +18,8 @@ const usersReducer = (oldState = {}, action) => {
         case RECEIVE_LOCATION:
             let locationListers = action.locationPayload.users;
             return locationListers ? locationListers : _nullState;
+        case RECEIVE_USER_LOCATION_LIST:
+            return action.userLocationListPayload.author;
         default:
             return oldState;
     };

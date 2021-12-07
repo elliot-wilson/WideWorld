@@ -4,7 +4,7 @@ class Api::UserLocationListsController < ApplicationController
         @user_location_list = UserLocationList.new(user_location_list_params)
 
         if @user_location_list.save
-            render :show
+            render :simple_show
         else
             render json: @user.errors.full_messages, status: 422
         end
@@ -13,14 +13,14 @@ class Api::UserLocationListsController < ApplicationController
 
     def show
         @user_location_list = UserLocationList.find(params[:id])
-        render :show
+        render :detail_show
     end
 
     def update
         @user_location_list = UserLocationList.find(params[:id])
 
         if @location.update_attributes(user_location_list_params)
-            render :show
+            render :detail_show
         else
             render json: @user_location_list.errors.full_messages, status: 422
         end

@@ -1,9 +1,16 @@
 .searchbar-positioner {
-    position: absolute;
+    position: fixed;
+    left: 0px;
+    top: 0px;
     height: 75px;
     width: 100vw;
     display: flex;
     justify-content: center;
+    z-index: -1;
+
+    &:hover {
+        cursor: default;
+    }
 }
 
 .searchbar {
@@ -11,6 +18,14 @@
     top: 250px;
     z-index: 10;
     transition: top 0.3s;
+
+    &.clicked {
+        top: 110px;
+
+        .searchbar-input {
+            width: 700px;
+        }
+    }
 
     .searchbar-form {
         padding: 5px;

@@ -33,6 +33,7 @@ class NavBar extends React.Component {
     }
 
     closeSearch() {
+        document.body.style.overflow = 'unset';
         this.setState({searchClicked: false})
     }
 

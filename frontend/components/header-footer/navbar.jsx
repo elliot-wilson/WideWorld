@@ -61,7 +61,7 @@ class NavBar extends React.Component {
                 </div>
                 <div className="nav-links">
                     <ul>
-                        <li>
+                        {/* <li>
                             <a>PLACES</a>
                         </li>
                         <li>
@@ -69,6 +69,14 @@ class NavBar extends React.Component {
                         </li>
                         <li>
                             <a>LISTS</a>
+                        </li> */}
+                        <li>
+                            <Link
+                                to="/about"
+                                onClick={this.closeSearch}
+                            >
+                                ABOUT
+                            </Link>
                         </li>
                         <li>
                             <Link

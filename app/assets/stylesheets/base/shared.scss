@@ -18,12 +18,22 @@ a:hover {
     font-size: 33px;
 }
 
+.sub-subheading {
+    color: #382c14;
+    font-weight: 600;
+    font-size: 24px;
+}
+
 .form-question-text {
     font-size: 19px;
 }
 
 .form-help-text {
     font-size: 17px;
+
+    a {
+        text-decoration: underline;
+    }
 }
 
 .green-button {

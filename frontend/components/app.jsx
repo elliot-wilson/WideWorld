@@ -13,6 +13,7 @@ import HomePageContainer from './homepage/homepage_container';
 import UserProfileContainer from './user_profile/user_profile_container';
 import NotFound from './not_found';
 import Footer from './header-footer/footer.jsx'
+import About from './about';
 
 const App = () => (
     <div>
@@ -27,6 +28,7 @@ const App = () => (
             <Route exact path="/locations/random" component={RandomLocationContainer}/>
             <Route exact path="/locations/:locationId" component={LocationContainer}/>
             <Route path="/users/:userId" component={UserProfileContainer}/>
+            <Route exact path="/about" component={About}/>
             <Route exact path="/" component={HomePageContainer}/>
             <Route component={NotFound} />
         </Switch>

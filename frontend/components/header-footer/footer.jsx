@@ -5,7 +5,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => (
     <footer className="footer">
-        <p>Inspired by <a href="http://www.atlasobscura.com">Atlas Obscura</a>.<br/>Built with React/Redux, Ruby on Rails, and PostgreSQL.</p>
+        <p>Inspired by <a href="http://www.atlasobscura.com" target="_blank" rel="noopener noreferrer">Atlas Obscura</a>.<br/>Built with React/Redux, Ruby on Rails, and PostgreSQL.</p>
         <ul className="personal-links">
             <li><a href="https://github.com/elliot-wilson/WideWorld" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub}/></a></li>
             <li><a href="https://angel.co/u/elliot-wilson-dev" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faAngellist}/></a></li>

@@ -223,7 +223,7 @@ class LocationForm extends React.Component {
                             Add photos
                         </p>
                         <p className="form-help-text">
-                            We’ll need at least one good photo to publish your submission. Use the Creative Commons Search  to find copyright-free images for your submission, or better yet, submit your own.
+                            We’ll need at least one good photo to publish your submission. Use <a href="https://search.creativecommons.org/" target="_blank" rel="noopener noreferrer">Creative Commons</a> to find copyright-free images for your submission, or better yet, submit your own.
                         </p>
                         <label
                             id="photo-chooser-label"

@@ -1,9 +1,6 @@
 import React from 'react';
 import AuthIndexContainer from './auth_index_container';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
-import SearchBarContainer from '../homepage/search_bar_container';
 import SearchContainer from '../search/search_container';
 
 class NavBar extends React.Component {
@@ -12,28 +9,31 @@ class NavBar extends React.Component {
 
         this.state = {
             searchClicked: false,
-            resultsReceived: false,
-            query: ""
         }
         
         this.bindFuncs();
     }
 
     bindFuncs() {
+        this.transformSearch = this.transformSearch.bind(this);
         this.closeSearch = this.closeSearch.bind(this);
         this.directHome = this.directHome.bind(this);
     }
 
 
+    transformSearch() {
+        this.setState({searchClicked: !this.state.searchClicked});
+    }
+
     closeSearch() {
-        this.setState({searchClicked: false});
+        this.setState({searchClicked: false})
     }
 
     directHome(e) {
         e.preventDefault();
         if (this.props.location.pathname === '/') {
             if (this.state.searchClicked) {
-                this.setState({searchClicked: false})
+                this.closeSearch();
             } else {
                 window.location.reload(false);
             }
@@ -65,14 +65,18 @@ class NavBar extends React.Component {
                         <li>
                             <Link
                                 to="/locations/random"
-                                onClick={this.transformSearch}
+                                onClick={this.closeSearch}
                             >RANDOM PLACE</Link>
                         </li>
                     </ul>
                 </div>
                 <div className="auth-and-search">
                     <AuthIndexContainer />
-                    <SearchContainer />
+                    <SearchContainer
+                        closeSearch={this.closeSearch}
+                        searchClicked={this.state.searchClicked}
+                        transformSearch={this.transformSearch}
+                    />
                 </div>
             </section>
         )

@@ -10,12 +10,17 @@ class Search extends React.Component {
         super(props);
 
         this.state = {
-            clicked: false,
             resultsReceived: false,
             query: ""
         }
 
         this.bindFuncs();
+    }
+
+    componentDidUpdate() {
+        if (!this.props.searchClicked && this.state.query !== "") {
+            this.setState({query: ""})
+        }
     }
 
     bindFuncs() {
@@ -28,12 +33,12 @@ class Search extends React.Component {
 
     transformSearch(e) {
         const atHomepage = this.props.location.pathname === "/";
-        const searchNotAlreadyClicked = !this.state.clicked;
+        const searchNotAlreadyClicked = !this.props.searchClicked;
 
         if (atHomepage && searchNotAlreadyClicked || this.validTarget(e)) {
             this.props.clearSearchResults();
             this.clearSearchBar();
-            this.setState({clicked: !this.state.clicked})
+            this.props.transformSearch();
         }
 
     }
@@ -71,7 +76,7 @@ class Search extends React.Component {
 
     render() {
 
-        const clicked = this.state.clicked;
+        const clicked = this.props.searchClicked;
         const icon = clicked ? faTimes : faSearch;
         const klass = clicked ? "clicked" : null;
 
@@ -82,17 +87,14 @@ class Search extends React.Component {
             >
                 <FontAwesomeIcon className="search-icon" icon={icon}/>
                 <SearchBar
-                    searchClicked={this.state.clicked}
+                    searchClicked={this.props.searchClicked}
                     transformSearch={this.transformSearch}
                     location={this.props.location}
                     resultsReceived={this.state.resultsReceived}
                     query={this.state.query}
                     handleChange={this.handleChange}
-                    fetchSearchResults={this.props.fetchSearchResults}
                     searchResults={this.props.searchResults}
-                    clearSearchResults={this.props.clearSearchResults}
-                    clearSearchBar={this.clearSearchBar}
-                    acknowledgeReceipt={this.acknowledgeReceipt}
+                    closeSearch={this.props.closeSearch}
                 />
             </div>
         )

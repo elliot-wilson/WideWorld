@@ -8,12 +8,6 @@ class SearchBar extends React.Component {
         super(props);
 
         this.liCount = 0;
-
-        this.bindFuncs();
-    }
-
-    bindFuncs() {
-        // this.transformSearch = this.transformSearch.bind(this);
     }
 
     generateResults() {
@@ -39,7 +33,7 @@ class SearchBar extends React.Component {
                                             id={`results-${liCount}`}
                                             key={`results-${liCount}`}
                                             to={`/locations/${result.id}`}
-                                            onClick={this.props.transformSearch}
+                                            onClick={this.props.closeSearch}
                                             >
                                             <li>
                                                 <FontAwesomeIcon icon={faMapMarkedAlt}/>
@@ -68,25 +62,13 @@ class SearchBar extends React.Component {
                     {resultsDisplay}
                     <div className="search-results-random">
                         <FontAwesomeIcon icon={faRandom}/>
-                        <Link to="/locations/random" onClick={this.props.transformSearch}>Random Place</Link>
+                        <Link to="/locations/random" onClick={this.props.closeSearch}>Random Place</Link>
                     </div>
                 </div>
             );
         }
         
     }
-
-    // transformSearch(e) {
-    //     const atHomepage = this.props.location.pathname === "/";
-    //     const searchNotAlreadyClicked = !this.props.searchClicked;
-    //     const searchBackgroundClicked = e.target === document.querySelector('.search-modal-background');
-
-    //     if (atHomepage && searchNotAlreadyClicked || searchBackgroundClicked) {
-    //         this.props.clearSearchResults();
-    //         this.props.clearSearchBar();
-    //         this.props.transformSearch(e);
-    //     }
-    // }
 
     render() {
 
@@ -99,7 +81,7 @@ class SearchBar extends React.Component {
 
         return (
             <div className="searchbar-positioner">
-                <div className={`searchbar ${klass}`} onClick={this.transformSearch}>
+                <div className={`searchbar ${klass}`} onClick={this.props.transformSearch}>
                     <div className="searchbar-form">
                         <input
                             onChange={this.props.handleChange}

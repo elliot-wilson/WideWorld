@@ -22,6 +22,13 @@ class NavBar extends React.Component {
 
 
     transformSearch() {
+
+        if (!this.state.searchClicked) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
         this.setState({searchClicked: !this.state.searchClicked});
     }
 

@@ -7,14 +7,15 @@ const mSTP = (state) => ({
     currentUser: state.session
 });
 
-const mDTP = (dispatch) => {
+const mDTP = (dispatch, ownProps) => {
     const formData = new FormData();
     formData.append("user[email]", "example@example.com");
     formData.append("user[password]", "123456");
 
     return ({
         logout: () => dispatch(logout()),
-        login: () => dispatch(login(formData))
+        login: () => dispatch(login(formData)),
+        closeSearch: ownProps.closeSearch
     });
 };
 

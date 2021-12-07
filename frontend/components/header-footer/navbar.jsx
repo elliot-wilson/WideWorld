@@ -71,7 +71,9 @@ class NavBar extends React.Component {
                     </ul>
                 </div>
                 <div className="auth-and-search">
-                    <AuthIndexContainer />
+                    <AuthIndexContainer
+                        closeSearch={this.closeSearch}
+                    />
                     <SearchContainer
                         closeSearch={this.closeSearch}
                         searchClicked={this.state.searchClicked}

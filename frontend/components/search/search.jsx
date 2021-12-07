@@ -35,6 +35,12 @@ class Search extends React.Component {
         const atHomepage = this.props.location.pathname === "/";
         const searchNotAlreadyClicked = !this.props.searchClicked;
 
+        if (!this.props.searchClicked) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
         if (atHomepage && searchNotAlreadyClicked || this.validTarget(e)) {
             this.props.clearSearchResults();
             this.clearSearchBar();

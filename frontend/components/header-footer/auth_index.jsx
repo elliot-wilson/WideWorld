@@ -17,7 +17,7 @@ class AuthIndex extends React.Component {
 
     render() {
 
-        const { currentUser } = this.props;
+        const { currentUser, closeSearch } = this.props;
         let authIndex, authImage;
         let userIcon = (<FontAwesomeIcon icon={faUserAlt} />)
         if (currentUser.id) {
@@ -31,12 +31,12 @@ class AuthIndex extends React.Component {
                 );
     
             authImage = (
-                <Link to={`/users/${currentUser.id}`}> {icon} </Link>
+                <Link onClick={closeSearch} to={`/users/${currentUser.id}`}> {icon} </Link>
                  )
             authIndex = (
                 <ul className="auth-index">
                     <li>
-                        <Link to={`/users/${currentUser.id}`}>
+                        <Link onClick={closeSearch} to={`/users/${currentUser.id}`}>
                             {currentUser.username}
                         </Link>
                     </li>
@@ -47,12 +47,12 @@ class AuthIndex extends React.Component {
             );
         } else {
             authImage = (
-                <Link to="/login">{userIcon}</Link>
+                <Link onClick={closeSearch} to="/login">{userIcon}</Link>
             )
             authIndex = (
                 <ul className="auth-index">
-                    <li><Link to="/signup">SIGN UP</Link></li>
-                    <li><Link to="/login">LOG IN</Link></li>
+                    <li><Link onClick={closeSearch} to="/signup">SIGN UP</Link></li>
+                    <li><Link onClick={closeSearch} to="/login">LOG IN</Link></li>
                     <li><a onClick={this.handleDemo}>DEMO USER</a></li>
                 </ul>
             );

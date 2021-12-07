@@ -28,7 +28,7 @@ json.wanna_visitors do
 end
 
 json.editors do
-        json.array! @location.editors do |editor|
+        json.array! @location.editors.distinct do |editor|
                 json.extract! editor, :id, :username
         end
 end

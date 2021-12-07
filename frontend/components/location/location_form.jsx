@@ -88,7 +88,16 @@ class LocationForm extends React.Component {
         }
 
         this.props.action(formData, id)
-            .then((response) => this.props.history.push(`/locations/${response.locationPayload.location.id}`));
+            .then((response) => {
+                if (this.props.formType === "update") {
+                    this.props.createLocationEdit({
+                        location_id: id,
+                        editor_id: this.props.currentUserId
+                    }).then((res) => this.props.history.push(`/locations/${res.locationEdit.location_id}`))
+                } else {
+                    this.props.history.push(`/locations/${response.locationPayload.location.id}`)
+                }
+            });
     }
 
     preventDefault(e) {

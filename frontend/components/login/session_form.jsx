@@ -58,8 +58,8 @@ class SessionForm extends React.Component {
 
         let errors;
 
-        if (this.props.errors.length > 1) {
-            errors = (<div>{this.props.errors}</div>)
+        if (this.props.errors.length > 0) {
+            errors = (<div className="error-msg">{this.props.errors[0]}</div>)
         } else {
             errors = null;
         }
@@ -116,9 +116,9 @@ class SessionForm extends React.Component {
                             value={this.state.password}
                             />
                         {addPhoto}
+                        {errors}
                         <button className="green-button">{this.props.formType}</button>
                     </form>
-                    {errors}
                     <div>
                         <p>Still deciding? Preview as a &nbsp;
                         <span><button onClick={this.submitDemo}>Guest</button></span>

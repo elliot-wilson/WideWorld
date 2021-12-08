@@ -10,7 +10,8 @@ class UserProfile extends React.Component {
 
         this.state = {
             locations: this.props.locationVisits,
-            selectedHeaderIdx: 0
+            selectedHeaderIdx: 0,
+            errors: {}
         }
 
         this.bindFuncs();

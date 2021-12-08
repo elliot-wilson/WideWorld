@@ -139,6 +139,10 @@ componentDidMount(){
 
 ````
 
-## Even more features!
+## More features!
 
 * There's much more to explore. The searchbar and "Add to List" modals in particular gave me a real headache, so I hope you like them! If there's anything specific you're curious about, I'm always happy to chat.
+
+## What's next?
+
+* I'm hoping to expand the site's search functionality so that you can search by city/country. I'm also hoping to build a category-tagging functionality (e.g. "Haunted Houses", "Natural Phenomena") which I can use to build out a "Similar Places" display.

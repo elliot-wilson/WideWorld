@@ -6,6 +6,8 @@ import UserLocationsMap from "../user_profile/user_locations_map";
 class List extends React.Component {
     constructor(props) {
         super(props);
+
+        this.deleteList = this.deleteList.bind(this);
     }
 
     componentDidMount() {
@@ -19,14 +21,29 @@ class List extends React.Component {
         }
     }
 
+    deleteList() {
+        this.props.deleteList(this.props.match.params.listId)
+            .then(this.props.history.push('/'))
+    }
+
 
     render() {
 
         const { list,
                 author,
+                currentUser,
                 locations } = this.props;
 
         if (!list || !author) return (<div className="placeholder"></div>)
+
+        let deleteOption;
+        if (currentUser.id === author.id) {
+            deleteOption = (
+                <button className="delete-button" onClick={this.deleteList}>
+                    Delete List
+                </button>
+            )
+        }
 
         return (
             <div className="list-positioner">
@@ -40,6 +57,7 @@ class List extends React.Component {
                     <UserLocationsIndex
                         locations={locations}
                     />
+                    {deleteOption}
                 </div>
             </div>
         )

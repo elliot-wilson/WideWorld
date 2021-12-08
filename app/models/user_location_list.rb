@@ -19,7 +19,7 @@ class UserLocationList < ApplicationRecord
         foreign_key: :author_id,
         class_name: :User
 
-    has_many :listings,
+    has_many :listings, dependent: :destroy,
         primary_key: :id,
         foreign_key: :list_id,
         class_name: :LocationListing

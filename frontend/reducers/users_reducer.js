@@ -1,7 +1,7 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 import { RECEIVE_USER } from "../actions/user_actions";
 import { RECEIVE_LOCATION } from "../actions/location_actions";
-import { RECEIVE_USER_LOCATION_LIST } from "../actions/user_location_lists";
+import { RECEIVE_USER_LOCATION_LIST } from "../actions/user_location_list_actions";
 
 const _nullState = {};
 

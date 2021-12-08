@@ -27,7 +27,7 @@ class Location < ApplicationRecord
         foreign_key: :initial_author_id,
         class_name: :User
 
-    has_many :location_visits,
+    has_many :location_visits, dependent: :destroy,
         primary_key: :id,
         foreign_key: :location_id,
         class_name: :LocationVisit
@@ -36,7 +36,7 @@ class Location < ApplicationRecord
         through: :location_visits,
         source: :visitor
 
-    has_many :location_wanna_visits,
+    has_many :location_wanna_visits, dependent: :destroy,
         primary_key: :id,
         foreign_key: :location_id,
         class_name: :LocationWannaVisit
@@ -45,7 +45,7 @@ class Location < ApplicationRecord
         through: :location_wanna_visits,
         source: :wanna_visitor
 
-    has_many :edits,
+    has_many :edits, dependent: :destroy,
         primary_key: :id,
         foreign_key: :location_id,
         class_name: :LocationEdit
@@ -54,7 +54,7 @@ class Location < ApplicationRecord
         through: :edits,
         source: :editor
 
-    has_many :listings,
+    has_many :listings, dependent: :destroy,
         primary_key: :id,
         foreign_key: :location_id,
         class_name: :LocationListing

@@ -1,5 +1,5 @@
 import { RECEIVE_LOCATION } from "../actions/location_actions";
-import { RECEIVE_USER_LOCATION_LIST, REMOVE_USER_LOCATION_LIST } from "../actions/user_location_lists";
+import { RECEIVE_USER_LOCATION_LIST, RECEIVE_ADDL_USER_LOCATION_LIST, REMOVE_USER_LOCATION_LIST } from "../actions/user_location_list_actions";
 
 // used on location page to show all the current user's lists
 
@@ -12,6 +12,9 @@ const userLocationListsReducer = (oldState = _nullState, action) => {
     switch(action.type) {
         case RECEIVE_USER_LOCATION_LIST:
             newState = Object.assign({}, oldState, {[action.userLocationListPayload.list.id]: action.userLocationListPayload.list});
+            return newState;
+        case RECEIVE_ADDL_USER_LOCATION_LIST:
+            newState = Object.assign({}, oldState, {[action.userLocationList.id]: action.userLocationList});
             return newState;
         case REMOVE_USER_LOCATION_LIST:
             newState = Object.assign({}, oldState);

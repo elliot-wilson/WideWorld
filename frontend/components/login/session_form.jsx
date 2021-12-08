@@ -31,7 +31,6 @@ class SessionForm extends React.Component {
         formData.append('user[password', this.state.password);
 
         this.props.processForm(formData)
-            .then((res) => this.props.history.push(`/users/${res.user.id}`));
     }
 
     handleChange(element) {

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { createUserLocationList } from "../../actions/user_location_lists";
+import { createUserLocationList } from "../../actions/user_location_list_actions";
 import CreateListModal from './create_list_modal';
 
 const mSTP = (state, ownProps) => ({

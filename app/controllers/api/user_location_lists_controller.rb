@@ -27,7 +27,7 @@ class Api::UserLocationListsController < ApplicationController
     end
 
     def destroy
-        @user_location_list = LocationVisit.find(params[:id])
+        @user_location_list = UserLocationList.find(params[:id])
         if @user_location_list && @user_location_list.author_id == current_user.id
             @user_location_list.delete
             render json: ['Successful deletion'], status: 200

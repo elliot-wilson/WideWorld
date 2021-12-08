@@ -5,15 +5,29 @@
     justify-content: center;
     background-color: #efe8dc;
     padding: 2% 0 2% 0;
+    
+    section {
+        width: 800px;
+        display: flex;
+        flex-direction: column;
+    }
 
     p {
         margin: 10px 0px;
         font-size: 19px;
-        width: 700px;
+        width: 100%;
         line-height: 1.15em;
 
         a {
             text-decoration: 1px underline;
         }
     }
+
+    .prof-pic {
+        align-self: center;
+        width: 200px;
+        border-radius: 50%;
+        margin: 40px 0px 20px 0px;
+    }
+    
 }

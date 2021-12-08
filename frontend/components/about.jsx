@@ -9,7 +9,7 @@ const About = (props) => {
         <section className="about">
             <h2 className="subheading">About Wide World</h2>
             <section>
-                <p>I love history and traveling, so I spend a lot of time on <a href="http://www.atlasobscura.com" target="_blank" rel="noopener noreferrer">Atlas Obscura</a>.</p>
+                <p>I love history and travel, so I spend a lot of time on <a href="http://www.atlasobscura.com" target="_blank" rel="noopener noreferrer">Atlas Obscura</a>.</p>
                 <p>I decided to build my own version as a way of learning more about React, Redux, and Ruby on Rails, and I'm really happy with the results!</p>
                 <br/>
             </section>

@@ -20,6 +20,7 @@ class AddToListButton extends React.Component {
     }
 
     openAddToListModal(e) {
+        if (!this.props.currentUser) return this.props.history.push("/login");
         const modalBg = document.querySelector('.add-to-list-modal-background');
         if (e.target !== modalBg) {
             this.setState({clicked: true})

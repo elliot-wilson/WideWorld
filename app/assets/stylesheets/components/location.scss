@@ -82,11 +82,12 @@
                     &.clicked {
                         color: white;
                         background-color: #00527d;
+                        
+                        > *:hover {
+                            cursor: default;
+                        }
                     }
 
-                    > *:hover {
-                        cursor: default;
-                    }
                 }
                 
                 .add-to-list-modal {

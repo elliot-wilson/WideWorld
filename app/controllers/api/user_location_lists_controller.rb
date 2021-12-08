@@ -6,7 +6,7 @@ class Api::UserLocationListsController < ApplicationController
         if @user_location_list.save
             render :simple_show
         else
-            render json: @user.errors.full_messages, status: 422
+            render json: @user_location_list.errors.full_messages, status: 422
         end
 
     end

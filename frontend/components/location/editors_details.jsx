@@ -53,12 +53,12 @@ class EditorsDetails extends React.Component {
                 <div className="initial-editor-spotlight">
                     <div><img></img></div>
                     <p className="editor-leadin">ADDED BY</p>
-                    <p className="editor-name">
+                    <div className="editor-name">
                         <Link to={`/users/${initialEditor.id}`}>
                             {editorPhoto}
                             <p>{initialEditor.username}</p>
                         </Link>
-                    </p>
+                    </div>
                 </div>
                 {editorsDiv}
                 <div className="edit-location-links-box">

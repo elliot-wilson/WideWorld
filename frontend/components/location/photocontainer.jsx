@@ -6,7 +6,7 @@ const PhotoContainer = (props) => {
 
     return (
         <div className="photo-container">
-            {photos.map(photo => <img src={photo}/>)}
+            {photos.map((photo, idx) => <img key={`photo-${idx}`}src={photo}/>)}
         </div>
     )
 }

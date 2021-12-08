@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faAngellist } from "@fortawesome/free-brands-svg-icons"
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faUserTie } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => (
     <footer className="footer">
@@ -11,6 +11,7 @@ const Footer = () => (
             <li><a href="https://angel.co/u/elliot-wilson-dev" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faAngellist}/></a></li>
             <li><a href="https://www.linkedin.com/in/elliot-wilson-4897a81b9/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin}/></a></li>
             <li><a href="mailto:elliot.andrew.wilson@gmail.com" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faEnvelope}/></a></li>
+            <li><a href="https://www.elliotwilson.me/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faUserTie}/></a></li>
         </ul>
     </footer>
 );

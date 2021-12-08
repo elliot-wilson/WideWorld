@@ -59,9 +59,10 @@ class AddToListModal extends React.Component {
     
     displayLists() {
         const { currentUserLists } = this.props;
+        console.log(currentUserLists);
 
         let listsDisplay;
-        if (currentUserLists) {
+        if (currentUserLists.length > 0) {
             listsDisplay = currentUserLists.map((list, idx) => (
                 <div className="lists-list">
                     <div>
@@ -77,7 +78,7 @@ class AddToListModal extends React.Component {
                 </div>
             ))
         } else {
-            listsDisplay = (<div></div>)
+            listsDisplay = (<div className="no-list-msg">When you create a list, it'll show up here!</div>)
         }
 
         return listsDisplay;

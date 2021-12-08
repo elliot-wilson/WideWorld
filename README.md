@@ -29,7 +29,7 @@ The project was built with the following tools.
 
 * Every <a href="https://wide-world.herokuapp.com/#/locations/13" target="_blanl" rel="noopener noreferrer">location page</a> is a meeting point for a number of relational PostgreSQL tables. Who wrote the article? Who edited it? How many people have visited? How many WANT to visit? Is your profile one of them? To access this information quickly, I used Rails' ActiveRecord ORM to pass up data that was associated across those tables as part of a single fetch request. For these associations, I used Rail's eager loading to avoid dreaded N+1 queries.
 
-<img src="https://wide-world-seeds.s3.us-east-1.amazonaws.com/readme_photos/add-to-list.gif"/>
+<img src="https://wide-world-seeds.s3.us-east-1.amazonaws.com/readme_photos/add-to-list2.gif"/>
 
 * To keep that payload manageable on the frontend, I made sure my Redux state was <a href="https://redux.js.org/usage/structuring-reducers/normalizing-state-shape" target="_blanl" rel="noopener noreferrer">normalized</a> according to my database design. By carefully structuring my Redux state, I've made it incredibly smooth to design new React components. I never need to dig deep into nested layers to find the data I'm looking for!
 

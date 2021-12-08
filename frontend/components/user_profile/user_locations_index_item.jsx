@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 const UserLocationsIndexItem = (props) => {
 
     const { location } = props;
-    console.log(location);
 
     return (
         <li className="locations-index-item">

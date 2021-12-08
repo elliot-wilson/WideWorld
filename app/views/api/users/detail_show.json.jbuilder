@@ -21,7 +21,7 @@ json.locationAdds do
 end
 
 json.locationEdits do 
-    json.array! @user.edited_locations.order('location_edits.created_at DESC') do |editedLocation|
+    json.array! @user.edited_locations.order('location_edits.created_at DESC').uniq do |editedLocation|
         json.partial! 'api/locations/snapshot.json.jbuilder', location: editedLocation
     end
 end

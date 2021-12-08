@@ -23,7 +23,6 @@ class AddToListModal extends React.Component {
     }
 
     handleClick(listId) {
-        console.log("handling click!!!");
         let listingId = this.findListing(listId);
         if (listingId) {
             this.props.deleteLocationListing(listingId);
@@ -59,7 +58,6 @@ class AddToListModal extends React.Component {
     
     displayLists() {
         const { currentUserLists } = this.props;
-        console.log(currentUserLists);
 
         let listsDisplay;
         if (currentUserLists.length > 0) {

@@ -27,7 +27,9 @@ class LocationForm extends React.Component {
     }
 
     generateAutoComplete() {
-        const autocomplete = new google.maps.places.Autocomplete(this.inputRef.current)
+        const autocomplete = new google.maps.places.Autocomplete(this.inputRef.current, {
+            fields: ["formatted_address", "geometry"]
+        })
         
         autocomplete.addListener("place_changed", () => {
             let place = autocomplete.getPlace();
